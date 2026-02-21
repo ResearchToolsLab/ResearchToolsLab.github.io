@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TikTok Money Calculator</title>
+</head>
+<body>
+  <h1>TikTok Money Calculator</h1>
+  <label>Followers: <input type="number" id="followers"></label><br>
+  <label>Average Views: <input type="number" id="views"></label><br>
+  <button onclick="calculate()">Calculate</button>
+  <p id="result"></p>
+
+<script>
+function calculate() {
+  let followers = document.getElementById('followers').value;
+  let views = document.getElementById('views').value;
+  let earning = views / 1000 * 1; 
+  document.getElementById('result').innerText = "Estimated Earnings: $" + earning.toFixed(2);
+}
+</script>
+</body>
+</html>
