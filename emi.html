@@ -3,57 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FreeToolHub – Loan & EMI Calculator | Free Online Tool</title>
-<meta name="description" content="FreeToolHub – Free EMI Calculator. Calculate monthly payments, total interest, and total loan payment instantly.">
-<meta name="keywords" content="EMI calculator, loan calculator, free EMI tool">
+<title>Advanced EMI Calculator – Bank Accurate</title>
+<meta name="description" content="Bank-accurate EMI Calculator with reducing & flat interest, real prepayments, amortization schedule, charts, and loan insights.">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <style>
-body{font-family:Arial,sans-serif;background:#f0f2f5;margin:0;text-align:center;}
-.container{background:white;max-width:500px;margin:50px auto;padding:30px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
-h1{background:linear-gradient(90deg,#ff4b2b,#ff416c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1.9em;margin-bottom:15px;}
-input{width:90%;max-width:300px;padding:12px;margin:10px 0;border-radius:6px;border:1px solid #ccc;font-size:1em;}
-button{padding:12px 25px;font-size:1em;border:none;color:white;background:#4CAF50;border-radius:6px;cursor:pointer;margin-top:10px;}
-button:hover{background:#45a049;}
-.result{margin-top:25px;text-align:left;padding:15px;background:#fafafa;border-radius:8px;border:1px solid #ddd;font-size:1.1em;}
-#adbox{margin-top:30px;background:#f9f9f9;padding:12px;border:1px dashed #ccc;}
-.footer{font-size:0.8em;color:#666;margin-top:30px;}
-@media(max-width:450px){.container{padding:30px 20px;} input,button{width:95%;}}
+body{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto;
+  background:#f3f5f9;
+  margin:0;
+  padding:20px;
+}
+.container{
+  max-width:1000px;
+  margin:auto;
+  background:#fff;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+h1{
+  text-align:center;
+  margin-bottom:10px;
+}
+p.desc{
+  text-align:center;
+  color:#555;
+}
+input,select,button{
+  width:100%;
+  padding:12px;
+  margin:6px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:1rem;
+}
+button{
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+button:hover{background:#1d4ed8}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:10px;
+}
+.result{
+  margin-top:20px;
+  background:#f9fafb;
+  padding:20px;
+  border-radius:12px;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+}
+th,td{
+  padding:6px;
+  border:1px solid #ddd;
+  font-size:.85rem;
+  text-align:right;
+}
+th{text-align:center;background:#eef2ff}
+canvas{margin-top:30px}
+small{color:#666}
 </style>
 </head>
+
 <body>
-
 <div class="container">
-<h1>FreeToolHub – Advanced Loan & EMI Calculator</h1>
-<p>Enter your loan details to calculate monthly EMI, total interest, and total payment.</p>
+<h1>Advanced EMI Calculator</h1>
+<p class="desc">Bank-accurate EMI • Real Prepayments • Amortization • Charts</p>
 
-<input type="number" id="loanAmt" placeholder="Loan Amount ($)" step="0.01">
-<input type="number" id="interestRate" placeholder="Annual Interest Rate (%)" step="0.01">
-<input type="number" id="tenureMonths" placeholder="Tenure (Months)">
-<button onclick="calculateEMI()">Calculate EMI</button>
+<div class="grid">
+  <input type="number" id="principal" placeholder="Loan Amount">
+  <input type="number" id="rate" placeholder="Annual Interest Rate (%)">
+  <input type="number" id="tenure" placeholder="Tenure (months)">
+  <select id="loanType">
+    <option value="reducing">Reducing Balance</option>
+    <option value="flat">Flat Interest</option>
+  </select>
+  <input type="number" id="prepayMonth" placeholder="Prepayment Month (optional)">
+  <input type="number" id="prepayAmount" placeholder="Prepayment Amount">
+  <select id="prepayMode">
+    <option value="reduceTenure">Reduce Tenure</option>
+    <option value="reduceEMI">Reduce EMI</option>
+  </select>
+</div>
 
-<div class="result" id="resultBox"></div>
-<div id="adbox">Your Ad Here</div>
-<div class="footer">Made with ❤️ by FreeToolHub</div>
+<button onclick="calculate()">Calculate EMI</button>
+
+<div id="output" class="result"></div>
+
+<canvas id="balanceChart"></canvas>
+<canvas id="interestChart"></canvas>
 </div>
 
 <script>
-function calculateEMI() {
-  let P=parseFloat(document.getElementById('loanAmt').value);
-  let annualR=parseFloat(document.getElementById('interestRate').value);
-  let n=parseInt(document.getElementById('tenureMonths').value);
-  if(isNaN(P)||P<=0||isNaN(annualR)||annualR<0||isNaN(n)||n<=0){
-    document.getElementById('resultBox').innerText="Please enter valid loan amount, interest rate and tenure!";
-    return;
-  }
-  let monthlyR=annualR/1200;
-  let emi=(P*monthlyR*Math.pow(1+monthlyR,n))/(Math.pow(1+monthlyR,n)-1);
-  let totalPayment=emi*n;
-  let totalInterest=totalPayment-P;
-  document.getElementById('resultBox').innerHTML=
-  `<strong>Monthly EMI:</strong> $${emi.toFixed(2)}<br>
-  <strong>Total Interest:</strong> $${totalInterest.toFixed(2)}<br>
-  <strong>Total Payment:</strong> $${totalPayment.toFixed(2)}`;
-}
-</script>
+let balanceChart, interestChart;
 
+function calculateReducingLoan(P, annualRate, n, prepayMonth, prepayAmount, prepayMode){
+  const r = annualRate / 12 / 100;
+  let balance = P;
+
+  let emi = (P * r * Math.pow(1+r,n)) / (Math.pow(1+r,n)-1);
+  let schedule = [];
+  let month = 1;
+
+  while(balance > 0.01 && month <= 1000){
+    let interest = balance * r;
+    let principalPaid = emi - interest;
+
+    if(month === prepayMonth && prepayAmount > 0){
+      balance -= prepayAmount;
+      if(balance < 0) balance = 0;
+
+      if(prepayMode === "reduceEMI"){
+        let remaining = n - month + 1;
+        emi = (balance * r * Math.pow(1+r,remaining)) / (Math.pow(1+r,remaining)-1);
+      }
+    }
+
+    balance -= principalPaid;
+    if(balance < 0) balance = 0;
+
+    schedule.push({
+      month, emi, principal:principalPaid, interest, balance
+    });
+    month++;
+  }
+
+  let totalInterest = schedule.reduce((s,m)=>s+m.interest,0);
+  let totalPayment = schedule.reduce((s,m)=>s+m.emi,0);
+
+  return {emi, totalInterest, totalPayment, schedule};
+}
+
+function calculateFlatLoan(P, annualRate, n){
+  let totalInterest = (P * annualRate * n) / (12*100);
+  let emi = (P + totalInterest) / n;
+  let schedule=[];
+  let balance=P;
+
+  for(let m=1;m<=n;m++){
+    let principal=P/n;
+    let interest=totalInterest/n;
+    balance-=principal;
+    schedule.push({month:m,emi,principal,interest,balance:Math.max(balance,0)});
+  }
+  return {emi,totalInterest,totalPayment:P+totalInterest,schedule};
+}
+
+function calculate(){
+  const P=+principal.value;
+  const R=+rate.value;
+  const n=+tenure.value;
+  const type=loanType.value;
+  const pm=+prepayMonth.value;
+  const pa=+prepayAmount.value;
+  const mode=prepayMode.value;
+
+  if(!P||!R||!n){alert("Enter valid inputs");return;}
+
+  let data = type==="flat"
+    ? calculateFlatLoan(P,R,n)
+    : calculateReducingLoan(P,R,n,pm,pa,mode);
+
+  render(data);
+}
+
+function render(data){
+  let html = `
+  <h3>Results</h3>
+  <p>
+  EMI: <b>${data.emi.toFixed(2)}</b><br>
+  Total Interest: <b>${data.totalInterest.toFixed(2)}</b><br>
+  Total Payment: <b>${data.totalPayment.toFixed(2)}</b><br>
+  Tenure: <b>${data.schedule.length} months</b>
+  </p>
+  <small>Reducing balance loans recalculate interest monthly. Flat loans charge interest on original principal.</small>
+  <table>
+  <tr><th>Month</th><th>EMI</th><th>Principal</th><th>Interest</th><th>Balance</th></tr>`;
+
+  data.schedule.forEach(r=>{
+    html+=`<tr>
+    <td>${r.month}</td>
+    <td>${r.emi.toFixed(2)}</td>
+    <td>${r.principal.toFixed(2)}</td>
+    <td>${r.interest.toFixed(2)}</td>
+    <td>${r.balance.toFixed(2)}</td>
+    </tr>`;
+  });
+  html+="</table>";
+  output.innerHTML=html;
+
+  drawCharts(data.schedule);
+}
+
+function drawCharts(s){
+  let labels=s.map(x=>x.month);
+  let balances=s.map(x=>x.balance);
+  let interests=s.map(x=>x.interest);
+
+  if(balanceChart) balanceChart.destroy();
+  if(interestChart) interestChart.destroy();
+
+  balanceChart=new Chart(balanceChartCtx(),{
+    type:"line",
+    data:{labels,datasets:[{label:"Outstanding Balance",data:balances}]},
+    options:{responsive:true}
+  });
+
+  interestChart=new Chart(interestChartCtx(),{
+    type:"line",
+    data:{labels,datasets:[{label:"Monthly Interest",data:interests}]},
+    options:{responsive:true}
+  });
+}
+
+function balanceChartCtx(){return document.getElementById("balanceChart").getContext("2d")}
+function interestChartCtx(){return document.getElementById("interestChart").getContext("2d")}
+</script>
 </body>
 </html>
