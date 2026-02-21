@@ -1,117 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FreeToolHub – Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreeToolHub – Home</title>
 
-  <!-- SEO meta tags -->
-  <meta name="description" content="FreeToolHub – free online tools including TikTok calculator, YouTube earnings calculator, loan calculator, PDF generator, and more.">
-  <meta name="keywords" content="FreeToolHub, free tools, calculator, TikTok, YouTube, EMI, PDF generator">
+<!-- SEO meta tags -->
+<meta name="description" content="FreeToolHub – free online tools including TikTok calculator, YouTube earnings calculator, loan calculator, PDF generator, and percentage calculator.">
+<meta name="keywords" content="FreeToolHub, free tools, calculator, TikTok, YouTube, EMI, PDF generator, percentage calculator">
 
-  <!-- Styles -->
-  <style>
-    /* Body */
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+<style>
+/* ===== Body & Container ===== */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    text-align: center;
+}
 
-    /* Container */
-    .container {
-      background: white;
-      padding: 40px 30px;
-      border-radius: 12px;
-      max-width: 500px;
-      margin: 60px auto;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
+.container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 60px auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
 
-    /* Header */
-    h1 {
-      background: linear-gradient(90deg, #ff4b2b, #ff416c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 2em;
-      margin-bottom: 25px;
-    }
+/* ===== Header ===== */
+h1 {
+    background: linear-gradient(90deg, #ff4b2b, #ff416c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    margin-bottom: 25px;
+}
 
-    /* Tool links */
-    .tool-list {
-      list-style: none;
-      padding: 0;
-    }
+/* ===== Tool buttons ===== */
+.tool-list {
+    list-style: none;
+    padding: 0;
+}
 
-    .tool-list li {
-      margin: 15px 0;
-    }
+.tool-list li {
+    margin: 15px 0;
+}
 
-    .tool-list a {
-      text-decoration: none;
-      font-size: 1.2em;
-      color: white;
-      background: #4CAF50;
-      padding: 12px 25px;
-      border-radius: 8px;
-      transition: 0.3s;
-      display: inline-block;
-      width: 200px;
-    }
+.tool-list a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    background: #4CAF50;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+    display: inline-block;
+    width: 220px;
+}
 
-    .tool-list a:hover {
-      background: #45a049;
-    }
+.tool-list a:hover {
+    background: #45a049;
+}
 
-    /* Footer */
-    .footer {
-      font-size: 0.8em;
-      color: #666;
-      margin-top: 40px;
-    }
+/* ===== Ad placeholder ===== */
+#ads {
+    margin-top:30px;
+    background:#f9f9f9;
+    padding:10px;
+    border:1px dashed #ccc;
+}
 
-    /* Optional ad space */
-    #ads {
-      margin-top:30px;
-      background:#f9f9f9;
-      padding:10px;
-      border:1px dashed #ccc;
-    }
+/* ===== Footer ===== */
+.footer {
+    font-size:0.8em;
+    color:#666;
+    margin-top:40px;
+}
 
-    /* Mobile adjustments */
-    @media(max-width: 450px) {
-      .container {
-        padding: 30px 20px;
-        margin: 40px 10px;
-      }
-      .tool-list a {
-        width: 90%;
-      }
-    }
-  </style>
+/* ===== Mobile adjustments ===== */
+@media(max-width:450px){
+    .container{padding:30px 20px;margin:40px 10px;}
+    .tool-list a{width:90%;}
+}
+</style>
 </head>
 <body>
-  <div class="container">
+
+<div class="container">
+    <!-- ===== Site Name ===== -->
     <h1>FreeToolHub</h1>
 
+    <!-- ===== Tools List ===== -->
     <ul class="tool-list">
-      <li><a href="tiktok.html">TikTok Money Calculator</a></li>
-      <li><a href="youtube.html">YouTube Earnings Calculator</a></li>
-      <li><a href="loan.html">Loan / EMI Calculator</a></li>
-      <li><a href="invoice.html">PDF Invoice Generator</a></li>
-      <li><a href="percentage.html">Percentage Calculator</a></li>
+        <li><a href="tiktok.html">TikTok Money Calculator</a></li>
+        <li><a href="youtube.html">YouTube Earnings Calculator</a></li>
+        <li><a href="loan.html">Loan / EMI Calculator</a></li>
+        <li><a href="invoice.html">PDF Invoice Generator</a></li>
+        <li><a href="percentage.html">Percentage Calculator</a></li>
     </ul>
 
-    <!-- Optional ad space -->
+    <!-- ===== Optional ad space ===== -->
     <div id="ads">
-      Your Ad Here
+        Your Ad Here
     </div>
 
+    <!-- ===== Footer ===== -->
     <div class="footer">
-      Made with ❤️ by FreeToolHub
+        Made with ❤️ by FreeToolHub
     </div>
-  </div>
+</div>
+
+<!-- ===== Notes for Editing ===== -->
+<!--
+    1. To add a new tool:
+       - Create a new HTML file for the tool (e.g., newtool.html)
+       - Add a new <li> in .tool-list with link
+    2. To change the site name: update <h1> and footer
+    3. To change colors or styles: edit the <style> section
+    4. To place actual ads, replace the #ads div content with ad code
+-->
+
 </body>
 </html>
