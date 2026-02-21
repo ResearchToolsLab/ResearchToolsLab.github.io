@@ -3,53 +3,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FreeToolHub – PDF Invoice Generator | Free Tool</title>
-<meta name="description" content="FreeToolHub – Create professional PDF invoices online for free. Fill in details and download instantly.">
-<meta name="keywords" content="PDF invoice generator, free invoice maker, online invoice tool">
-<style>
-body{font-family:Arial,sans-serif;background:#f0f2f5;margin:0;text-align:center;}
-.container{background:white;max-width:500px;margin:50px auto;padding:30px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
-h1{background:linear-gradient(90deg,#ff4b2b,#ff416c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1.8em;margin-bottom:15px;}
-input,textarea{width:90%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;font-size:1em;}
-button{padding:10px 20px;margin-top:8px;background:#4CAF50;color:white;border:none;border-radius:6px;cursor:pointer;font-size:1em;}
-button:hover{background:#45a049;}
-#ads{margin-top:30px;background:#f9f9f9;padding:10px;border:1px dashed #ccc;}
-.footer{font-size:0.8em;color:#666;margin-top:30px;}
-@media(max-width:450px){.container{padding:30px 20px;} input,textarea,button{width:95%;}}
-</style>
-</head>
-<body>
 
-<div class="container">
-<h1>FreeToolHub – PDF Invoice Generator</h1>
-<p>Fill in invoice details and download PDF instantly.</p>
+<title>Free Invoice Generator – Create Professional PDF Invoices Online</title>
 
-<input type="text" id="client" placeholder="Client Name"><br>
-<input type="text" id="item" placeholder="Item Description"><br>
-<input type="number" id="amount" placeholder="Amount ($)" step="0.01"><br>
-<button onclick="generateInvoice()">Generate PDF</button>
-
-<div id="ads">Your Ad Here</div>
-<div class="footer">Made with ❤️ by FreeToolHub</div>
-</div>
+<meta name="description" content="Create professional PDF invoices online for free. Add logo, multiple items, tax, currency, notes, live preview, and download instantly. No signup required.">
+<meta name="keywords" content="free invoice generator, pdf invoice maker, online invoice tool, create invoice pdf, business invoice generator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freetoolhub.github.io/invoice-generator">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+:root{
+  --primary:#2563eb;
+  --bg:#f3f5f9;
+  --card:#ffffff;
+}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+  background:var(--bg);
+  margin:0;
+  padding:20px;
+}
+.container{
+  max-width:900px;
+  margin:auto;
+  background:var(--card);
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+h1{text-align:center;margin-bottom:8px}
+p.sub{text-align:center;color:#555;margin-bottom:20px}
+
+input,select,textarea,button{
+  width:100%;
+  padding:12px;
+  margin:6px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:1rem;
+}
+button{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+button:hover{opacity:.9}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:10px;
+}
+
+.items-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+.items-table th,.items-table td{
+  border:1px solid #ddd;
+  padding:8px;
+  text-align:right;
+}
+.items-table th{text-align:center;background:#eef2ff}
+
+.preview{
+  background:#f9fafb;
+  padding:20px;
+  border-radius:12px;
+  margin-top:20px;
+}
+footer{
+  text-align:center;
+  margin-top:30px;
+  font-size:.85rem;
+  color:#666;
+}
+img#logoPreview{max-height:80px;margin-top:6px}
+</style>
+</head>
+
+<body>
+<main class="container">
+<h1>Free PDF Invoice Generator</h1>
+<p class="sub">Create professional, business-ready invoices instantly — no signup</p>
+
+<section class="grid">
+  <input id="business" placeholder="Your Business Name">
+  <input id="client" placeholder="Client Name">
+  <input id="invoiceNo" placeholder="Invoice Number">
+  <input type="date" id="date">
+  <select id="currency">
+    <option value="$">USD ($)</option>
+    <option value="€">EUR (€)</option>
+    <option value="₹">INR (₹)</option>
+    <option value="£">GBP (£)</option>
+  </select>
+  <input type="number" id="tax" placeholder="Tax % (GST/VAT)">
+</section>
+
+<h3>Invoice Items</h3>
+<table class="items-table">
+<thead>
+<tr><th>Description</th><th>Qty</th><th>Price</th><th>Total</th></tr>
+</thead>
+<tbody id="items"></tbody>
+</table>
+<button onclick="addItem()">+ Add Item</button>
+
+<label>Notes / Payment Terms</label>
+<textarea id="notes" rows="3"></textarea>
+
+<label>Upload Logo (optional)</label>
+<input type="file" id="logo">
+<img id="logoPreview">
+
+<button onclick="generatePDF()">Download PDF</button>
+
+<section class="preview" id="preview"></section>
+
+<footer>FreeToolHub • Privacy-friendly • Client-side only</footer>
+</main>
+
 <script>
-function generateInvoice(){
-  let { jsPDF } = window.jspdf;
-  let client=document.getElementById('client').value;
-  let item=document.getElementById('item').value;
-  let amount=document.getElementById('amount').value;
-  if(!client||!item||!amount){alert("Enter all fields!"); return;}
-  let doc=new jsPDF();
-  doc.setFontSize(16); doc.text("Invoice",105,20,{align:"center"});
-  doc.setFontSize(12);
-  doc.text(`Client: ${client}`,20,40);
-  doc.text(`Item: ${item}`,20,50);
-  doc.text(`Amount: $${parseFloat(amount).toFixed(2)}`,20,60);
-  doc.save(`Invoice_${client}.pdf`);
+const itemsEl = document.getElementById("items");
+const invoiceNoEl = document.getElementById("invoiceNo");
+
+invoiceNoEl.value = localStorage.getItem("invoiceNo") || "1001";
+document.getElementById("date").valueAsDate = new Date();
+
+addItem();
+
+document.getElementById("logo").addEventListener("change",e=>{
+  const r=new FileReader();
+  r.onload=()=>logoPreview.src=r.result;
+  r.readAsDataURL(e.target.files[0]);
+});
+
+function addItem(){
+  const row=document.createElement("tr");
+  row.innerHTML=`
+    <td contenteditable>Description</td>
+    <td contenteditable>1</td>
+    <td contenteditable>0.00</td>
+    <td>0.00</td>`;
+  itemsEl.appendChild(row);
+}
+
+function generatePDF(){
+  const { jsPDF } = window.jspdf;
+  const doc=new jsPDF();
+
+  const business=business.value||"Business";
+  const client=client.value||"Client";
+  const invoiceNo=invoiceNoEl.value;
+  const date=date.value;
+  const currency=currency.value;
+  const taxRate=parseFloat(tax.value)||0;
+  const notes=notes.value;
+
+  let y=20;
+  if(logoPreview.src){
+    doc.addImage(logoPreview.src,"PNG",150,10,40,20);
+  }
+
+  doc.setFontSize(18);
+  doc.text("INVOICE",20,y);
+  y+=10;
+
+  doc.setFontSize(11);
+  doc.text(`Invoice #: ${invoiceNo}`,20,y);
+  doc.text(`Date: ${date}`,140,y);
+  y+=8;
+  doc.text(`From: ${business}`,20,y);
+  y+=8;
+  doc.text(`Bill To: ${client}`,20,y);
+  y+=12;
+
+  let subtotal=0;
+  doc.text("Description",20,y);
+  doc.text("Qty",110,y);
+  doc.text("Price",130,y);
+  doc.text("Total",160,y);
+  y+=6;
+
+  [...itemsEl.children].forEach(r=>{
+    const d=r.cells[0].innerText;
+    const q=parseFloat(r.cells[1].innerText)||0;
+    const p=parseFloat(r.cells[2].innerText)||0;
+    const t=q*p;
+    subtotal+=t;
+    doc.text(d,20,y);
+    doc.text(q.toString(),110,y);
+    doc.text(p.toFixed(2),130,y);
+    doc.text(t.toFixed(2),160,y);
+    y+=6;
+  });
+
+  y+=6;
+  const taxAmt=subtotal*taxRate/100;
+  const total=subtotal+taxAmt;
+
+  doc.text(`Subtotal: ${currency}${subtotal.toFixed(2)}`,130,y); y+=6;
+  doc.text(`Tax: ${currency}${taxAmt.toFixed(2)}`,130,y); y+=6;
+  doc.text(`Total: ${currency}${total.toFixed(2)}`,130,y);
+
+  if(notes){
+    y+=10;
+    doc.text("Notes:",20,y);
+    y+=6;
+    doc.text(notes,20,y,{maxWidth:170});
+  }
+
+  doc.save(`Invoice_${invoiceNo}.pdf`);
+
+  localStorage.setItem("invoiceNo",Number(invoiceNo)+1);
+  renderPreview(subtotal,taxAmt,total,currency);
+}
+
+function renderPreview(sub,tax,total,c){
+  preview.innerHTML=`
+  <h3>Live Preview</h3>
+  <p>Subtotal: <b>${c}${sub.toFixed(2)}</b></p>
+  <p>Tax: <b>${c}${tax.toFixed(2)}</b></p>
+  <p>Total: <b>${c}${total.toFixed(2)}</b></p>
+  `;
 }
 </script>
-
 </body>
 </html>
