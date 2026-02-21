@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreeToolHub – Loan EMI Calculator</title>
+<meta name="description" content="FreeToolHub – Loan / EMI Calculator to calculate monthly payments easily. Free online tool.">
+<meta name="keywords" content="FreeToolHub, EMI calculator, loan calculator, finance, free tool">
+<style>
+body{font-family:Arial,sans-serif;background:#f0f2f5;margin:0;text-align:center;}
+.container{background:white;padding:40px 30px;border-radius:12px;max-width:400px;margin:60px auto;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
+h1{background:linear-gradient(90deg,#ff4b2b,#ff416c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1.8em;margin-bottom:30px;}
+input{padding:12px;margin:10px 0;width:90%;max-width:250px;border-radius:6px;border:1px solid #ccc;font-size:1em;}
+button{padding:12px 25px;margin-top:15px;font-size:1em;border-radius:6px;border:none;cursor:pointer;background:#4CAF50;color:white;transition:0.3s;}
+button:hover{background:#45a049;}
+#result{margin-top:25px;font-size:1.2em;font-weight:bold;color:#333;}
+#ads{margin-top:30px;background:#f9f9f9;padding:10px;border:1px dashed #ccc;}
+.footer{font-size:0.8em;color:#666;margin-top:40px;}
+@media(max-width:450px){.container{padding:30px 20px;margin:40px 10px;}input,button{width:95%;}}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>FreeToolHub – Loan EMI Calculator</h1>
+<input type="number" id="principal" placeholder="Enter loan amount"><br>
+<input type="number" id="rate" placeholder="Enter annual interest rate (%)"><br>
+<input type="number" id="tenure" placeholder="Enter tenure in months"><br>
+<button onclick="calculate()">Calculate EMI</button>
+<p id="result"></p>
+<div id="ads">Your Ad Here</div>
+<div class="footer">Made with ❤️ by FreeToolHub</div>
+</div>
+<script>
+function calculate(){
+  let P=+document.getElementById('principal').value;
+  let R=+document.getElementById('rate').value/12/100;
+  let N=+document.getElementById('tenure').value;
+  if(!P||!R||!N){document.getElementById('result').innerText="Please enter valid numbers!";return;}
+  let EMI=(P*R*Math.pow(1+R,N))/(Math.pow(1+R,N)-1);
+  document.getElementById('result').innerText="Monthly EMI: $"+EMI.toFixed(2);
+}
+</script>
+</body>
+</html>
