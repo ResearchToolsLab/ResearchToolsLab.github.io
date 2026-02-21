@@ -3,170 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Percentage Calculator – Increase, Decrease, Difference & Reverse %</title>
-
-<meta name="description" content="Free smart percentage calculator. Calculate percentage increase, decrease, difference, reverse percentage, and see step-by-step solutions. No signup required.">
-<meta name="keywords" content="percentage calculator, increase percentage, decrease percentage, percentage difference, reverse percentage, step by step">
+<title>Ultimate Percentage Calculator – FreeToolHub</title>
+<meta name="description" content="All-in-one percentage calculator. Increase, decrease, difference, reverse %, X% of Y, step-by-step, smart input.">
+<meta name="keywords" content="percentage calculator, increase percentage, decrease percentage, reverse percentage, percentage difference, step by step">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://freetoolhub.github.io/percentage-calculator">
 
 <style>
-:root{
+:root {
   --primary:#2563eb;
   --bg:#f3f5f9;
-  --card:#ffffff;
+  --card:#fff;
 }
-body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto;
-  background:var(--bg);
-  margin:0;
-  padding:20px;
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto;
+  margin:0;padding:20px;background:var(--bg);
 }
-.container{
-  max-width:720px;
-  margin:auto;
-  background:var(--card);
-  padding:30px;
-  border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,.1);
+.container {
+  max-width:720px;margin:auto;background:var(--card);
+  padding:30px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
-h1{text-align:center;margin-bottom:8px}
-p.sub{text-align:center;color:#555;margin-bottom:20px}
-
-input,select,button{
-  width:100%;
-  padding:12px;
-  margin:6px 0;
-  border-radius:8px;
-  border:1px solid #ccc;
-  font-size:1rem;
-}
-button{
-  background:var(--primary);
-  color:#fff;
-  border:none;
-  cursor:pointer;
-}
-button:hover{opacity:.9}
-
-.result{
-  margin-top:20px;
-  background:#f9fafb;
-  padding:20px;
-  border-radius:12px;
-}
-.steps{
-  margin-top:10px;
-  font-size:.95rem;
-  color:#333;
-}
-.copy{
-  margin-top:10px;
-  background:#16a34a;
-}
-
-.examples{
-  font-size:.9rem;
-  color:#666;
-  margin-top:10px;
-}
-footer{
-  text-align:center;
-  margin-top:30px;
-  font-size:.85rem;
-  color:#666;
-}
+h1{text-align:center;margin-bottom:5px;}
+p.sub{text-align:center;color:#555;margin-bottom:20px;}
+input, select, button {width:100%;padding:12px;margin:6px 0;border-radius:8px;border:1px solid #ccc;font-size:1rem;}
+button {background:var(--primary);color:#fff;border:none;cursor:pointer;}
+button:hover {opacity:.9;}
+label{font-weight:bold;margin-top:10px;display:block;}
+.result{margin-top:20px;background:#f9fafb;padding:20px;border-radius:12px;}
+.steps{margin-top:10px;font-size:.95rem;color:#333;}
+.copy-btn{margin-top:10px;padding:8px 12px;background:#16a34a;color:#fff;border:none;border-radius:6px;cursor:pointer;}
+.copy-btn:hover{background:#15803d;}
+.tab{display:flex;margin-bottom:10px;gap:5px;}
+.tab button{flex:1;}
+.tab button.active{background:#4f46e5;color:#fff;}
+@media(max-width:500px){input, select, button{width:100%;}}
 </style>
 </head>
-
 <body>
-<main class="container">
-<h1>Smart Percentage Calculator</h1>
-<p class="sub">Increase • Decrease • Difference • Reverse Percentage • Step-by-Step</p>
 
-<label>Enter calculation (natural language or numbers)</label>
-<input id="input" placeholder='Examples: "Increase 250 by 18%", "250 to 300", "30 is 20% of what?"'>
+<div class="container">
+<h1>Ultimate Percentage Calculator</h1>
+<p class="sub">All major percentage operations, with optional smart input and step-by-step solution</p>
 
-<button onclick="calculate()">Calculate</button>
-
-<div class="examples">
-Examples:
-• Increase 250 by 18%  
-• Decrease 120 by 15%  
-• 250 to 300  
-• 30 is 20% of what?  
-• What is 20% of 150?
+<div class="tab">
+  <button class="tabBtn active" onclick="showTab('basic')">Basic Input</button>
+  <button class="tabBtn" onclick="showTab('smart')">Smart Input</button>
 </div>
 
-<section id="result" class="result"></section>
-<button class="copy" onclick="copyResult()">Copy Result</button>
+<div id="basic" class="tabContent">
+<label>Select Operation:</label>
+<select id="operation">
+  <option value="percentOf">X% of Y</option>
+  <option value="whatPercent">X is what % of Y</option>
+  <option value="increase">Increase X by Y%</option>
+  <option value="decrease">Decrease X by Y%</option>
+  <option value="difference">Difference % between X and Y</option>
+</select>
 
-<footer>FreeToolHub • Simple • Accurate • Private</footer>
-</main>
+<label>Value 1 (X)</label>
+<input type="number" id="val1">
+
+<label>Value 2 (Y / %)</label>
+<input type="number" id="val2">
+
+<button onclick="calculateBasic()">Calculate</button>
+</div>
+
+<div id="smart" class="tabContent" style="display:none;">
+<label>Enter Calculation:</label>
+<input type="text" id="smartInput" placeholder='Examples: "Increase 250 by 18%", "30 is 20% of what?", "250 to 300"'>
+<button onclick="calculateSmart()">Calculate</button>
+</div>
+
+<div class="result" id="result"></div>
+<button class="copy-btn" onclick="copyResult()">Copy Result</button>
+</div>
 
 <script>
-function calculate(){
-  const raw = input.value.trim().toLowerCase();
-  let answer="", steps="";
+const tabs = document.querySelectorAll('.tabBtn');
+function showTab(tab){
+  document.querySelectorAll('.tabContent').forEach(c=>c.style.display='none');
+  document.getElementById(tab).style.display='block';
+  tabs.forEach(b=>b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+}
 
-  // What is X% of Y
-  let ofMatch = raw.match(/what\s+is\s+([\d.]+)%\s+of\s+([\d.]+)/);
-  if(ofMatch){
-    const p=+ofMatch[1], v=+ofMatch[2];
-    const r=v*p/100;
-    answer=`${p}% of ${v} = ${r.toFixed(2)}`;
-    steps=`Step 1: ${v} × (${p}/100)<br>Step 2: ${r.toFixed(2)}`;
+// Basic calculation
+function calculateBasic(){
+  const op = document.getElementById('operation').value;
+  const x = parseFloat(document.getElementById('val1').value);
+  const y = parseFloat(document.getElementById('val2').value);
+  if(isNaN(x)||isNaN(y)){alert("Enter both values"); return;}
+  let res=0, steps="";
+  switch(op){
+    case "percentOf":
+      res = x*y/100;
+      steps = `Step 1: ${x} × ${y}/100 = ${res.toFixed(2)}`;
+      break;
+    case "whatPercent":
+      res = (x/y)*100;
+      steps = `Step 1: (${x} ÷ ${y}) × 100 = ${res.toFixed(2)}%`;
+      break;
+    case "increase":
+      res = x + (x*y/100);
+      steps = `Step 1: ${x} × ${y}/100 = ${(x*y/100).toFixed(2)}<br>Step 2: ${x} + ${(x*y/100).toFixed(2)} = ${res.toFixed(2)}`;
+      break;
+    case "decrease":
+      res = x - (x*y/100);
+      steps = `Step 1: ${x} × ${y}/100 = ${(x*y/100).toFixed(2)}<br>Step 2: ${x} - ${(x*y/100).toFixed(2)} = ${res.toFixed(2)}`;
+      break;
+    case "difference":
+      const diff = y-x;
+      res = (diff/x)*100;
+      steps = `Step 1: Difference = ${y} - ${x} = ${diff}<br>Step 2: (${diff} ÷ ${x}) × 100 = ${res.toFixed(2)}%`;
+      break;
   }
+  document.getElementById('result').innerHTML=`<strong>Result: ${res.toFixed(2)}</strong><div class="steps">${steps}</div>`;
+}
 
+// Smart calculation (natural language)
+function calculateSmart(){
+  const input = document.getElementById('smartInput').value.toLowerCase();
+  let res="", steps="";
   // Increase X by Y%
-  let inc = raw.match(/increase\s+([\d.]+)\s+by\s+([\d.]+)%/);
+  let inc = input.match(/increase\s+([\d.]+)\s+by\s+([\d.]+)%/);
   if(inc){
-    const x=+inc[1], p=+inc[2];
-    const r=x + (x*p/100);
-    answer=`${x} increased by ${p}% = ${r.toFixed(2)}`;
-    steps=`Step 1: ${x} × (${p}/100) = ${(x*p/100).toFixed(2)}<br>Step 2: ${x} + ${(x*p/100).toFixed(2)} = ${r.toFixed(2)}`;
+    const x=+inc[1], y=+inc[2];
+    res = x + (x*y/100);
+    steps = `Step 1: ${x} × ${y}/100 = ${(x*y/100).toFixed(2)}<br>Step 2: ${x} + ${(x*y/100).toFixed(2)} = ${res.toFixed(2)}`;
+    return showResult(res, steps);
   }
-
   // Decrease X by Y%
-  let dec = raw.match(/decrease\s+([\d.]+)\s+by\s+([\d.]+)%/);
+  let dec = input.match(/decrease\s+([\d.]+)\s+by\s+([\d.]+)%/);
   if(dec){
-    const x=+dec[1], p=+dec[2];
-    const r=x - (x*p/100);
-    answer=`${x} decreased by ${p}% = ${r.toFixed(2)}`;
-    steps=`Step 1: ${x} × (${p}/100) = ${(x*p/100).toFixed(2)}<br>Step 2: ${x} − ${(x*p/100).toFixed(2)} = ${r.toFixed(2)}`;
+    const x=+dec[1], y=+dec[2];
+    res = x - (x*y/100);
+    steps = `Step 1: ${x} × ${y}/100 = ${(x*y/100).toFixed(2)}<br>Step 2: ${x} - ${(x*y/100).toFixed(2)} = ${res.toFixed(2)}`;
+    return showResult(res, steps);
   }
-
-  // Reverse percentage
-  let rev = raw.match(/([\d.]+)\s+is\s+([\d.]+)%\s+of\s+what/);
+  // X is Y% of what?
+  let rev = input.match(/([\d.]+)\s+is\s+([\d.]+)%\s+of\s+what/);
   if(rev){
     const part=+rev[1], p=+rev[2];
-    const r=(part*100)/p;
-    answer=`${part} is ${p}% of ${r.toFixed(2)}`;
-    steps=`Step 1: (${part} × 100) ÷ ${p}<br>Step 2: ${r.toFixed(2)}`;
+    res = (part*100)/p;
+    steps = `Step 1: (${part} × 100) ÷ ${p} = ${res.toFixed(2)}`;
+    return showResult(res, steps);
   }
-
-  // Percentage change (X to Y)
-  let diff = raw.match(/([\d.]+)\s+to\s+([\d.]+)/);
+  // Difference X to Y
+  let diff = input.match(/([\d.]+)\s+to\s+([\d.]+)/);
   if(diff){
     const x=+diff[1], y=+diff[2];
-    const d=y-x;
-    const p=(d/x)*100;
-    answer=`Change from ${x} to ${y} = ${p.toFixed(2)}%`;
-    steps=`Step 1: Difference = ${y} − ${x} = ${d.toFixed(2)}<br>
-           Step 2: (${d.toFixed(2)} ÷ ${x}) × 100 = ${p.toFixed(2)}%`;
+    const d = y-x;
+    res = (d/x)*100;
+    steps = `Step 1: Difference = ${y} - ${x} = ${d}<br>Step 2: (${d} ÷ ${x}) × 100 = ${res.toFixed(2)}%`;
+    return showResult(res, steps);
+  }
+  // X% of Y
+  let ofMatch = input.match(/([\d.]+)%\s+of\s+([\d.]+)/);
+  if(ofMatch){
+    const x=+ofMatch[1], y=+ofMatch[2];
+    res = x*y/100;
+    steps = `Step 1: ${x} × ${y}/100 = ${res.toFixed(2)}`;
+    return showResult(res, steps);
   }
 
-  if(!answer){
-    answer="Unable to understand input.";
-    steps="Try formats like: Increase 250 by 18%, 250 to 300, 30 is 20% of what?";
-  }
+  document.getElementById('result').innerHTML="Could not parse input. Use formats like: Increase 250 by 18%, 250 to 300, 30 is 20% of what?, 20% of 150.";
+}
 
-  result.innerHTML=`<strong>${answer}</strong><div class="steps">${steps}</div>`;
+function showResult(res, steps){
+  document.getElementById('result').innerHTML=`<strong>Result: ${res.toFixed(2)}</strong><div class="steps">${steps}</div>`;
 }
 
 function copyResult(){
-  navigator.clipboard.writeText(result.innerText);
+  navigator.clipboard.writeText(document.getElementById('result').innerText);
   alert("Result copied!");
 }
 </script>
