@@ -1,11 +1,12 @@
+<!-- SEO & instructions improved, logo size guidance added, date/logo overlap fixed -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free PDF Invoice Generator – Robust & Smart</title>
-<meta name="description" content="Professional PDF invoice generator online. Upload logo, multiple items, tax, currency, notes, live preview, and error handling.">
-<meta name="keywords" content="pdf invoice generator, invoice maker online, free invoice generator, business invoice pdf">
+<title>Free PDF Invoice Generator – Online Invoice Maker</title>
+<meta name="description" content="Create professional PDF invoices online instantly. Upload your business logo, add client info, items, taxes, currency, and download free invoices.">
+<meta name="keywords" content="pdf invoice generator, online invoice maker, free invoice creator, business invoice PDF, client invoice template">
 <meta name="robots" content="index, follow">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -54,7 +55,12 @@ label{font-weight:bold;margin-top:10px;display:block;}
   border-radius:12px;
   margin-top:20px;
 }
-#logoPreview{max-height:100px;margin-top:6px}
+#logoPreview{
+  max-width:150px;    /* limit width */
+  max-height:80px;    /* limit height */
+  object-fit:contain; /* maintain aspect ratio */
+  margin-top:6px;
+}
 .status{font-size:.9rem;margin-top:5px;color:#444;}
 .status.error{color:red;}
 .status.success{color:green;}
@@ -65,7 +71,7 @@ footer{text-align:center;margin-top:30px;font-size:.85rem;color:#666;}
 <body>
 <div class="container">
 <h1>Professional PDF Invoice Generator</h1>
-<p class="desc">Upload logo, add client info, items, tax, currency, notes, and download instantly</p>
+<p class="desc">Upload your business logo (max 150x80px), add client info, items, taxes, currency, notes, and download instantly</p>
 
 <label>Your Business Name</label>
 <input type="text" id="business" placeholder="Your Business Name">
@@ -104,7 +110,7 @@ footer{text-align:center;margin-top:30px;font-size:.85rem;color:#666;}
 <label>Notes / Terms</label>
 <textarea id="notes" rows="3"></textarea>
 
-<label>Upload Logo (optional)</label>
+<label>Upload Logo (optional, max 150x80px)</label>
 <input type="file" id="logo">
 <img id="logoPreview" alt="Logo Preview">
 <div id="logoStatus" class="status"></div>
@@ -127,7 +133,6 @@ document.getElementById("invoiceNo").value = localStorage.getItem("invoiceNo") |
 
 addItem(); // initial row
 
-// Handle logo upload
 logoInput.addEventListener("change", e=>{
   const file = e.target.files[0];
   if(!file) return;
@@ -187,7 +192,7 @@ function generateInvoice(){
   // Add logo if loaded
   if(logoData){
     try{
-      doc.addImage(logoData,"PNG",150,10,40,40);
+      doc.addImage(logoData,"PNG",20,10,50,25); // smaller logo, positioned top-left
     }catch(e){
       logoStatus.textContent = "Failed to embed logo, proceeding without logo.";
       logoStatus.className="status error";
@@ -195,12 +200,12 @@ function generateInvoice(){
   }
 
   doc.setFontSize(18);
-  doc.text("INVOICE",20,y);
+  doc.text("INVOICE",150,20,{align:"right"}); // move invoice title right to avoid logo
   y+=10;
   doc.setFontSize(11);
-  doc.text(`Invoice #: ${invoiceNo}`,20,y);
-  doc.text(`Date: ${date}`,140,y);
-  y+=8;
+  doc.text(`Invoice #: ${invoiceNo}`,150,30,{align:"right"});
+  doc.text(`Date: ${date}`,150,36,{align:"right"});
+  y+=16;
   doc.text(`From: ${business}`,20,y);
   y+=8;
   doc.text(`Bill To: ${client}`,20,y);
@@ -244,7 +249,6 @@ function generateInvoice(){
   try{
     doc.save(`Invoice_${invoiceNo}.pdf`);
     document.getElementById("preview").innerHTML = `<strong>Invoice generated successfully! Total: ${currency}${total.toFixed(2)}</strong>`;
-    // Auto-increment invoice number
     localStorage.setItem("invoiceNo",Number(invoiceNo)+1);
   }catch(e){
     document.getElementById("preview").innerHTML = `<span style="color:red;">Failed to generate PDF. ${e}</span>`;
