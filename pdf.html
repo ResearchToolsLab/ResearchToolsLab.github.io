@@ -3,13 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Free Invoice Generator – Create Professional PDF Invoices Online</title>
-
-<meta name="description" content="Create professional PDF invoices online for free. Add logo, multiple items, tax, currency, notes, live preview, and download instantly. No signup required.">
-<meta name="keywords" content="free invoice generator, pdf invoice maker, online invoice tool, create invoice pdf, business invoice generator">
+<title>Free PDF Invoice Generator – Robust & Smart</title>
+<meta name="description" content="Professional PDF invoice generator online. Upload logo, multiple items, tax, currency, notes, live preview, and error handling.">
+<meta name="keywords" content="pdf invoice generator, invoice maker online, free invoice generator, business invoice pdf">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://freetoolhub.github.io/invoice-generator">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
@@ -33,10 +30,9 @@ body{
   border-radius:16px;
   box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
-h1{text-align:center;margin-bottom:8px}
-p.sub{text-align:center;color:#555;margin-bottom:20px}
-
-input,select,textarea,button{
+h1{text-align:center;margin-bottom:10px;}
+p.desc{text-align:center;color:#555;margin-bottom:20px;}
+input, select, textarea, button{
   width:100%;
   padding:12px;
   margin:6px 0;
@@ -51,129 +47,156 @@ button{
   cursor:pointer;
 }
 button:hover{opacity:.9}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:10px;
-}
-
-.items-table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:10px;
-}
-.items-table th,.items-table td{
-  border:1px solid #ddd;
-  padding:8px;
-  text-align:right;
-}
-.items-table th{text-align:center;background:#eef2ff}
-
-.preview{
+label{font-weight:bold;margin-top:10px;display:block;}
+.result{
   background:#f9fafb;
   padding:20px;
   border-radius:12px;
   margin-top:20px;
 }
-footer{
-  text-align:center;
-  margin-top:30px;
-  font-size:.85rem;
-  color:#666;
-}
-img#logoPreview{max-height:80px;margin-top:6px}
+#logoPreview{max-height:100px;margin-top:6px}
+.status{font-size:.9rem;margin-top:5px;color:#444;}
+.status.error{color:red;}
+.status.success{color:green;}
+footer{text-align:center;margin-top:30px;font-size:.85rem;color:#666;}
 </style>
 </head>
 
 <body>
-<main class="container">
-<h1>Free PDF Invoice Generator</h1>
-<p class="sub">Create professional, business-ready invoices instantly — no signup</p>
+<div class="container">
+<h1>Professional PDF Invoice Generator</h1>
+<p class="desc">Upload logo, add client info, items, tax, currency, notes, and download instantly</p>
 
-<section class="grid">
-  <input id="business" placeholder="Your Business Name">
-  <input id="client" placeholder="Client Name">
-  <input id="invoiceNo" placeholder="Invoice Number">
-  <input type="date" id="date">
-  <select id="currency">
-    <option value="$">USD ($)</option>
-    <option value="€">EUR (€)</option>
-    <option value="₹">INR (₹)</option>
-    <option value="£">GBP (£)</option>
-  </select>
-  <input type="number" id="tax" placeholder="Tax % (GST/VAT)">
-</section>
+<label>Your Business Name</label>
+<input type="text" id="business" placeholder="Your Business Name">
+
+<label>Client Name</label>
+<input type="text" id="client" placeholder="Client Name">
+
+<label>Invoice Number</label>
+<input type="text" id="invoiceNo" value="1001">
+
+<label>Invoice Date</label>
+<input type="date" id="date">
+
+<label>Currency</label>
+<select id="currency">
+  <option value="$">USD ($)</option>
+  <option value="€">EUR (€)</option>
+  <option value="₹">INR (₹)</option>
+  <option value="£">GBP (£)</option>
+</select>
+
+<label>Tax % (GST/VAT)</label>
+<input type="number" id="tax" placeholder="Tax %" step="0.01">
 
 <h3>Invoice Items</h3>
-<table class="items-table">
+<table id="items" style="width:100%;border-collapse:collapse;margin-bottom:10px;">
 <thead>
-<tr><th>Description</th><th>Qty</th><th>Price</th><th>Total</th></tr>
+<tr>
+<th>Description</th><th>Qty</th><th>Price</th><th>Total</th>
+</tr>
 </thead>
-<tbody id="items"></tbody>
+<tbody></tbody>
 </table>
 <button onclick="addItem()">+ Add Item</button>
 
-<label>Notes / Payment Terms</label>
+<label>Notes / Terms</label>
 <textarea id="notes" rows="3"></textarea>
 
 <label>Upload Logo (optional)</label>
 <input type="file" id="logo">
-<img id="logoPreview">
+<img id="logoPreview" alt="Logo Preview">
+<div id="logoStatus" class="status"></div>
 
-<button onclick="generatePDF()">Download PDF</button>
+<button onclick="generateInvoice()">Generate PDF</button>
 
-<section class="preview" id="preview"></section>
+<div id="preview" class="result"></div>
 
 <footer>FreeToolHub • Privacy-friendly • Client-side only</footer>
-</main>
+</div>
 
 <script>
-const itemsEl = document.getElementById("items");
-const invoiceNoEl = document.getElementById("invoiceNo");
+const itemsBody = document.querySelector("#items tbody");
+const logoInput = document.getElementById("logo");
+const logoPreview = document.getElementById("logoPreview");
+const logoStatus = document.getElementById("logoStatus");
+let logoData = null;
 
-invoiceNoEl.value = localStorage.getItem("invoiceNo") || "1001";
-document.getElementById("date").valueAsDate = new Date();
+document.getElementById("invoiceNo").value = localStorage.getItem("invoiceNo") || "1001";
 
-addItem();
+addItem(); // initial row
 
-document.getElementById("logo").addEventListener("change",e=>{
-  const r=new FileReader();
-  r.onload=()=>logoPreview.src=r.result;
-  r.readAsDataURL(e.target.files[0]);
+// Handle logo upload
+logoInput.addEventListener("change", e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+
+  if(!["image/png","image/jpeg"].includes(file.type)){
+    logoStatus.textContent = "Unsupported format! Only PNG or JPEG allowed.";
+    logoStatus.className="status error";
+    logoData = null;
+    logoPreview.src="";
+    return;
+  }
+
+  if(file.size > 500*1024){
+    logoStatus.textContent = "File too large! Max 500KB recommended.";
+    logoStatus.className="status error";
+    logoData = null;
+    logoPreview.src="";
+    return;
+  }
+
+  logoStatus.textContent = "Uploading...";
+  logoStatus.className="status";
+
+  const reader = new FileReader();
+  reader.onload = ()=> {
+    logoData = reader.result;
+    logoPreview.src = logoData;
+    logoStatus.textContent = "Logo loaded successfully!";
+    logoStatus.className="status success";
+  }
+  reader.readAsDataURL(file);
 });
 
 function addItem(){
-  const row=document.createElement("tr");
-  row.innerHTML=`
-    <td contenteditable>Description</td>
-    <td contenteditable>1</td>
-    <td contenteditable>0.00</td>
-    <td>0.00</td>`;
-  itemsEl.appendChild(row);
+  const row = document.createElement("tr");
+  row.innerHTML = `
+  <td contenteditable>Description</td>
+  <td contenteditable>1</td>
+  <td contenteditable>0.00</td>
+  <td>0.00</td>`;
+  itemsBody.appendChild(row);
 }
 
-function generatePDF(){
+function generateInvoice(){
   const { jsPDF } = window.jspdf;
-  const doc=new jsPDF();
+  const doc = new jsPDF();
+  const business = document.getElementById("business").value || "Business";
+  const client = document.getElementById("client").value || "Client";
+  const invoiceNo = document.getElementById("invoiceNo").value;
+  const date = document.getElementById("date").value || new Date().toISOString().slice(0,10);
+  const currency = document.getElementById("currency").value;
+  const taxRate = parseFloat(document.getElementById("tax").value) || 0;
+  const notes = document.getElementById("notes").value;
 
-  const business=business.value||"Business";
-  const client=client.value||"Client";
-  const invoiceNo=invoiceNoEl.value;
-  const date=date.value;
-  const currency=currency.value;
-  const taxRate=parseFloat(tax.value)||0;
-  const notes=notes.value;
+  let y = 20;
 
-  let y=20;
-  if(logoPreview.src){
-    doc.addImage(logoPreview.src,"PNG",150,10,40,20);
+  // Add logo if loaded
+  if(logoData){
+    try{
+      doc.addImage(logoData,"PNG",150,10,40,40);
+    }catch(e){
+      logoStatus.textContent = "Failed to embed logo, proceeding without logo.";
+      logoStatus.className="status error";
+    }
   }
 
   doc.setFontSize(18);
   doc.text("INVOICE",20,y);
   y+=10;
-
   doc.setFontSize(11);
   doc.text(`Invoice #: ${invoiceNo}`,20,y);
   doc.text(`Date: ${date}`,140,y);
@@ -183,30 +206,30 @@ function generatePDF(){
   doc.text(`Bill To: ${client}`,20,y);
   y+=12;
 
-  let subtotal=0;
+  // Table headers
   doc.text("Description",20,y);
   doc.text("Qty",110,y);
   doc.text("Price",130,y);
   doc.text("Total",160,y);
   y+=6;
 
-  [...itemsEl.children].forEach(r=>{
-    const d=r.cells[0].innerText;
-    const q=parseFloat(r.cells[1].innerText)||0;
-    const p=parseFloat(r.cells[2].innerText)||0;
-    const t=q*p;
-    subtotal+=t;
-    doc.text(d,20,y);
-    doc.text(q.toString(),110,y);
-    doc.text(p.toFixed(2),130,y);
-    doc.text(t.toFixed(2),160,y);
+  let subtotal = 0;
+  [...itemsBody.children].forEach(r=>{
+    const desc = r.cells[0].innerText;
+    const qty = parseFloat(r.cells[1].innerText) || 0;
+    const price = parseFloat(r.cells[2].innerText) || 0;
+    const total = qty*price;
+    subtotal += total;
+    doc.text(desc,20,y);
+    doc.text(qty.toString(),110,y);
+    doc.text(price.toFixed(2),130,y);
+    doc.text(total.toFixed(2),160,y);
     y+=6;
   });
 
+  const taxAmt = subtotal*taxRate/100;
+  const total = subtotal+taxAmt;
   y+=6;
-  const taxAmt=subtotal*taxRate/100;
-  const total=subtotal+taxAmt;
-
   doc.text(`Subtotal: ${currency}${subtotal.toFixed(2)}`,130,y); y+=6;
   doc.text(`Tax: ${currency}${taxAmt.toFixed(2)}`,130,y); y+=6;
   doc.text(`Total: ${currency}${total.toFixed(2)}`,130,y);
@@ -218,19 +241,14 @@ function generatePDF(){
     doc.text(notes,20,y,{maxWidth:170});
   }
 
-  doc.save(`Invoice_${invoiceNo}.pdf`);
-
-  localStorage.setItem("invoiceNo",Number(invoiceNo)+1);
-  renderPreview(subtotal,taxAmt,total,currency);
-}
-
-function renderPreview(sub,tax,total,c){
-  preview.innerHTML=`
-  <h3>Live Preview</h3>
-  <p>Subtotal: <b>${c}${sub.toFixed(2)}</b></p>
-  <p>Tax: <b>${c}${tax.toFixed(2)}</b></p>
-  <p>Total: <b>${c}${total.toFixed(2)}</b></p>
-  `;
+  try{
+    doc.save(`Invoice_${invoiceNo}.pdf`);
+    document.getElementById("preview").innerHTML = `<strong>Invoice generated successfully! Total: ${currency}${total.toFixed(2)}</strong>`;
+    // Auto-increment invoice number
+    localStorage.setItem("invoiceNo",Number(invoiceNo)+1);
+  }catch(e){
+    document.getElementById("preview").innerHTML = `<span style="color:red;">Failed to generate PDF. ${e}</span>`;
+  }
 }
 </script>
 </body>
