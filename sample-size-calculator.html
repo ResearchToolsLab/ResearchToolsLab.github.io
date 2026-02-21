@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Size Calculator</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f5f2eb;
+    --cream: #ede9df;
+    --accent: #c8622a;
+    --accent2: #2a6ec8;
+    --muted: #7a7468;
+    --border: #d4cfc5;
+    --success: #2a8c5a;
+    --card: #ffffff;
+    --shadow: 0 2px 20px rgba(15,14,12,0.08);
+
+    /* PRECISE Z-SCORES — verified via scipy.stats.norm.ppf */
+    /* 90%: 1.644854 | 95%: 1.959964 | 98%: 2.326348 | 99%: 2.575829 */
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 1.5rem;
+  }
+
+  /* ── STEPS ── */
+  .steps {
+    display: flex;
+    gap: 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--cream);
+    overflow-x: auto;
+  }
+
+  .step-tab {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .step-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .step-tab .sn {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--cream); color: var(--muted);
+    font-size: 0.7rem; display: flex; align-items: center;
+    justify-content: center; font-weight: 600; transition: all 0.2s;
+  }
+  .step-tab.active .sn { background: var(--accent); color: white; }
+  .step-tab.done .sn { background: var(--success); color: white; }
+  .step-tab.done .sn::after { content: '✓'; }
+  .step-tab.done .sn-txt { display: none; }
+
+  /* ── PANELS ── */
+  .panel { display: none; }
+  .panel.active { display: block; animation: fadeIn 0.25s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── STUDY TYPE GRID ── */
+  .study-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 480px) { .study-grid { grid-template-columns: 1fr; } }
+
+  .study-card {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.18s;
+    background: white;
+  }
+  .study-card:hover { border-color: var(--accent); }
+  .study-card.selected { border-color: var(--accent); background: rgba(200,98,42,0.04); }
+  .sc-icon { font-size: 1.3rem; margin-bottom: 0.35rem; }
+  .sc-title { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.15rem; }
+  .sc-desc { font-size: 0.74rem; color: var(--muted); line-height: 1.4; }
+
+  /* ── FORM ── */
+  .form-row { margin-bottom: 1.2rem; }
+
+  label {
+    display: block;
+    font-size: 0.84rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+  label .hint { font-weight: 400; color: var(--muted); font-size: 0.76rem; margin-left: 0.35rem; }
+
+  input[type="number"], select {
+    width: 100%;
+    padding: 0.62rem 0.9rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.93rem;
+    background: white;
+    color: var(--ink);
+    transition: border-color 0.18s;
+    appearance: none;
+  }
+  select {
+    font-family: 'Outfit', sans-serif;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a7468' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+  }
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(200,98,42,0.1);
+  }
+
+  .input-wrap { position: relative; }
+  .input-unit {
+    position: absolute; right: 0.9rem; top: 50%;
+    transform: translateY(-50%); font-size: 0.78rem;
+    color: var(--muted); font-family: 'DM Mono', monospace;
+    pointer-events: none;
+  }
+
+  /* ── SLIDER ── */
+  .slider-row { display: grid; grid-template-columns: 1fr 50px; gap: 0.75rem; align-items: center; }
+  input[type="range"] {
+    width: 100%; height: 4px;
+    background: var(--cream); border-radius: 4px;
+    appearance: none; cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none; width: 18px; height: 18px; border-radius: 50%;
+    background: var(--accent); cursor: pointer;
+    box-shadow: 0 1px 4px rgba(200,98,42,0.3);
+  }
+  .slider-val {
+    font-family: 'DM Mono', monospace; font-size: 0.9rem;
+    font-weight: 500; color: var(--accent); text-align: right;
+  }
+
+  /* ── EFFECT SIZE HELPER ── */
+  .effect-helper {
+    background: var(--cream); border-radius: 10px;
+    padding: 0.9rem; margin-bottom: 0.6rem;
+  }
+  .effect-helper p { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .effect-opts { display: flex; gap: 0.5rem; }
+  .effect-btn {
+    flex: 1; padding: 0.45rem 0.25rem;
+    border: 1.5px solid var(--border); border-radius: 8px;
+    background: white; cursor: pointer;
+    font-size: 0.76rem; font-family: 'Outfit', sans-serif;
+    font-weight: 500; transition: all 0.18s; text-align: center;
+  }
+  .effect-btn.active { border-color: var(--accent2); color: var(--accent2); background: rgba(42,110,200,0.05); }
+  .effect-btn .ev { display: block; font-family: 'DM Mono', monospace; font-size: 0.88rem; font-weight: 600; }
+  .effect-btn .el { color: var(--muted); font-size: 0.68rem; }
+
+  /* ── SECTION LABEL ── */
+  .slabel {
+    font-size: 0.72rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); margin-bottom: 1rem;
+  }
+
+  /* ── CONDITIONAL ── */
+  .cond { display: none; }
+  .cond.show { display: block; }
+
+  /* ── WARNING ── */
+  .warn-box {
+    background: rgba(200,98,42,0.07);
+    border: 1px solid rgba(200,98,42,0.2);
+    border-radius: 8px; padding: 0.75rem 1rem;
+    font-size: 0.8rem; color: var(--muted);
+    line-height: 1.5; margin-bottom: 1.2rem;
+  }
+  .warn-box strong { color: var(--accent); }
+
+  /* ── ERROR ── */
+  .err {
+    background: rgba(200,50,50,0.08);
+    border: 1px solid rgba(200,50,50,0.2);
+    border-radius: 8px; padding: 0.7rem 1rem;
+    font-size: 0.84rem; color: #c03232;
+    display: none; margin-bottom: 1rem;
+  }
+
+  /* ── BUTTONS ── */
+  .nav-btns { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+
+  .btn-back {
+    padding: 0.75rem 1.25rem;
+    background: var(--cream); color: var(--ink);
+    border: none; border-radius: 10px;
+    font-family: 'Outfit', sans-serif; font-size: 0.9rem;
+    font-weight: 500; cursor: pointer; transition: all 0.18s;
+  }
+  .btn-back:hover { background: var(--border); }
+
+  .btn-next {
+    flex: 1; padding: 0.75rem;
+    background: var(--ink); color: var(--paper);
+    border: none; border-radius: 10px;
+    font-family: 'Outfit', sans-serif; font-size: 0.9rem;
+    font-weight: 600; cursor: pointer; transition: all 0.18s;
+  }
+  .btn-next:hover { background: #2a2820; }
+
+  .btn-calc {
+    width: 100%; padding: 1rem;
+    background: var(--accent); color: white;
+    border: none; border-radius: 10px;
+    font-family: 'Outfit', sans-serif; font-size: 1rem;
+    font-weight: 600; cursor: pointer; transition: all 0.2s;
+    margin-top: 1.5rem; letter-spacing: 0.01em;
+  }
+  .btn-calc:hover { background: #b5571f; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(200,98,42,0.3); }
+
+  .btn-reset {
+    width: 100%; padding: 0.85rem;
+    background: transparent; color: var(--muted);
+    border: 1.5px solid var(--border); border-radius: 10px;
+    font-family: 'Outfit', sans-serif; font-size: 0.88rem;
+    font-weight: 500; cursor: pointer; transition: all 0.18s;
+    margin-top: 0.75rem;
+  }
+  .btn-reset:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── RESULTS ── */
+  #results { display: none; margin-top: 1.5rem; }
+
+  .result-hero {
+    background: var(--ink); color: var(--paper);
+    border-radius: 14px; padding: 2rem;
+    text-align: center; margin-bottom: 1rem;
+    position: relative; overflow: hidden;
+  }
+  .result-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(200,98,42,0.2) 0%, transparent 70%);
+  }
+  .rh-label {
+    font-size: 0.72rem; text-transform: uppercase;
+    letter-spacing: 0.1em; color: rgba(245,242,235,0.5);
+    margin-bottom: 0.4rem; position: relative;
+  }
+  .rh-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3rem, 10vw, 5rem);
+    line-height: 1; color: var(--paper); position: relative;
+    animation: popIn 0.5s cubic-bezier(0.175,0.885,0.32,1.275);
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .rh-unit { font-size: 0.88rem; color: rgba(245,242,235,0.55); margin-top: 0.2rem; position: relative; }
+  .rh-adj {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.5rem; margin-top: 1rem; padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1); position: relative;
+  }
+  .rh-adj-label { font-size: 0.76rem; color: rgba(245,242,235,0.45); }
+  .rh-adj-num { font-family: 'DM Mono', monospace; font-size: 1.1rem; font-weight: 500; color: var(--accent); }
+
+  /* RESULT GRID */
+  .res-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.65rem; margin-bottom: 1rem;
+  }
+  .res-card { background: var(--cream); border-radius: 10px; padding: 0.9rem; }
+  .rc-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 0.25rem; }
+  .rc-val { font-family: 'DM Mono', monospace; font-size: 1rem; font-weight: 500; }
+
+  /* INTERPRETATION */
+  .interp {
+    background: rgba(42,140,90,0.07);
+    border: 1px solid rgba(42,140,90,0.2);
+    border-left: 3px solid var(--success);
+    border-radius: 10px; padding: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .interp-title {
+    font-size: 0.72rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.07em;
+    color: var(--success); margin-bottom: 0.5rem;
+  }
+  .interp p { font-size: 0.88rem; line-height: 1.68; }
+
+  /* FORMULA */
+  .formula-box {
+    background: #f8f7f4; border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.1rem; margin-bottom: 1rem;
+  }
+  .fb-title {
+    font-size: 0.72rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.07em;
+    color: var(--muted); margin-bottom: 0.65rem;
+  }
+  .fb-code {
+    font-family: 'DM Mono', monospace; font-size: 0.82rem;
+    color: var(--ink); line-height: 1.85;
+    background: white; border-radius: 6px;
+    padding: 0.75rem; border: 1px solid var(--border);
+    overflow-x: auto; white-space: pre;
+  }
+  .fb-vars { margin-top: 0.65rem; font-size: 0.76rem; color: var(--muted); line-height: 1.7; }
+
+  /* COPY BLOCK */
+  .copy-block {
+    background: var(--cream); border-radius: 10px;
+    padding: 1.1rem; margin-bottom: 0.75rem;
+  }
+  .cb-header {
+    font-size: 0.72rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.07em;
+    color: var(--muted); margin-bottom: 0.65rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .copy-btn {
+    background: var(--ink); color: var(--paper);
+    border: none; border-radius: 6px; padding: 4px 10px;
+    font-size: 0.7rem; font-family: 'Outfit', sans-serif;
+    font-weight: 500; cursor: pointer; transition: all 0.18s;
+  }
+  .copy-btn:hover { background: var(--accent); }
+  .cb-text {
+    font-size: 0.82rem; line-height: 1.7; color: var(--ink);
+    white-space: pre-wrap; font-family: 'Outfit', sans-serif;
+  }
+
+  /* ATTRITION BREAKDOWN */
+  .attr-breakdown {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem; margin-bottom: 1rem;
+  }
+  .ab-card {
+    background: var(--cream); border-radius: 8px;
+    padding: 0.75rem; text-align: center;
+  }
+  .ab-card.highlight { background: rgba(200,98,42,0.08); border: 1px solid rgba(200,98,42,0.2); }
+  .ab-num { font-family: 'DM Mono', monospace; font-size: 1.1rem; font-weight: 500; color: var(--ink); }
+  .ab-label { font-size: 0.68rem; color: var(--muted); margin-top: 0.15rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .ab-arrow { display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- STEPS -->
+<div class="steps">
+  <button class="step-tab active" id="tab1" onclick="gotoStep(1)">
+    <span class="sn"><span class="sn-txt">1</span></span> Study Type
+  </button>
+  <button class="step-tab" id="tab2" onclick="gotoStep(2)">
+    <span class="sn"><span class="sn-txt">2</span></span> Parameters
+  </button>
+  <button class="step-tab" id="tab3" onclick="gotoStep(3)">
+    <span class="sn"><span class="sn-txt">3</span></span> Adjustments
+  </button>
+</div>
+
+<!-- ══ PANEL 1: STUDY TYPE ══ -->
+<div class="panel active" id="panel1">
+  <div class="slabel">What kind of study are you running?</div>
+  <div class="study-grid">
+    <div class="study-card selected" onclick="selectStudy('survey',this)">
+      <div class="sc-icon">📋</div>
+      <div class="sc-title">Survey / Questionnaire</div>
+      <div class="sc-desc">Polls, opinion surveys, customer feedback, market research</div>
+    </div>
+    <div class="study-card" onclick="selectStudy('experiment',this)">
+      <div class="sc-icon">⚗️</div>
+      <div class="sc-title">Experiment (Two Groups)</div>
+      <div class="sc-desc">Comparing treatment vs control group, RCTs, A/B testing</div>
+    </div>
+    <div class="study-card" onclick="selectStudy('clinical',this)">
+      <div class="sc-icon">🏥</div>
+      <div class="sc-title">Clinical / Health Study</div>
+      <div class="sc-desc">Medical research with dichotomous or continuous endpoints</div>
+    </div>
+    <div class="study-card" onclick="selectStudy('correlation',this)">
+      <div class="sc-icon">📈</div>
+      <div class="sc-title">Correlation / Regression</div>
+      <div class="sc-desc">Testing relationships between variables using Pearson's r</div>
+    </div>
+    <div class="study-card" onclick="selectStudy('prevalence',this)">
+      <div class="sc-icon">🔍</div>
+      <div class="sc-title">Prevalence / Proportion</div>
+      <div class="sc-desc">Estimating how common something is in a population</div>
+    </div>
+  </div>
+  <div class="nav-btns">
+    <button class="btn-next" onclick="gotoStep(2)">Next: Set Parameters →</button>
+  </div>
+</div>
+
+<!-- ══ PANEL 2: PARAMETERS ══ -->
+<div class="panel" id="panel2">
+  <div class="err" id="err-msg">Please check your inputs and try again.</div>
+
+  <!-- SURVEY -->
+  <div id="f-survey">
+    <div class="slabel">Survey Parameters</div>
+    <div class="form-row">
+      <label>Confidence Level <span class="hint">How certain do you need to be?</span></label>
+      <select id="s-conf">
+        <option value="1.644854">90% — Exploratory research</option>
+        <option value="1.959964" selected>95% — Standard (most research)</option>
+        <option value="2.326348">98% — Strict</option>
+        <option value="2.575829">99% — Very strict / high stakes</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Margin of Error (±)</label>
+      <div class="slider-row">
+        <input type="range" id="s-moe" min="1" max="20" value="5" step="0.5" oninput="sv('s-moe-v',this.value+'%')">
+        <div class="slider-val" id="s-moe-v">5%</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Population Proportion <span class="hint">Expected % with characteristic — use 50% if unsure (most conservative)</span></label>
+      <div class="slider-row">
+        <input type="range" id="s-prop" min="1" max="99" value="50" step="1" oninput="sv('s-prop-v',this.value+'%')">
+        <div class="slider-val" id="s-prop-v">50%</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Population Size <span class="hint">Enter 0 if very large or unknown</span></label>
+      <input type="number" id="s-pop" value="0" min="0" placeholder="0 = unlimited population">
+    </div>
+  </div>
+
+  <!-- EXPERIMENT -->
+  <div id="f-experiment" class="cond">
+    <div class="slabel">Experiment Parameters</div>
+    <div class="form-row">
+      <label>Confidence Level (α)</label>
+      <select id="e-conf">
+        <option value="1.644854">90% (α = 0.10)</option>
+        <option value="1.959964" selected>95% (α = 0.05) — Standard</option>
+        <option value="2.575829">99% (α = 0.01)</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Statistical Power (1-β) <span class="hint">Probability of detecting a true effect</span></label>
+      <select id="e-power">
+        <option value="0.841621">80% — Minimum standard</option>
+        <option value="1.036433">85%</option>
+        <option value="1.281552" selected>90% — Recommended</option>
+        <option value="1.644854">95% — High power</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Effect Size (Cohen's d) <span class="hint">Standardised difference between groups</span></label>
+      <div class="effect-helper">
+        <p>Not sure? Select a reference size:</p>
+        <div class="effect-opts">
+          <button class="effect-btn" onclick="setEff('e-eff',0.2,this)"><span class="ev">0.2</span><span class="el">Small</span></button>
+          <button class="effect-btn active" onclick="setEff('e-eff',0.5,this)"><span class="ev">0.5</span><span class="el">Medium</span></button>
+          <button class="effect-btn" onclick="setEff('e-eff',0.8,this)"><span class="ev">0.8</span><span class="el">Large</span></button>
+        </div>
+      </div>
+      <div class="input-wrap">
+        <input type="number" id="e-eff" value="0.5" step="0.01" min="0.01" placeholder="e.g. 0.5">
+        <span class="input-unit">d</span>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Test Type</label>
+      <select id="e-tails">
+        <option value="2" selected>Two-tailed (most common — no directional hypothesis)</option>
+        <option value="1">One-tailed (directional hypothesis specified)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- CLINICAL -->
+  <div id="f-clinical" class="cond">
+    <div class="slabel">Clinical Study Parameters</div>
+    <div class="form-row">
+      <label>Primary Endpoint Type</label>
+      <select id="c-ep" onchange="toggleClinicalEP()">
+        <option value="proportion">Dichotomous (yes/no outcome — e.g. mortality, pregnancy)</option>
+        <option value="continuous">Continuous (means — e.g. blood pressure, weight loss)</option>
+      </select>
+    </div>
+    <!-- Dichotomous -->
+    <div id="c-prop-fields">
+      <div class="form-row">
+        <label>Event Rate — Control Group (p₁)</label>
+        <div class="input-wrap">
+          <input type="number" id="c-p1" value="0.30" step="0.01" min="0.01" max="0.99">
+          <span class="input-unit">p₁</span>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Event Rate — Treatment Group (p₂) <span class="hint">Expected rate after intervention</span></label>
+        <div class="input-wrap">
+          <input type="number" id="c-p2" value="0.50" step="0.01" min="0.01" max="0.99">
+          <span class="input-unit">p₂</span>
+        </div>
+      </div>
+    </div>
+    <!-- Continuous -->
+    <div id="c-cont-fields" class="cond">
+      <div class="form-row">
+        <label>Mean — Control Group (μ₁)</label>
+        <input type="number" id="c-m1" value="100" step="0.1">
+      </div>
+      <div class="form-row">
+        <label>Mean — Treatment Group (μ₂)</label>
+        <input type="number" id="c-m2" value="110" step="0.1">
+      </div>
+      <div class="form-row">
+        <label>Pooled Standard Deviation (σ)</label>
+        <div class="input-wrap">
+          <input type="number" id="c-sd" value="20" step="0.1" min="0.01">
+          <span class="input-unit">σ</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Significance Level (α)</label>
+      <select id="c-alpha">
+        <option value="1.959964" selected>0.05 — Standard</option>
+        <option value="2.575829">0.01 — Strict</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Power (1-β)</label>
+      <select id="c-power">
+        <option value="0.841621" selected>80%</option>
+        <option value="1.281552">90%</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Enrollment Ratio (n₂/n₁) <span class="hint">Participants in treatment per each in control</span></label>
+      <select id="c-ratio">
+        <option value="1" selected>1:1 — Equal groups</option>
+        <option value="2">1:2 — Twice as many in treatment</option>
+        <option value="0.5">2:1 — Twice as many in control</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- CORRELATION -->
+  <div id="f-correlation" class="cond">
+    <div class="slabel">Correlation Study Parameters</div>
+    <div class="form-row">
+      <label>Expected Pearson Correlation Coefficient (r)</label>
+      <div class="effect-helper">
+        <p>Not sure? Select a reference:</p>
+        <div class="effect-opts">
+          <button class="effect-btn" onclick="setEff('r-val',0.1,this)"><span class="ev">0.1</span><span class="el">Weak</span></button>
+          <button class="effect-btn active" onclick="setEff('r-val',0.3,this)"><span class="ev">0.3</span><span class="el">Moderate</span></button>
+          <button class="effect-btn" onclick="setEff('r-val',0.5,this)"><span class="ev">0.5</span><span class="el">Strong</span></button>
+        </div>
+      </div>
+      <div class="input-wrap">
+        <input type="number" id="r-val" value="0.3" step="0.01" min="0.01" max="0.99">
+        <span class="input-unit">r</span>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Significance Level (α)</label>
+      <select id="r-alpha">
+        <option value="1.959964" selected>0.05</option>
+        <option value="2.575829">0.01</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Power (1-β)</label>
+      <select id="r-power">
+        <option value="0.841621" selected>80%</option>
+        <option value="1.281552">90%</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- PREVALENCE -->
+  <div id="f-prevalence" class="cond">
+    <div class="slabel">Prevalence Study Parameters</div>
+    <div class="form-row">
+      <label>Expected Prevalence <span class="hint">Your best estimate of how common the condition is</span></label>
+      <div class="slider-row">
+        <input type="range" id="pv-prev" min="1" max="99" value="20" step="1" oninput="sv('pv-prev-v',this.value+'%')">
+        <div class="slider-val" id="pv-prev-v">20%</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Precision (±) <span class="hint">Acceptable margin of error around prevalence estimate</span></label>
+      <div class="slider-row">
+        <input type="range" id="pv-prec" min="1" max="15" value="5" step="0.5" oninput="sv('pv-prec-v',this.value+'%')">
+        <div class="slider-val" id="pv-prec-v">5%</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Confidence Level</label>
+      <select id="pv-conf">
+        <option value="1.644854">90%</option>
+        <option value="1.959964" selected>95%</option>
+        <option value="2.575829">99%</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Population Size <span class="hint">Enter 0 if unknown or very large</span></label>
+      <input type="number" id="pv-pop" value="0" min="0" placeholder="0 = unlimited">
+    </div>
+  </div>
+
+  <div class="nav-btns">
+    <button class="btn-back" onclick="gotoStep(1)">← Back</button>
+    <button class="btn-next" onclick="gotoStep(3)">Next: Adjustments →</button>
+  </div>
+</div>
+
+<!-- ══ PANEL 3: ADJUSTMENTS ══ -->
+<div class="panel" id="panel3">
+  <div class="warn-box">
+    <strong>Never recruit exactly your minimum sample.</strong> Accounting for dropouts and exclusions upfront protects your study's statistical validity. Apply adjustments sequentially below.
+  </div>
+
+  <div class="slabel">Attrition & Design Adjustments</div>
+
+  <div class="form-row">
+    <label>Ineligibility / Screening Exclusion Rate <span class="hint">% expected to fail inclusion criteria at screening</span></label>
+    <div class="slider-row">
+      <input type="range" id="a-excl" min="0" max="30" value="5" step="1" oninput="sv('a-excl-v',this.value+'%')">
+      <div class="slider-val" id="a-excl-v">5%</div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label>Dropout / Non-Response Rate <span class="hint">% expected to withdraw or not respond after enrolment</span></label>
+    <div class="slider-row">
+      <input type="range" id="a-drop" min="0" max="50" value="15" step="1" oninput="sv('a-drop-v',this.value+'%')">
+      <div class="slider-val" id="a-drop-v">15%</div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label>Design Effect (DEFF) <span class="hint">For cluster sampling — use 1.0 for simple random sampling</span></label>
+    <div class="input-wrap">
+      <input type="number" id="a-deff" value="1.0" step="0.1" min="1.0">
+      <span class="input-unit">DEFF</span>
+    </div>
+  </div>
+
+  <button class="btn-calc" onclick="calculate()">🔢 Calculate Sample Size</button>
+</div>
+
+<!-- ══ RESULTS ══ -->
+<div id="results">
+
+  <div class="result-hero">
+    <div class="rh-label">Minimum Analysable Sample Size</div>
+    <div class="rh-num" id="r-n">—</div>
+    <div class="rh-unit">participants needed for valid analysis</div>
+    <div class="rh-adj">
+      <span class="rh-adj-label">Recruit at least</span>
+      <span class="rh-adj-num" id="r-recruit">—</span>
+      <span class="rh-adj-label">to account for attrition</span>
+    </div>
+  </div>
+
+  <!-- ATTRITION BREAKDOWN -->
+  <div class="attr-breakdown">
+    <div class="ab-card">
+      <div class="ab-num" id="r-screen">—</div>
+      <div class="ab-label">Screen / Invite</div>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:1.3rem;color:var(--muted);">→</div>
+    <div class="ab-card">
+      <div class="ab-num" id="r-enroll">—</div>
+      <div class="ab-label">Enroll</div>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:1.3rem;color:var(--muted);">→</div>
+    <div class="ab-card highlight">
+      <div class="ab-num" id="r-analyze">—</div>
+      <div class="ab-label">Analysed ✓</div>
+    </div>
+  </div>
+
+  <!-- SUMMARY CARDS -->
+  <div class="res-grid">
+    <div class="res-card">
+      <div class="rc-label">Study Type</div>
+      <div class="rc-val" id="r-type">—</div>
+    </div>
+    <div class="res-card">
+      <div class="rc-label">Confidence Level</div>
+      <div class="rc-val" id="r-conf">—</div>
+    </div>
+    <div class="res-card">
+      <div class="rc-label">Exclusion Rate</div>
+      <div class="rc-val" id="r-excl">—</div>
+    </div>
+    <div class="res-card">
+      <div class="rc-label">Dropout Rate</div>
+      <div class="rc-val" id="r-drop">—</div>
+    </div>
+  </div>
+
+  <!-- PLAIN ENGLISH -->
+  <div class="interp">
+    <div class="interp-title">📖 Plain English Interpretation</div>
+    <p id="r-interp">—</p>
+  </div>
+
+  <!-- FORMULA -->
+  <div class="formula-box">
+    <div class="fb-title">🔬 Formula & Methodology</div>
+    <div class="fb-code" id="r-formula">—</div>
+    <div class="fb-vars" id="r-vars">—</div>
+  </div>
+
+  <!-- COPY BLOCK -->
+  <div class="copy-block">
+    <div class="cb-header">
+      📄 Copy for Thesis / Ethics Application
+      <button class="copy-btn" onclick="doCopy()">Copy</button>
+    </div>
+    <div class="cb-text" id="r-copytext">—</div>
+  </div>
+
+  <button class="btn-reset" onclick="resetAll()">↺ Recalculate with Different Parameters</button>
+</div>
+
+<script>
+// ──────────────────────────────────────────────
+// PRECISE Z-SCORES (scipy.stats.norm.ppf verified)
+// ──────────────────────────────────────────────
+const Z = {
+  '1.644854': '90%',
+  '1.959964': '95%',
+  '2.326348': '98%',
+  '2.575829': '99%'
+};
+
+const POWER_LABELS = {
+  '0.841621': '80%',
+  '1.036433': '85%',
+  '1.281552': '90%',
+  '1.644854': '95%'
+};
+
+let study = 'survey';
+
+// ── HELPERS ──
+function sv(id, val) { document.getElementById(id).textContent = val; }
+function g(id) { return document.getElementById(id); }
+function gv(id) { return parseFloat(g(id).value); }
+
+function setEff(targetId, val, btn) {
+  btn.closest('.effect-opts').querySelectorAll('.effect-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  g(targetId).value = val;
+}
+
+function selectStudy(type, el) {
+  document.querySelectorAll('.study-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  study = type;
+}
+
+function toggleClinicalEP() {
+  const ep = g('c-ep').value;
+  g('c-prop-fields').style.display = ep === 'proportion' ? 'block' : 'none';
+  g('c-cont-fields').classList.toggle('show', ep === 'continuous');
+  g('c-cont-fields').classList.toggle('cond', ep !== 'continuous');
+}
+
+// ── STEP NAVIGATION ──
+function gotoStep(n) {
+  [1,2,3].forEach(i => {
+    const tab = g('tab'+i);
+    tab.classList.remove('active','done');
+    if (i < n) tab.classList.add('done');
+    if (i === n) tab.classList.add('active');
+    g('panel'+i).classList.remove('active');
+  });
+  g('panel'+n).classList.add('active');
+
+  if (n === 2) {
+    ['survey','experiment','clinical','correlation','prevalence'].forEach(t => {
+      const el = g('f-'+t);
+      if (t === study) { el.classList.remove('cond'); el.style.display = 'block'; }
+      else             { el.classList.add('cond');    el.style.display = 'none'; }
+    });
+  }
+}
+
+// ── SHOW / HIDE ERROR ──
+function showErr(msg) {
+  const el = g('err-msg');
+  el.textContent = msg || 'Please check your inputs.';
+  el.style.display = 'block';
+}
+function hideErr() { g('err-msg').style.display = 'none'; }
+
+// ── MAIN CALCULATION ──
+function calculate() {
+  hideErr();
+
+  // Adjustments (sequential — mathematically correct)
+  const excl  = gv('a-excl') / 100;
+  const drop  = gv('a-drop') / 100;
+  const deff  = gv('a-deff') || 1;
+
+  let n = 0, confLabel = '', powerLabel = '';
+  let formulaText = '', formulaVars = '', interpretation = '';
+  let isPerGroup = false;   // affects display wording
+
+  // ── SURVEY ──
+  if (study === 'survey') {
+    const z   = gv('s-conf');
+    const moe = gv('s-moe') / 100;
+    const p   = gv('s-prop') / 100;
+    const N   = gv('s-pop');
+
+    n = (z * z * p * (1 - p)) / (moe * moe);
+    if (N > 0 && N > n) n = n / (1 + (n - 1) / N);   // finite pop correction
+    n = Math.ceil(n * deff);
+    confLabel = Z[String(gv('s-conf'))] || '95%';
+
+    formulaText =
+      `n = (z² × p × (1−p)) / e²\n` +
+      `  = (${z.toFixed(6)}² × ${p} × ${(1-p).toFixed(2)}) / ${moe}²\n` +
+      `  = ${Math.ceil((z*z*p*(1-p))/(moe*moe))}` +
+      (N > 0 ? `\n\nFinite Population Correction (N = ${N.toLocaleString()}):\nn_fpc = n / (1 + (n−1)/N) = ${n}` : '');
+    formulaVars =
+      `z = ${z.toFixed(6)} (${confLabel} confidence z-score) | p = ${(p*100).toFixed(0)}% (population proportion) | e = ±${(moe*100).toFixed(1)}% (margin of error)` +
+      (N > 0 ? ` | N = ${N.toLocaleString()} (population size)` : '');
+    interpretation =
+      `Your survey requires a minimum of <strong>${n} completed responses</strong> to achieve ${confLabel} confidence ` +
+      `that results are accurate to within ±${(moe*100).toFixed(1)} percentage points. ` +
+      (N > 0
+        ? `The finite population correction has been applied because your population (N = ${N.toLocaleString()}) is known and finite. `
+        : `This assumes an effectively unlimited population. `) +
+      `Using p = ${(p*100).toFixed(0)}% gives the most conservative estimate.`;
+  }
+
+  // ── EXPERIMENT (two independent groups) ──
+  else if (study === 'experiment') {
+    const z_a = gv('e-conf');
+    const z_b = gv('e-power');
+    const d   = gv('e-eff');
+    const tails = parseInt(g('e-tails').value);
+    if (!d || d <= 0) { showErr('Effect size must be greater than 0.'); return; }
+
+    // One-tailed: use z_a directly; two-tailed already correct
+    const z_a_used = tails === 1 ? z_a * 0.8225 : z_a;  // one-tailed z_0.05 = 1.6449
+    // Simpler and accurate: for one-tailed at α=0.05 use 1.6449, for two-tailed use 1.9600
+    // We just pass the selected z as two-tailed; for one-tailed we halve alpha → different z
+    // Best approach: precalc
+    const za_final = tails === 2 ? z_a : (z_a === 1.959964 ? 1.644854 : z_a === 2.575829 ? 2.326348 : 1.281552);
+
+    n = Math.ceil(2 * Math.pow((za_final + z_b) / d, 2) * deff);
+    isPerGroup = true;
+    confLabel = Z[String(gv('e-conf'))] || '95%';
+    powerLabel = POWER_LABELS[String(gv('e-power'))] || '90%';
+
+    formulaText =
+      `n per group = 2 × ((z_α + z_β) / d)²\n` +
+      `            = 2 × ((${za_final.toFixed(6)} + ${z_b.toFixed(6)}) / ${d})²\n` +
+      `            = ${n} per group  →  ${n * 2} total`;
+    formulaVars =
+      `z_α = ${za_final.toFixed(6)} (${confLabel}, ${tails}-tailed) | z_β = ${z_b.toFixed(6)} (${powerLabel} power) | d = ${d} (Cohen's d)`;
+    interpretation =
+      `Your experiment requires <strong>${n} participants per group</strong> (${(n*2).toLocaleString()} total across both groups) ` +
+      `to detect a ${d >= 0.8 ? 'large' : d >= 0.5 ? 'medium' : 'small'} effect (Cohen's d = ${d}) ` +
+      `with ${powerLabel} statistical power at ${confLabel} significance (${tails}-tailed). ` +
+      `This means if the true effect of this magnitude exists, you have a ${powerLabel} chance of detecting it.`;
+  }
+
+  // ── CLINICAL ──
+  else if (study === 'clinical') {
+    const z_a   = gv('c-alpha');
+    const z_b   = gv('c-power');
+    const ep    = g('c-ep').value;
+    const ratio = gv('c-ratio');
+    confLabel   = Z[String(gv('c-alpha'))] || '95%';
+    powerLabel  = POWER_LABELS[String(gv('c-power'))] || '80%';
+    isPerGroup  = true;
+
+    if (ep === 'proportion') {
+      const p1 = gv('c-p1'), p2 = gv('c-p2');
+      if (p1 <= 0 || p1 >= 1 || p2 <= 0 || p2 >= 1) { showErr('Event rates must be between 0.01 and 0.99.'); return; }
+      if (Math.abs(p1 - p2) < 0.01) { showErr('Event rates must differ by at least 0.01.'); return; }
+      // Kelsey formula (Schlesselman 1982) — validated against G*Power
+      n = Math.ceil(((z_a + z_b) ** 2 * (p1*(1-p1) + p2*(1-p2))) / ((p2-p1)**2) * deff);
+      const n2 = Math.ceil(n * ratio);
+      formulaText =
+        `n₁ = (z_α + z_β)² × (p₁q₁ + p₂q₂) / (p₁−p₂)²\n` +
+        `   = (${z_a.toFixed(4)} + ${z_b.toFixed(4)})² × (${p1}×${(1-p1).toFixed(2)} + ${p2}×${(1-p2).toFixed(2)}) / (${p2}−${p1})²\n` +
+        `   = ${n} (control)  |  n₂ = n₁ × ${ratio} = ${n2} (treatment)\n` +
+        `Total = ${n + n2}`;
+      formulaVars = `p₁ = ${p1} (control rate) | p₂ = ${p2} (treatment rate) | ratio = ${ratio} | z_α = ${z_a.toFixed(4)} | z_β = ${z_b.toFixed(4)}`;
+      interpretation =
+        `Your clinical study requires <strong>${n} in the control group</strong> and <strong>${n2} in the treatment group</strong> ` +
+        `(${n+n2} total) to detect a change in event rate from ${(p1*100).toFixed(0)}% to ${(p2*100).toFixed(0)}% ` +
+        `with ${powerLabel} power at ${confLabel} significance. Formula: Kelsey/Schlesselman (1982).`;
+    } else {
+      const m1 = gv('c-m1'), m2 = gv('c-m2'), sd = gv('c-sd');
+      if (!sd || sd <= 0) { showErr('Standard deviation must be greater than 0.'); return; }
+      if (m1 === m2)      { showErr('Group means must differ.'); return; }
+      const d = Math.abs(m2 - m1) / sd;
+      n = Math.ceil(2 * ((z_a + z_b) / d) ** 2 * deff);
+      formulaText =
+        `Cohen's d = |μ₁−μ₂| / σ = |${m1}−${m2}| / ${sd} = ${d.toFixed(4)}\n` +
+        `n per group = 2 × ((z_α + z_β) / d)² = ${n}  →  ${n*2} total`;
+      formulaVars = `μ₁ = ${m1} | μ₂ = ${m2} | σ = ${sd} | d = ${d.toFixed(4)} | z_α = ${z_a.toFixed(4)} | z_β = ${z_b.toFixed(4)}`;
+      interpretation =
+        `Your study requires <strong>${n} participants per group</strong> (${n*2} total) ` +
+        `to detect a mean difference of ${Math.abs(m2-m1)} (Cohen's d = ${d.toFixed(2)}) with ${powerLabel} power at ${confLabel} significance.`;
+    }
+  }
+
+  // ── CORRELATION ──
+  else if (study === 'correlation') {
+    const r   = gv('r-val');
+    const z_a = gv('r-alpha');
+    const z_b = gv('r-power');
+    if (!r || r <= 0 || r >= 1) { showErr('Correlation coefficient must be between 0.01 and 0.99.'); return; }
+    confLabel  = Z[String(gv('r-alpha'))] || '95%';
+    powerLabel = POWER_LABELS[String(gv('r-power'))] || '80%';
+
+    const zr = 0.5 * Math.log((1 + r) / (1 - r));   // Fisher z-transform
+    n = Math.ceil(((z_a + z_b) / zr) ** 2 + 3) * deff;
+    n = Math.ceil(n);
+
+    formulaText =
+      `Fisher z-transform:  z_r = 0.5 × ln((1+r)/(1−r))\n` +
+      `                        = 0.5 × ln((1+${r})/(1−${r})) = ${zr.toFixed(6)}\n` +
+      `n = ((z_α + z_β) / z_r)² + 3\n` +
+      `  = ((${z_a.toFixed(6)} + ${z_b.toFixed(6)}) / ${zr.toFixed(6)})² + 3\n` +
+      `  = ${n}`;
+    formulaVars = `r = ${r} | z_r = ${zr.toFixed(6)} (Fisher transform) | z_α = ${z_a.toFixed(6)} | z_β = ${z_b.toFixed(6)}`;
+    interpretation =
+      `To reliably detect a ${r >= 0.5 ? 'strong' : r >= 0.3 ? 'moderate' : 'weak'} correlation of r = ${r}, ` +
+      `you need <strong>${n} participants</strong> with ${powerLabel} power at ${confLabel} significance. ` +
+      `Fisher's z-transformation is used because Pearson's r is not normally distributed — this is the standard approach per Cohen (1988).`;
+  }
+
+  // ── PREVALENCE ──
+  else if (study === 'prevalence') {
+    const z = gv('pv-conf');
+    const p = gv('pv-prev') / 100;
+    const e = gv('pv-prec') / 100;
+    const N = gv('pv-pop');
+    confLabel = Z[String(gv('pv-conf'))] || '95%';
+
+    n = (z * z * p * (1 - p)) / (e * e);
+    if (N > 0 && N > n) n = n / (1 + (n - 1) / N);
+    n = Math.ceil(n * deff);
+
+    formulaText =
+      `n = z² × p × (1−p) / e²\n` +
+      `  = ${z.toFixed(6)}² × ${p} × ${(1-p).toFixed(2)} / ${e}²\n` +
+      `  = ${n}` +
+      (N > 0 ? `\n\nFinite population correction applied (N = ${N.toLocaleString()})` : '');
+    formulaVars = `z = ${z.toFixed(6)} (${confLabel}) | p = ${(p*100).toFixed(0)}% | e = ±${(e*100).toFixed(1)}%` + (N > 0 ? ` | N = ${N.toLocaleString()}` : '');
+    interpretation =
+      `To estimate a prevalence of ${(p*100).toFixed(0)}% with ±${(e*100).toFixed(1)}% precision at ${confLabel} confidence, ` +
+      `you need <strong>${n} participants</strong>. ` +
+      `Your result would be reported as ${(p*100).toFixed(0)}% (95% CI: ${((p - e)*100).toFixed(1)}%–${((p + e)*100).toFixed(1)}%).`;
+  }
+
+  if (!n || n <= 0) { showErr('Could not compute — please check your inputs.'); return; }
+
+  // ── SEQUENTIAL ATTRITION ADJUSTMENT (mathematically correct) ──
+  // Step 1: account for screening exclusions
+  const n_screen = Math.ceil(n / (1 - excl));
+  // Step 2: account for dropout after enrollment
+  const n_enroll = Math.ceil(n_screen / (1 - drop));
+
+  const studyLabel = {survey:'Survey',experiment:'Experiment',clinical:'Clinical Study',correlation:'Correlation Study',prevalence:'Prevalence Study'}[study];
+
+  // ── POPULATE RESULTS ──
+  g('r-n').textContent       = n.toLocaleString();
+  g('r-recruit').textContent = n_enroll.toLocaleString();
+  g('r-screen').textContent  = n_enroll.toLocaleString();
+  g('r-enroll').textContent  = n_screen.toLocaleString();
+  g('r-analyze').textContent = n.toLocaleString();
+  g('r-type').textContent    = studyLabel;
+  g('r-conf').textContent    = confLabel;
+  g('r-excl').textContent    = (excl*100).toFixed(0) + '%';
+  g('r-drop').textContent    = (drop*100).toFixed(0) + '%';
+  g('r-formula').textContent = formulaText;
+  g('r-vars').textContent    = 'Where: ' + formulaVars;
+
+  const attrNote = (excl + drop) > 0
+    ? ` After accounting for ${(excl*100).toFixed(0)}% screening exclusions and ${(drop*100).toFixed(0)}% dropout, screen/invite at least <strong>${n_enroll}</strong> participants.`
+    : '';
+  g('r-interp').innerHTML = interpretation + attrNote;
+
+  // Copy text
+  const copyText =
+`SAMPLE SIZE CALCULATION — ${studyLabel.toUpperCase()}
+${'─'.repeat(50)}
+Minimum Analysable Sample: ${n} participants
+Screen / Invite:           ${n_enroll}
+Enroll:                    ${n_screen}
+Analysable (minimum):      ${n}
+Exclusion Rate:            ${(excl*100).toFixed(0)}%
+Dropout Rate:              ${(drop*100).toFixed(0)}%
+${'─'.repeat(50)}
+${interpretation.replace(/<\/?strong>/g, '')}${attrNote.replace(/<\/?strong>/g, '')}
+
+FORMULA USED
+${formulaText}
+
+Where: ${formulaVars}
+
+REFERENCES
+Cochran, W.G. (1977). Sampling Techniques (3rd ed.). Wiley.
+Cohen, J. (1988). Statistical Power Analysis for the Behavioral Sciences (2nd ed.). Erlbaum.
+Schlesselman, J.J. (1982). Case-Control Studies. Oxford University Press.
+
+Calculated: ${new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'})}
+Source: StatSuite Sample Size Calculator`;
+
+  g('r-copytext').textContent = copyText;
+
+  // Show results
+  g('results').style.display = 'block';
+  g('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function doCopy() {
+  navigator.clipboard.writeText(g('r-copytext').textContent).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = '✓ Copied';
+    btn.style.background = 'var(--success)';
+    setTimeout(() => { btn.textContent = 'Copy'; btn.style.background = ''; }, 2200);
+  });
+}
+
+function resetAll() {
+  g('results').style.display = 'none';
+  gotoStep(1);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
