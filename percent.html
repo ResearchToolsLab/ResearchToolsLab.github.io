@@ -3,43 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FreeToolHub – Percentage Calculator</title>
-<meta name="description" content="FreeToolHub – Quickly calculate percentage increase, decrease, or any percentage with this free tool.">
-<meta name="keywords" content="FreeToolHub, percentage calculator, free tool, math calculator">
+<title>FreeToolHub – Advanced Percentage Calculator</title>
+<meta name="description" content="FreeToolHub – Advanced Percentage Calculator with multiple modes: percentage of a number, ratio, increase/decrease, discount & reverse percentage.">
+<meta name="keywords" content="FreeToolHub, percentage calculator, discount calculator, percentage increase, percentage change, advanced percentage">
 <style>
-body{font-family:Arial,sans-serif;background:#f0f2f5;margin:0;text-align:center;}
-.container{background:white;padding:40px 30px;border-radius:12px;max-width:400px;margin:60px auto;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
-h1{background:linear-gradient(90deg,#ff4b2b,#ff416c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1.8em;margin-bottom:30px;}
-input{padding:12px;margin:10px 0;width:90%;max-width:250px;border-radius:6px;border:1px solid #ccc;font-size:1em;}
-button{padding:12px 25px;margin-top:15px;font-size:1em;border-radius:6px;border:none;cursor:pointer;background:#4CAF50;color:white;transition:0.3s;}
-button:hover{background:#45a049;}
-#result{margin-top:25px;font-size:1.2em;font-weight:bold;color:#333;}
-#ads{margin-top:30px;background:#f9f9f9;padding:10px;border:1px dashed #ccc;}
-.footer{font-size:0.8em;color:#666;margin-top:40px;}
-@media(max-width:450px){.container{padding:30px 20px;margin:40px 10px;}input,button{width:95%;}}
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  background: white;
+  max-width: 520px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Headers */
+h1 {
+  background: linear-gradient(90deg, #ff4b2b, #ff416c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Labels & Inputs */
+.section {
+  margin: 20px 0;
+}
+
+.section input {
+  width: 90%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.section button {
+  padding: 10px 20px;
+  margin-top: 8px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.section button:hover {
+  background: #45a049;
+}
+
+.result {
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+}
+
+#ads {
+  margin-top: 30px;
+  background: #f9f9f9;
+  padding: 10px;
+  border: 1px dashed #ccc;
+}
+
+.footer {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 30px;
+  text-align: center;
+}
 </style>
 </head>
 <body>
+
 <div class="container">
-<h1>FreeToolHub – Percentage Calculator</h1>
+  <h1>FreeToolHub – Advanced Percentage Calculator</h1>
 
-<input type="number" id="value" placeholder="Enter value"><br>
-<input type="number" id="total" placeholder="Enter total value"><br>
-<button onclick="calculate()">Calculate %</button>
-<p id="result"></p>
+  <!-- Basic % of a Number -->
+  <div class="section">
+    <h3>Percentage of a Number</h3>
+    <input type="number" id="p_of_n_base" placeholder="Enter number">
+    <input type="number" id="p_of_n_percent" placeholder="Enter percentage (%)">
+    <button onclick="calcPercentOf()">Calculate</button>
+    <div class="result" id="result_percent_of"></div>
+  </div>
 
-<div id="ads">Your Ad Here</div>
-<div class="footer">Made with ❤️ by FreeToolHub</div>
+  <!-- X is what % of Y -->
+  <div class="section">
+    <h3>X is what % of Y</h3>
+    <input type="number" id="ratio_x" placeholder="Enter part value">
+    <input type="number" id="ratio_y" placeholder="Enter whole value">
+    <button onclick="calcRatio()">Calculate</button>
+    <div class="result" id="result_ratio"></div>
+  </div>
+
+  <!-- Percentage Increase/Decrease -->
+  <div class="section">
+    <h3>Percentage Change</h3>
+    <input type="number" id="old_val" placeholder="Original value">
+    <input type="number" id="new_val" placeholder="New value">
+    <button onclick="calcChange()">Calculate</button>
+    <div class="result" id="result_change"></div>
+  </div>
+
+  <!-- Discount & Final Price -->
+  <div class="section">
+    <h3>Discount Calculator</h3>
+    <input type="number" id="price" placeholder="Original price">
+    <input type="number" id="disc" placeholder="Discount %">
+    <button onclick="calcDiscount()">Calculate</button>
+    <div class="result" id="result_discount"></div>
+  </div>
+
+  <!-- Ad Placeholder -->
+  <div id="ads">Your Ad Here</div>
+
+  <!-- Footer -->
+  <div class="footer">Made with ❤️ by FreeToolHub</div>
 </div>
 
 <script>
-function calculate(){
-  let val=+document.getElementById('value').value;
-  let total=+document.getElementById('total').value;
-  if(!val||!total){document.getElementById('result').innerText="Please enter valid numbers!"; return;}
-  let perc=(val/total)*100;
-  document.getElementById('result').innerText=perc.toFixed(2)+"%";
+function calcPercentOf() {
+  let num = +document.getElementById('p_of_n_base').value;
+  let per = +document.getElementById('p_of_n_percent').value;
+  if (!num && num !== 0 || !per && per !== 0) {
+    document.getElementById('result_percent_of').innerText = "Please enter valid numbers!";
+    return;
+  }
+  let res = (per/100) * num;
+  document.getElementById('result_percent_of').innerText = per + "% of " + num + " = " + res.toFixed(2);
+}
+
+function calcRatio() {
+  let x = +document.getElementById('ratio_x').value;
+  let y = +document.getElementById('ratio_y').value;
+  if (!y) {
+    document.getElementById('result_ratio').innerText = "Please enter a valid whole value!";
+    return;
+  }
+  let perc = (x / y) * 100;
+  document.getElementById('result_ratio').innerText = x + " is " + perc.toFixed(2) + "% of " + y;
+}
+
+function calcChange() {
+  let oldV = +document.getElementById('old_val').value;
+  let newV = +document.getElementById('new_val').value;
+  if (!oldV && oldV !== 0) {
+    document.getElementById('result_change').innerText = "Please enter valid numbers!";
+    return;
+  }
+  let change = ((newV - oldV) / oldV) * 100;
+  let sign = change >= 0 ? "+" : "";
+  document.getElementById('result_change').innerText = "Change: " + sign + change.toFixed(2) + "%";
+}
+
+function calcDiscount() {
+  let price = +document.getElementById('price').value;
+  let disc = +document.getElementById('disc').value;
+  if (!price && price !== 0 || !disc && disc !== 0) {
+    document.getElementById('result_discount').innerText = "Please enter valid numbers!";
+    return;
+  }
+  let discountAmount = (disc / 100) * price;
+  let finalPrice = price - discountAmount;
+  document.getElementById('result_discount').innerText =
+    "Discount: $" + discountAmount.toFixed(2) + "  |  Final Price: $" + finalPrice.toFixed(2);
 }
 </script>
+
 </body>
 </html>
