@@ -3,142 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FreeToolHub – Advanced Loan & EMI Calculator</title>
-<meta name="description" content="FreeToolHub – Advanced EMI Calculator with monthly payment, total interest, and total payment breakdown. Free online tool.">
-<meta name="keywords" content="FreeToolHub, EMI calculator, loan calculator, monthly payment, total interest, free tool">
-
+<title>FreeToolHub – Loan & EMI Calculator | Free Online Tool</title>
+<meta name="description" content="FreeToolHub – Free EMI Calculator. Calculate monthly payments, total interest, and total loan payment instantly.">
+<meta name="keywords" content="EMI calculator, loan calculator, free EMI tool">
 <style>
-/* Body */
-body {
-  font-family: Arial, sans-serif;
-  background: #f0f2f5;
-  margin: 0;
-  text-align: center;
-}
-
-/* Container */
-.container {
-  background: white;
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-/* Header */
-h1 {
-  background: linear-gradient(90deg, #ff4b2b, #ff416c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 1.9em;
-  margin-bottom: 20px;
-}
-
-/* Input fields */
-input {
-  width: 90%;
-  max-width: 300px;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1em;
-}
-
-/* Buttons */
-button {
-  padding: 12px 25px;
-  font-size: 1em;
-  border: none;
-  color: white;
-  background: #4CAF50;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-button:hover {
-  background: #45a049;
-}
-
-/* Result */
-.result {
-  margin-top: 25px;
-  text-align: left;
-  padding: 15px;
-  background: #fafafa;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 1.1em;
-}
-
-/* Ad placeholder */
-#adbox {
-  margin-top: 30px;
-  background: #f9f9f9;
-  padding: 12px;
-  border: 1px dashed #ccc;
-}
-
-/* Footer */
-.footer {
-  font-size: 0.8em;
-  color: #666;
-  margin-top: 30px;
-}
-
-/* Mobile adjustments */
-@media(max-width:450px){
-  .container{padding:30px 20px;}
-  input, button{width:95%;}
-}
+body{font-family:Arial,sans-serif;background:#f0f2f5;margin:0;text-align:center;}
+.container{background:white;max-width:500px;margin:50px auto;padding:30px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
+h1{background:linear-gradient(90deg,#ff4b2b,#ff416c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1.9em;margin-bottom:15px;}
+input{width:90%;max-width:300px;padding:12px;margin:10px 0;border-radius:6px;border:1px solid #ccc;font-size:1em;}
+button{padding:12px 25px;font-size:1em;border:none;color:white;background:#4CAF50;border-radius:6px;cursor:pointer;margin-top:10px;}
+button:hover{background:#45a049;}
+.result{margin-top:25px;text-align:left;padding:15px;background:#fafafa;border-radius:8px;border:1px solid #ddd;font-size:1.1em;}
+#adbox{margin-top:30px;background:#f9f9f9;padding:12px;border:1px dashed #ccc;}
+.footer{font-size:0.8em;color:#666;margin-top:30px;}
+@media(max-width:450px){.container{padding:30px 20px;} input,button{width:95%;}}
 </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>FreeToolHub – Advanced Loan & EMI Calculator</h1>
+<h1>FreeToolHub – Advanced Loan & EMI Calculator</h1>
+<p>Enter your loan details to calculate monthly EMI, total interest, and total payment.</p>
 
-  <input type="number" id="loanAmt" placeholder="Loan Amount ($)" step="0.01">
-  <input type="number" id="interestRate" placeholder="Annual Interest Rate (%)" step="0.01">
-  <input type="number" id="tenureMonths" placeholder="Tenure (Months)">
-  
-  <button onclick="calculateEMI()">Calculate EMI</button>
+<input type="number" id="loanAmt" placeholder="Loan Amount ($)" step="0.01">
+<input type="number" id="interestRate" placeholder="Annual Interest Rate (%)" step="0.01">
+<input type="number" id="tenureMonths" placeholder="Tenure (Months)">
+<button onclick="calculateEMI()">Calculate EMI</button>
 
-  <div class="result" id="resultBox"></div>
-
-  <div id="adbox">Your Ad Here</div>
-
-  <div class="footer">Made with ❤️ by FreeToolHub</div>
+<div class="result" id="resultBox"></div>
+<div id="adbox">Your Ad Here</div>
+<div class="footer">Made with ❤️ by FreeToolHub</div>
 </div>
 
 <script>
 function calculateEMI() {
-  // Inputs
-  let P = parseFloat(document.getElementById('loanAmt').value);
-  let annualR = parseFloat(document.getElementById('interestRate').value);
-  let n = parseInt(document.getElementById('tenureMonths').value);
-
-  // Validate
-  if (isNaN(P) || P <= 0 || isNaN(annualR) || annualR < 0 || isNaN(n) || n <= 0) {
-    document.getElementById('resultBox').innerText = "Please enter valid loan amount, interest rate and tenure!";
+  let P=parseFloat(document.getElementById('loanAmt').value);
+  let annualR=parseFloat(document.getElementById('interestRate').value);
+  let n=parseInt(document.getElementById('tenureMonths').value);
+  if(isNaN(P)||P<=0||isNaN(annualR)||annualR<0||isNaN(n)||n<=0){
+    document.getElementById('resultBox').innerText="Please enter valid loan amount, interest rate and tenure!";
     return;
   }
-
-  let monthlyR = annualR / 1200; // monthly interest rate
-
-  // EMI formula
-  let emi = (P * monthlyR * Math.pow(1 + monthlyR, n)) / (Math.pow(1 + monthlyR, n) - 1);
-
-  // Total interest & total payment
-  let totalPayment = emi * n;
-  let totalInterest = totalPayment - P;
-
-  // Show results
-  document.getElementById('resultBox').innerHTML =
-    `<strong>Monthly EMI:</strong> $${emi.toFixed(2)}<br>
-     <strong>Total Interest:</strong> $${totalInterest.toFixed(2)}<br>
-     <strong>Total Payment:</strong> $${totalPayment.toFixed(2)}`;
+  let monthlyR=annualR/1200;
+  let emi=(P*monthlyR*Math.pow(1+monthlyR,n))/(Math.pow(1+monthlyR,n)-1);
+  let totalPayment=emi*n;
+  let totalInterest=totalPayment-P;
+  document.getElementById('resultBox').innerHTML=
+  `<strong>Monthly EMI:</strong> $${emi.toFixed(2)}<br>
+  <strong>Total Interest:</strong> $${totalInterest.toFixed(2)}<br>
+  <strong>Total Payment:</strong> $${totalPayment.toFixed(2)}`;
 }
 </script>
 

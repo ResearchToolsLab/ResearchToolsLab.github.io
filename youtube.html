@@ -3,40 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FreeToolHub – YouTube Earnings Calculator</title>
-<meta name="description" content="FreeToolHub – YouTube Earnings Calculator to estimate your video earnings based on views and CPM. Free tool.">
-<meta name="keywords" content="FreeToolHub, YouTube earnings, YouTube calculator, free tool">
+<title>FreeToolHub – YouTube Earnings Calculator | Free Online Tool</title>
+<meta name="description" content="FreeToolHub – Free YouTube Earnings Calculator. Enter views, CPM and engagement to estimate your earnings instantly.">
+<meta name="keywords" content="YouTube earnings calculator, free YouTube tool, YouTube income estimate">
 <style>
-body{font-family:Arial,sans-serif;background:#f0f2f5;margin:0;text-align:center;}
-.container{background:white;padding:40px 30px;border-radius:12px;max-width:400px;margin:60px auto;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
-h1{background:linear-gradient(90deg,#ff4b2b,#ff416c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1.8em;margin-bottom:30px;}
-input{padding:12px;margin:10px 0;width:90%;max-width:250px;border-radius:6px;border:1px solid #ccc;font-size:1em;}
-button{padding:12px 25px;margin-top:15px;font-size:1em;border-radius:6px;border:none;cursor:pointer;background:#4CAF50;color:white;transition:0.3s;}
+body{font-family:Arial,sans-serif;background:#f0f2f5;text-align:center;margin:0;}
+.container{background:white; max-width:500px;margin:50px auto;padding:30px;border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.1);}
+h1{background:linear-gradient(90deg,#ff4b2b,#ff416c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1.8em;margin-bottom:15px;}
+p{font-size:1em;margin-bottom:15px;}
+input{width:90%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;font-size:1em;}
+button{padding:10px 20px;margin-top:8px;background:#4CAF50;color:white;border:none;border-radius:6px;cursor:pointer;font-size:1em;}
 button:hover{background:#45a049;}
-#result{margin-top:25px;font-size:1.2em;font-weight:bold;color:#333;}
+.result{margin-top:15px;font-size:1.1em;font-weight:bold;color:#333;}
 #ads{margin-top:30px;background:#f9f9f9;padding:10px;border:1px dashed #ccc;}
-.footer{font-size:0.8em;color:#666;margin-top:40px;}
-@media(max-width:450px){.container{padding:30px 20px;margin:40px 10px;}input,button{width:95%;}}
+.footer{font-size:0.8em;color:#666;margin-top:30px;}
+@media(max-width:450px){.container{padding:30px 20px;} input, button{width:95%;}}
 </style>
 </head>
 <body>
+
 <div class="container">
 <h1>FreeToolHub – YouTube Earnings Calculator</h1>
-<input type="number" id="views" placeholder="Enter video views"><br>
-<input type="number" id="cpm" placeholder="Enter CPM ($ per 1000 views)"><br>
-<button onclick="calculate()">Calculate Earnings</button>
-<p id="result"></p>
+<p>Estimate your YouTube earnings. Enter total views and CPM to see your estimated revenue.</p>
+
+<input type="number" id="ytViews" placeholder="Total Views">
+<input type="number" id="ytCPM" placeholder="CPM ($ per 1000 views)">
+<button onclick="calculateYouTube()">Calculate Earnings</button>
+<div class="result" id="ytResult"></div>
+
 <div id="ads">Your Ad Here</div>
 <div class="footer">Made with ❤️ by FreeToolHub</div>
 </div>
+
 <script>
-function calculate(){
-  let views=document.getElementById('views').value;
-  let cpm=document.getElementById('cpm').value;
-  if(!views||!cpm){document.getElementById('result').innerText="Please enter valid numbers!";return;}
-  let earning=(views/1000)*cpm;
-  document.getElementById('result').innerText="Estimated Earnings: $"+earning.toFixed(2);
+function calculateYouTube(){
+  let views = +document.getElementById('ytViews').value;
+  let cpm = +document.getElementById('ytCPM').value;
+  if(!views||!cpm){document.getElementById('ytResult').innerText="Please enter valid numbers!"; return;}
+  let earnings = (views/1000)*cpm;
+  document.getElementById('ytResult').innerText="Estimated Earnings: $"+earnings.toFixed(2);
 }
 </script>
+
 </body>
 </html>
