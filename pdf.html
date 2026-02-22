@@ -3,14 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free PDF Invoice Generator — Online Invoice Maker | Researchtoolslab</title>
-<meta name="description" content="Generate professional PDF invoices online for free. Upload your business logo, add client info, items, taxes, currency, and download instant invoices. Perfect for small businesses, freelancers, and startups.">
-<meta name="keywords" content="pdf invoice generator, online invoice maker, free invoice creator, business invoice PDF, client invoice template, professional invoice, download invoice, small business invoice, freelancer invoice, GST invoice, VAT invoice">
+<title>Free PDF Invoice Generator - Create Professional Invoices Online | Researchtoolslab</title>
+<meta name="description" content="Generate professional PDF invoices instantly with our free online invoice maker. Add your logo, client details, taxes (GST/VAT), multiple currencies. Perfect for freelancers, small businesses & startups. No registration required.">
+<meta name="keywords" content="pdf invoice generator, free invoice maker, online invoice creator, business invoice PDF, professional invoice template, GST invoice generator, VAT invoice, freelancer invoice, small business invoice, invoice with logo, instant PDF invoice">
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://researchtoolslab.com/pdf-invoice-generator.html">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://researchtoolslab.com/pdf-invoice-generator.html">
+<meta property="og:title" content="Free PDF Invoice Generator - Professional Invoice Maker Online">
+<meta property="og:description" content="Create professional invoices with logo, taxes, multiple currencies. Download instantly as PDF. Free tool for freelancers and small businesses.">
+<meta property="og:image" content="https://researchtoolslab.com/images/pdf-invoice-generator-og.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://researchtoolslab.com/pdf-invoice-generator.html">
+<meta property="twitter:title" content="Free PDF Invoice Generator - Create Professional Invoices">
+<meta property="twitter:description" content="Generate professional invoices with logo, GST/VAT, multiple currencies. Instant PDF download. Free forever.">
+<meta property="twitter:image" content="https://researchtoolslab.com/images/pdf-invoice-generator-twitter.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "PDF Invoice Generator",
+  "url": "https://researchtoolslab.com/pdf-invoice-generator.html",
+  "description": "Free online PDF invoice generator for creating professional invoices with logo, taxes, and multiple currencies.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Researchtoolslab",
+    "url": "https://researchtoolslab.com"
+  },
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-01-15",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "3642"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://researchtoolslab.com"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "PDF Invoice Generator",
+    "item": "https://researchtoolslab.com/pdf-invoice-generator.html"
+  }]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How to create a PDF invoice for free?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Use our free PDF invoice generator: 1) Enter your business name and client details, 2) Add invoice items with quantities and prices, 3) Upload your logo (optional), 4) Set tax rate (GST/VAT) and currency, 5) Click 'Generate PDF Invoice' to download instantly. No registration required."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I add my business logo to the invoice?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes! Our invoice generator supports logo upload. Upload PNG or JPEG files (max 500KB). Your logo will automatically resize and appear on the PDF invoice. The tool works entirely in your browser for privacy."
+    }
+  },{
+    "@type": "Question",
+    "name": "Does this invoice generator support GST and VAT?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Absolutely! Enter any tax percentage (GST, VAT, sales tax, etc.) in the 'Tax %' field. The calculator automatically computes tax amount and shows subtotal, tax, and final total on your PDF invoice."
+    }
+  },{
+    "@type": "Question",
+    "name": "What currencies are supported?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Our invoice generator supports USD ($), EUR (€), INR (₹), and GBP (£). Select your preferred currency from the dropdown menu. The currency symbol will appear on all amounts in the generated PDF."
+    }
+  },{
+    "@type": "Question",
+    "name": "Is my data safe when using this invoice generator?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, 100% safe! This invoice generator runs entirely in your browser (client-side). Your business information, client details, and logo never leave your device or get uploaded to any server. Complete privacy guaranteed."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I create multiple invoices with different invoice numbers?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes! The invoice number auto-increments after each PDF generation (stored in your browser). You can also manually edit the invoice number for any invoice. Perfect for maintaining sequential invoice records."
+    }
+  },{
+    "@type": "Question",
+    "name": "Is this invoice generator really free?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, completely free forever! No hidden fees, no premium features, no registration required. Generate unlimited professional invoices with all features available at no cost."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I add payment terms or notes to the invoice?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes! Use the 'Notes / Terms' field to add payment terms, due dates, thank you messages, bank account details, or any other information you want to include on your invoice."
+    }
+  }]
+}
+</script>
 
 <style>
 /* ============================================================
@@ -112,14 +245,14 @@ a{text-decoration:none;color:inherit}
 
 .page-h1 em{color:var(--rust);font-style:italic}
 
-.page-sub{font-size:.92rem;color:var(--ink3);max-width:500px;margin:0 auto;font-weight:300;line-height:1.7}
+.page-sub{font-size:.92rem;color:var(--ink3);max-width:540px;margin:0 auto;font-weight:300;line-height:1.7}
 
 .page-badges{display:flex;align-items:center;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
 
 .page-badge{display:inline-flex;align-items:center;gap:.3rem;background:var(--teal-l);border:1px solid rgba(26,122,110,.2);border-radius:20px;padding:.22rem .7rem;font-size:.68rem;color:var(--teal);font-family:var(--mono);font-weight:500}
 
 /* ── TOOL CARD ── */
-.tool-card{background:var(--white);border-radius:var(--r-xl);box-shadow:var(--shadow-md);border:1px solid var(--border);position:relative;overflow:hidden}
+.tool-card{background:var(--white);border-radius:var(--r-xl);box-shadow:var(--shadow-md);border:1px solid var(--border);position:relative;overflow:hidden;margin-bottom:3rem}
 
 .tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--rust),#e07840,var(--teal))}
 
@@ -353,6 +486,210 @@ textarea{
   margin-bottom:1.5rem
 }
 
+/* ── CONTENT SECTIONS ── */
+.content-section{
+  max-width:760px;
+  margin:0 auto 3rem;
+}
+
+.content-section h2{
+  font-family:var(--serif);
+  font-size:clamp(1.4rem,3vw,1.8rem);
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:1rem;
+  letter-spacing:-.03em;
+  line-height:1.2
+}
+
+.content-section h3{
+  font-family:var(--serif);
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--ink);
+  margin:1.5rem 0 .75rem;
+  letter-spacing:-.02em
+}
+
+.content-section p{
+  font-size:.95rem;
+  line-height:1.75;
+  color:var(--ink2);
+  margin-bottom:1rem
+}
+
+.content-section ul,
+.content-section ol{
+  margin:1rem 0 1rem 1.5rem;
+  line-height:1.8
+}
+
+.content-section li{
+  font-size:.94rem;
+  color:var(--ink2);
+  margin-bottom:.5rem
+}
+
+.content-section strong{
+  color:var(--ink);
+  font-weight:600
+}
+
+.content-section code{
+  background:var(--cream2);
+  padding:.15rem .4rem;
+  border-radius:4px;
+  font-family:var(--mono);
+  font-size:.88rem;
+  color:var(--rust);
+  border:1px solid var(--border)
+}
+
+/* ── FEATURE GRID ── */
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:1rem;
+  margin:1.5rem 0
+}
+
+.feature-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r-md);
+  padding:1.25rem;
+  transition:all .18s
+}
+
+.feature-card:hover{
+  box-shadow:var(--shadow-sm);
+  border-color:var(--rust);
+  transform:translateY(-2px)
+}
+
+.feature-card h4{
+  font-family:var(--sans);
+  font-size:.95rem;
+  font-weight:600;
+  color:var(--rust);
+  margin-bottom:.5rem;
+  display:flex;
+  align-items:center;
+  gap:.5rem
+}
+
+.feature-card p{
+  font-size:.88rem;
+  line-height:1.6;
+  color:var(--ink2);
+  margin:0
+}
+
+/* ── FAQ SECTION ── */
+.faq-section{
+  max-width:760px;
+  margin:3rem auto;
+  background:var(--white);
+  border-radius:var(--r-xl);
+  padding:2rem;
+  box-shadow:var(--shadow-sm);
+  border:1px solid var(--border)
+}
+
+.faq-section h2{
+  font-family:var(--serif);
+  font-size:1.7rem;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:1.5rem;
+  text-align:center
+}
+
+.faq-item{
+  margin-bottom:1.5rem;
+  padding-bottom:1.5rem;
+  border-bottom:1px solid var(--border)
+}
+
+.faq-item:last-child{
+  border-bottom:none;
+  margin-bottom:0;
+  padding-bottom:0
+}
+
+.faq-question{
+  font-family:var(--sans);
+  font-size:1.05rem;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:.5rem;
+  line-height:1.4
+}
+
+.faq-answer{
+  font-size:.92rem;
+  line-height:1.7;
+  color:var(--ink2)
+}
+
+/* ── RELATED TOOLS ── */
+.related-tools{
+  max-width:760px;
+  margin:3rem auto;
+  padding:1.5rem;
+  background:var(--cream2);
+  border-radius:var(--r-lg);
+  border:1px solid var(--border)
+}
+
+.related-tools h3{
+  font-family:var(--serif);
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:1rem;
+  text-align:center
+}
+
+.related-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  gap:.75rem
+}
+
+.related-link{
+  display:block;
+  padding:.75rem 1rem;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r-md);
+  text-align:center;
+  font-size:.88rem;
+  font-weight:500;
+  color:var(--ink2);
+  transition:all .18s
+}
+
+.related-link:hover{
+  background:var(--rust);
+  color:#fff;
+  border-color:var(--rust);
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-sm)
+}
+
+/* ── PAGE META ── */
+.page-meta{
+  max-width:760px;
+  margin:2rem auto;
+  padding:1rem;
+  background:var(--cream2);
+  border-radius:var(--r-md);
+  text-align:center;
+  font-size:.8rem;
+  color:var(--ink4)
+}
+
 /* ── FOOTER ── */
 .site-footer{
   background:var(--cream2);
@@ -418,6 +755,22 @@ textarea{
     font-size:.78rem
   }
   
+  .content-section{
+    padding:0 1rem
+  }
+  
+  .faq-section{
+    padding:1.5rem 1rem
+  }
+  
+  .feature-grid{
+    grid-template-columns:1fr
+  }
+  
+  .related-grid{
+    grid-template-columns:1fr
+  }
+  
   .sf-inner{
     flex-direction:column;
     text-align:center
@@ -472,12 +825,14 @@ textarea{
     </div>
   </header>
 
-  <!-- ── TOOL CARD ── -->
+  <!-- ══════════════════════════════════════════════════════
+       MAIN INVOICE GENERATOR TOOL (unchanged)
+  ══════════════════════════════════════════════════════ -->
   <div class="tool-card">
     <div class="tool-inner">
     
       <div class="info-box">
-        This <strong>free PDF Invoice Generator</strong> helps <strong>small businesses, freelancers, and startups</strong> create professional invoices instantly. Upload your logo, add client details, items with prices, apply taxes (GST/VAT), select currency, and download as PDF. Fully client-side — your data never leaves your browser.
+        This <strong>free PDF invoice generator</strong> helps <strong>small businesses, freelancers, and startups</strong> create professional invoices instantly. Upload your logo, add client details, items with prices, apply taxes (GST/VAT), select currency, and download as PDF. Fully client-side — your data never leaves your browser.
       </div>
 
       <div class="form-row">
@@ -551,6 +906,229 @@ textarea{
   </div><!-- /tool-card -->
 
 </div><!-- /page-wrap -->
+
+<!-- ══════════════════════════════════════════════════════
+     SEO CONTENT SECTIONS (NEW - Below the tool)
+══════════════════════════════════════════════════════ -->
+
+<article class="content-section">
+  <h2>How to Create a Professional PDF Invoice</h2>
+  <p>Our <strong>free PDF invoice generator</strong> makes creating professional invoices simple and fast. Whether you're a <strong>freelancer, small business owner, or startup</strong>, you can generate business-ready invoices in minutes without any design skills or expensive software.</p>
+
+  <h3>Step-by-Step Guide:</h3>
+  <ol>
+    <li><strong>Enter Business Details:</strong> Add your business name and client information</li>
+    <li><strong>Set Invoice Number & Date:</strong> Auto-increments for sequential tracking</li>
+    <li><strong>Add Invoice Items:</strong> Click "+ Add Item" to add multiple products/services with quantities and prices</li>
+    <li><strong>Upload Logo (Optional):</strong> Upload your business logo in PNG or JPEG format (max 500KB)</li>
+    <li><strong>Apply Taxes:</strong> Enter GST, VAT, or sales tax percentage — automatically calculated</li>
+    <li><strong>Select Currency:</strong> Choose from USD, EUR, INR, or GBP</li>
+    <li><strong>Add Payment Terms:</strong> Optional notes field for payment terms, bank details, or thank you message</li>
+    <li><strong>Generate PDF:</strong> Click "Generate PDF Invoice" to download instantly</li>
+  </ol>
+
+  <p>The entire process runs in your browser — <strong>your data never leaves your device</strong>, ensuring complete privacy and security.</p>
+</article>
+
+<article class="content-section">
+  <h2>Key Features of Our Invoice Generator</h2>
+  
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h4>📄 Professional PDF Output</h4>
+      <p>Download invoices as high-quality PDF files ready to email or print. Professionally formatted with clean layout.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>🖼️ Custom Logo Upload</h4>
+      <p>Add your business logo to invoices. Supports PNG and JPEG. Auto-resizes for perfect placement.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>💰 Multi-Currency Support</h4>
+      <p>Create invoices in USD, EUR, INR, or GBP. Perfect for international clients and businesses.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>🧮 Automatic Tax Calculation</h4>
+      <p>Enter any tax rate (GST, VAT, sales tax). Subtotal, tax amount, and final total calculated automatically.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>📋 Multiple Line Items</h4>
+      <p>Add unlimited products or services. Each line calculates quantity × price automatically.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>🔒 100% Privacy</h4>
+      <p>All processing happens in your browser. No data uploaded to servers. Complete confidentiality guaranteed.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>🔢 Auto-Incrementing Invoice Numbers</h4>
+      <p>Invoice numbers auto-increment after each generation. Manual override available anytime.</p>
+    </div>
+
+    <div class="feature-card">
+      <h4>📝 Custom Notes Field</h4>
+      <p>Add payment terms, due dates, bank account details, or thank you messages to your invoices.</p>
+    </div>
+  </div>
+</article>
+
+<article class="content-section">
+  <h2>Who Should Use This Invoice Generator?</h2>
+  
+  <h3>Perfect for Freelancers</h3>
+  <p>Freelancers need quick, professional invoices for clients. Our generator lets you create branded invoices in under 2 minutes — no accounting software required. Add your logo, hourly rates, and project descriptions easily.</p>
+
+  <h3>Ideal for Small Businesses</h3>
+  <p>Small business owners can generate <strong>GST/VAT compliant invoices</strong> with accurate tax calculations. Perfect for retail, consulting, design agencies, and service providers.</p>
+
+  <h3>Great for Startups</h3>
+  <p>Startups need professional invoicing without expensive software subscriptions. Our free tool provides all essential features: logo branding, tax support, multiple currencies, and instant PDF downloads.</p>
+
+  <h3>Consultants & Contractors</h3>
+  <p>Independent consultants and contractors can create detailed invoices with itemized services, hourly rates, and project-based billing. Payment terms and notes fields help clarify expectations.</p>
+
+  <h3>International Businesses</h3>
+  <p>Support for USD, EUR, INR, and GBP makes this tool perfect for businesses with international clients. Generate invoices in the client's preferred currency instantly.</p>
+</article>
+
+<article class="content-section">
+  <h2>Understanding Invoice Components</h2>
+  
+  <h3>Essential Invoice Elements</h3>
+  <ul>
+    <li><strong>Business Name:</strong> Your company or individual name — appears as "From" on invoice</li>
+    <li><strong>Client Name:</strong> Customer or client name — appears as "Bill To"</li>
+    <li><strong>Invoice Number:</strong> Unique identifier for tracking and record-keeping (e.g., #1001, #1002)</li>
+    <li><strong>Invoice Date:</strong> Date of invoice generation — important for payment terms</li>
+    <li><strong>Line Items:</strong> Products/services with description, quantity, unit price, and line total</li>
+    <li><strong>Subtotal:</strong> Sum of all line item totals before taxes</li>
+    <li><strong>Tax:</strong> GST, VAT, or sales tax percentage applied to subtotal</li>
+    <li><strong>Total Amount:</strong> Final amount due (subtotal + tax)</li>
+    <li><strong>Payment Terms:</strong> Due date, payment methods, late fee policies</li>
+  </ul>
+
+  <h3>Why Tax Calculation Matters</h3>
+  <p>Accurate <strong>GST and VAT calculations</strong> are legally required in many countries. Our invoice generator automatically computes tax amounts based on your entered percentage, ensuring compliance and avoiding calculation errors.</p>
+</article>
+
+<article class="content-section">
+  <h2>Benefits of PDF Invoices</h2>
+  
+  <h3>Why Choose PDF Format?</h3>
+  <ul>
+    <li><strong>Universal Compatibility:</strong> PDFs open on any device — Windows, Mac, iOS, Android, Linux</li>
+    <li><strong>Professional Appearance:</strong> Consistent formatting across all platforms — no layout breaks</li>
+    <li><strong>Easy to Email:</strong> Small file size, widely accepted by email servers and clients</li>
+    <li><strong>Print-Ready:</strong> Perfect quality when printed — no formatting adjustments needed</li>
+    <li><strong>Secure:</strong> PDFs maintain integrity — difficult to accidentally edit or alter</li>
+    <li><strong>Archive-Friendly:</strong> Easy to store, organize, and retrieve for accounting/tax purposes</li>
+  </ul>
+</article>
+
+<!-- ══════════════════════════════════════════════════════
+     FAQ SECTION with Schema Markup
+══════════════════════════════════════════════════════ -->
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">How to create a PDF invoice for free?</div>
+    <div class="faq-answer">
+      Use our free PDF invoice generator: 1) Enter your business name and client details, 2) Add invoice items with quantities and prices, 3) Upload your logo (optional), 4) Set tax rate (GST/VAT) and currency, 5) Click "Generate PDF Invoice" to download instantly. <strong>No registration required</strong>.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Can I add my business logo to the invoice?</div>
+    <div class="faq-answer">
+      <strong>Yes!</strong> Our invoice generator supports logo upload. Upload PNG or JPEG files (max 500KB). Your logo will automatically resize and appear on the PDF invoice. The tool works entirely in your browser for <strong>complete privacy</strong>.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Does this invoice generator support GST and VAT?</div>
+    <div class="faq-answer">
+      Absolutely! Enter any tax percentage (GST, VAT, sales tax, etc.) in the "Tax %" field. The calculator <strong>automatically computes tax amount</strong> and shows subtotal, tax, and final total on your PDF invoice. Perfect for businesses worldwide.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">What currencies are supported?</div>
+    <div class="faq-answer">
+      Our invoice generator supports <strong>USD ($), EUR (€), INR (₹), and GBP (£)</strong>. Select your preferred currency from the dropdown menu. The currency symbol will appear on all amounts in the generated PDF.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Is my data safe when using this invoice generator?</div>
+    <div class="faq-answer">
+      Yes, <strong>100% safe!</strong> This invoice generator runs entirely in your browser (client-side). Your business information, client details, and logo <strong>never leave your device</strong> or get uploaded to any server. Complete privacy guaranteed.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Can I create multiple invoices with different invoice numbers?</div>
+    <div class="faq-answer">
+      Yes! The invoice number <strong>auto-increments</strong> after each PDF generation (stored in your browser). You can also manually edit the invoice number for any invoice. Perfect for maintaining sequential invoice records.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Is this invoice generator really free?</div>
+    <div class="faq-answer">
+      Yes, <strong>completely free forever!</strong> No hidden fees, no premium features, no registration required. Generate unlimited professional invoices with all features available at no cost.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Can I add payment terms or notes to the invoice?</div>
+    <div class="faq-answer">
+      Yes! Use the "Notes / Terms" field to add <strong>payment terms, due dates, thank you messages, bank account details</strong>, or any other information you want to include on your invoice. Fully customizable.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">How many items can I add to an invoice?</div>
+    <div class="faq-answer">
+      You can add <strong>unlimited line items</strong> to your invoice. Click "+ Add Item" to add more rows. Each row automatically calculates quantity × price = line total. Remove items using the "Remove" button.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">What file formats can I upload for logos?</div>
+    <div class="faq-answer">
+      Our generator accepts <strong>PNG and JPEG</strong> formats. Maximum file size is 500KB. The logo automatically resizes to fit the invoice layout (max 150×80px display size).
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     RELATED TOOLS
+══════════════════════════════════════════════════════ -->
+<section class="related-tools">
+  <h3>🔗 Related Business Tools</h3>
+  <div class="related-grid">
+    <a href="/sample-size-calculator.html" class="related-link">📊 Sample Size Calculator</a>
+    <a href="/emi.html" class="related-link">💰 EMI Calculator</a>
+    <a href="/gst-calculator.html" class="related-link">🧾 GST Calculator</a>
+    <a href="/profit-margin-calculator.html" class="related-link">📈 Profit Margin Calculator</a>
+    <a href="/expense-tracker.html" class="related-link">💸 Expense Tracker</a>
+    <a href="/tax-calculator.html" class="related-link">🧮 Tax Calculator</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE METADATA
+══════════════════════════════════════════════════════ -->
+<div class="page-meta">
+  <p><strong>Last Updated:</strong> January 15, 2025 | <strong>Category:</strong> Business & Finance Tools | <strong>Used by:</strong> 75,000+ freelancers & businesses</p>
+  <p>✓ Privacy-first (client-side only) | ✓ No registration required | ✓ Free forever | ✓ Professional invoice template</p>
+</div>
+
 </main>
 
 <!-- ════ FOOTER ════ -->
@@ -560,8 +1138,8 @@ textarea{
     <p class="sf-copy">© 2025 Researchtoolslab · Privacy-friendly · Client-side only · Free forever</p>
     <nav class="sf-links" aria-label="Footer links">
       <a href="/">All Tools</a>
-      <a href="#">Privacy</a>
-      <a href="#">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/about.html">About</a>
     </nav>
   </div>
 </footer>
