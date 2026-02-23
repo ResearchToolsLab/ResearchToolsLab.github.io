@@ -3,207 +3,625 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research Methodology Guide — ResearchtoolsLab</title>
-<meta name="description" content="Comprehensive Research Methodology Guide covering types, designs, methods, data collection, analysis, and best practices. Includes links to our Sample Size Calculator and research tools.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://researchtoolslab.github.io/methodology.html">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Research Methodology Guide — Complete Framework for Academic Studies | Researchtoolslab</title>
+<meta name="description" content="Comprehensive research methodology guide covering quantitative, qualitative, and mixed methods approaches. Learn research design, sampling techniques, data collection methods, and statistical analysis for thesis and dissertation success.">
+<meta name="keywords" content="research methodology, research methods, quantitative research, qualitative research, mixed methods, research design, sampling methods, data collection, research methodology guide, thesis methodology, dissertation research, academic research methods, research framework, statistical analysis, research paradigms">
+<meta name="author" content="Researchtoolslab">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://researchtoolslab.github.io/research-methodology-guide.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://researchtoolslab.github.io/research-methodology-guide.html">
+<meta property="og:title" content="Research Methodology Guide — Complete Framework for Academic Studies | Researchtoolslab">
+<meta property="og:description" content="Master research methodology with our comprehensive guide. Covers quantitative, qualitative, mixed methods, sampling, data collection, and analysis techniques.">
+<meta property="og:image" content="https://researchtoolslab.github.io/og-image.png">
+<meta property="og:site_name" content="Researchtoolslab">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Research Methodology Guide — Complete Framework | Researchtoolslab">
+<meta name="twitter:description" content="Complete research methodology guide for thesis and dissertation. Quantitative, qualitative, mixed methods explained.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Research Methodology Guide — Complete Framework for Academic Studies",
+  "description": "Comprehensive research methodology guide covering quantitative, qualitative, and mixed methods approaches for thesis and dissertation research.",
+  "author": {
+    "@type": "Organization",
+    "name": "Researchtoolslab",
+    "url": "https://researchtoolslab.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Researchtoolslab",
+    "url": "https://researchtoolslab.github.io/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://researchtoolslab.github.io/research-methodology-guide.html"
+  },
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-01-15",
+  "keywords": ["research methodology", "quantitative research", "qualitative research", "mixed methods", "research design", "sampling methods", "data collection", "thesis methodology"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Researchtoolslab", "item": "https://researchtoolslab.github.io/"},
+    {"@type": "ListItem", "position": 2, "name": "Research Methodology Guide", "item": "https://researchtoolslab.github.io/research-methodology-guide.html"}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is research methodology?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Research methodology refers to the systematic framework and procedures used to conduct research. It encompasses the theoretical approach, research design, data collection methods, sampling techniques, and analytical procedures that guide how a study is conducted and how findings are interpreted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between quantitative and qualitative research?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quantitative research focuses on numerical data and statistical analysis to test hypotheses and establish generalizable findings. Qualitative research explores phenomena through non-numerical data like interviews and observations to understand meanings, experiences, and contexts. Both approaches serve different research purposes and can be combined in mixed methods research."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I choose the right research methodology?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choose your research methodology based on your research questions, objectives, and the nature of your study. Use quantitative methods when measuring variables and testing hypotheses, qualitative methods when exploring experiences and meanings, and mixed methods when you need both breadth and depth of understanding."
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-/* --- same CSS as your site --- */
-:root{--cream:#f5f0e8;--cream2:#ede7d9;--cream3:#e4ddd0;--white:#ffffff;--ink:#1a1612;--ink2:#3d3530;--ink3:#7a6f65;--ink4:#b0a89e;--rust:#c8441a;--rust2:#e05228;--rust-l:rgba(200,68,26,.1);--teal:#1a7a6e;--teal-l:rgba(26,122,110,.1);--border:rgba(26,22,18,.1);--border2:rgba(26,22,18,.16);--shadow-md:0 8px 40px rgba(26,22,18,.12);--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',sans-serif;--mono:'DM Mono',monospace;--r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px}
+:root{
+  --cream:#f5f0e8;--cream2:#ede7d9;--cream3:#e4ddd0;
+  --white:#ffffff;--ink:#1a1612;--ink2:#3d3530;--ink3:#7a6f65;--ink4:#b0a89e;
+  --rust:#c8441a;--rust2:#e05228;--rust-l:rgba(200,68,26,.1);
+  --teal:#1a7a6e;--teal-l:rgba(26,122,110,.1);
+  --success:#0f9b6e;--success-l:rgba(15,155,110,.08);--success-b:rgba(15,155,110,.2);
+  --warn:#b45a00;--warn-l:rgba(180,90,0,.07);--warn-b:rgba(180,90,0,.2);
+  --border:rgba(26,22,18,.1);--border2:rgba(26,22,18,.16);
+  --shadow-sm:0 2px 12px rgba(26,22,18,.07);
+  --shadow-md:0 8px 40px rgba(26,22,18,.12);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+  --mono:'DM Mono',monospace;
+  --r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;min-height:100vh}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;mix-blend-mode:multiply}
 a{text-decoration:none;color:inherit}
-/* ... include all your site CSS exactly as in the privacy.html ... */
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(245,240,232,.93);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1200px;margin:0 auto;padding:0 2rem;height:62px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.logo{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.logo-mark{width:34px;height:34px;background:var(--ink);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.05rem;font-weight:900;color:var(--cream);letter-spacing:-.05em}
+.logo-name{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);letter-spacing:-.03em}
+.logo-name em{color:var(--rust);font-style:normal}
+.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none}
+.nav-links a{padding:.4rem .85rem;font-size:.86rem;font-weight:500;color:var(--ink2);border-radius:var(--r-sm);transition:all .18s}
+.nav-links a:hover{background:var(--cream2);color:var(--ink)}
+.nav-cta{background:var(--rust)!important;color:#fff!important;font-weight:600!important;padding:.4rem 1rem!important}
+.nav-cta:hover{background:var(--rust2)!important;transform:translateY(-1px)!important;box-shadow:0 4px 16px rgba(200,68,26,.3)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .2s}
+
+/* PAGE LAYOUT */
+.page-wrap{max-width:800px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+
+/* PAGE HEADER */
+.page-header{text-align:center;margin-bottom:2.5rem}
+.page-breadcrumb{display:flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--mono);font-size:.68rem;color:var(--ink4);letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.25rem}
+.page-breadcrumb a:hover{color:var(--rust)}
+.page-h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:900;color:var(--ink);letter-spacing:-.04em;margin-bottom:.75rem;line-height:1.15}
+.page-h1 em{color:var(--rust);font-style:italic}
+.page-sub{font-size:.95rem;color:var(--ink3);max-width:600px;margin:0 auto;font-weight:300;line-height:1.75}
+.page-badges{display:flex;align-items:center;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:1.25rem}
+.page-badge{display:inline-flex;align-items:center;gap:.3rem;background:var(--teal-l);border:1px solid rgba(26,122,110,.2);border-radius:20px;padding:.22rem .7rem;font-size:.68rem;color:var(--teal);font-family:var(--mono);font-weight:500}
+
+/* CONTENT CARD */
+.content-card{background:var(--white);border-radius:var(--r-xl);box-shadow:var(--shadow-md);border:1px solid var(--border);position:relative;overflow:hidden;padding:2.5rem}
+.content-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--rust),#e07840,var(--teal))}
+
+/* TYPOGRAPHY */
+.content-card h2{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);margin:2rem 0 1rem;letter-spacing:-.02em;line-height:1.3}
+.content-card h2:first-of-type{margin-top:0}
+.content-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin:1.75rem 0 .75rem;letter-spacing:-.01em}
+.content-card p{margin-bottom:1rem;line-height:1.8;color:var(--ink2)}
+.content-card ul,.content-card ol{margin:1rem 0 1.5rem 1.5rem;color:var(--ink2)}
+.content-card li{margin-bottom:.5rem;line-height:1.7}
+.content-card strong{color:var(--ink);font-weight:600}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:var(--teal-l);border:1px solid rgba(26,122,110,.2);border-left:3px solid var(--teal);border-radius:var(--r-md);padding:1.25rem 1.5rem;margin:1.5rem 0}
+.highlight-box p{margin-bottom:0;color:var(--ink2)}
+.highlight-box strong{color:var(--teal)}
+
+/* INFO BOX */
+.info-box{background:var(--warn-l);border:1px solid var(--warn-b);border-radius:var(--r-md);padding:1rem 1.25rem;margin:1.5rem 0}
+.info-box p{margin-bottom:0;font-size:.9rem}
+.info-box strong{color:var(--warn)}
+
+/* METHOD CARDS */
+.method-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+.method-card{background:var(--cream);border:1px solid var(--border);border-radius:var(--r-md);padding:1.25rem;transition:all .2s}
+.method-card:hover{border-color:var(--rust);box-shadow:var(--shadow-sm)}
+.method-card h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.method-card p{font-size:.85rem;color:var(--ink3);margin-bottom:0;line-height:1.6}
+.method-icon{font-size:1.5rem;margin-bottom:.5rem}
+
+/* COMPARISON TABLE */
+.comparison-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.88rem}
+.comparison-table th,.comparison-table td{padding:.85rem 1rem;text-align:left;border-bottom:1px solid var(--border)}
+.comparison-table th{background:var(--cream2);font-weight:600;color:var(--ink);font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.05em}
+.comparison-table td{color:var(--ink2)}
+.comparison-table tr:hover td{background:var(--cream)}
+
+/* CTA SECTION */
+.cta-section{background:var(--ink);border-radius:var(--r-lg);padding:2rem;margin-top:2rem;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(200,68,26,.2) 0%,transparent 65%)}
+.cta-section h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:.5rem;position:relative;z-index:1}
+.cta-section p{color:rgba(245,240,232,.7);font-size:.9rem;margin-bottom:1.25rem;position:relative;z-index:1}
+.cta-btn{display:inline-block;background:var(--rust);color:#fff;padding:.75rem 1.75rem;border-radius:var(--r-md);font-weight:600;font-size:.95rem;transition:all .2s;position:relative;z-index:1}
+.cta-btn:hover{background:var(--rust2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,68,26,.35)}
+
+/* TOC */
+.toc{background:var(--cream2);border-radius:var(--r-md);padding:1.5rem;margin-bottom:2rem}
+.toc-title{font-family:var(--mono);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--ink4);margin-bottom:1rem}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list li{margin-bottom:.5rem}
+.toc-list a{font-size:.9rem;color:var(--ink2);transition:color .18s}
+.toc-list a:hover{color:var(--rust)}
+.toc-list a::before{content:'→';margin-right:.5rem;color:var(--ink4)}
+
+/* FOOTER */
+.site-footer{background:var(--cream2);border-top:1px solid var(--border);padding:2.5rem 2rem 2rem;margin-top:3rem}
+.sf-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.sf-brand{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:-.03em}
+.sf-brand em{color:var(--rust);font-style:normal}
+.sf-copy{font-size:.78rem;color:var(--ink4);font-weight:300}
+.sf-links{display:flex;gap:1.5rem}
+.sf-links a{font-size:.78rem;color:var(--ink4);transition:color .18s}
+.sf-links a:hover{color:var(--rust)}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .page-wrap{padding:1.25rem 1rem 3rem}
+  .content-card{padding:1.5rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .page-h1{font-size:1.6rem}
+  .method-grid{grid-template-columns:1fr}
+  .comparison-table{font-size:.8rem}
+  .comparison-table th,.comparison-table td{padding:.6rem .75rem}
+}
 </style>
 </head>
 <body>
+
+<!-- NAV -->
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-wrap">
-    <a href="/" class="logo" aria-label="Researchtoolslab home">
+    <a href="https://researchtoolslab.github.io/" class="logo" aria-label="Researchtoolslab home">
       <div class="logo-mark" aria-hidden="true">R</div>
-      <span class="logo-name">Research<em>tools</em>lab</span>
+      <span class="logo-name">Research<em>Tools</em>Lab</span>
     </a>
     <ul class="nav-links" role="list">
-      <li><a href="/">Home</a></li>
-      <li><a href="/sample-size-calculator.html">Sample Size</a></li>
-      <li><a href="/emi.html">Finance</a></li>
-      <li><a href="/tiktok.html">Creator</a></li>
-      <li><a href="/sample-size-calculator.html" class="nav-cta">Open Calculator →</a></li>
+      <li><a href="https://researchtoolslab.github.io/">Home</a></li>
+      <li><a href="https://researchtoolslab.github.io/sample-size-calculator.html">Sample Size Calculator</a></li>
+      <li><a href="https://researchtoolslab.github.io/" class="nav-cta">← All Tools</a></li>
     </ul>
-    <button class="hamburger" aria-label="Open menu" onclick="navToggle()"><span></span><span></span><span></span></button>
+    <button class="hamburger" aria-label="Open menu" onclick="navToggle()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
 <main>
 <div class="page-wrap">
-  <nav class="page-breadcrumb" aria-label="Breadcrumb">
-    <a href="/">Researchtoolslab</a><span aria-hidden="true">›</span><span aria-current="page">Research Methodology Guide</span>
-  </nav>
 
-  <h1 class="page-h1">Research <em>Methodology Guide</em></h1>
-  <p class="last-updated">Last updated: February 2026</p>
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <nav class="page-breadcrumb" aria-label="Breadcrumb">
+      <a href="https://researchtoolslab.github.io/">Researchtoolslab</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Research Methodology Guide</span>
+    </nav>
+    <h1 class="page-h1">Research Methodology<br><em>Guide</em></h1>
+    <p class="page-sub">A comprehensive framework for understanding quantitative, qualitative, and mixed methods research approaches. Master research design, sampling techniques, and data analysis for your thesis or dissertation.</p>
+    <div class="page-badges">
+      <span class="page-badge">📚 Academic Standards</span>
+      <span class="page-badge">✓ Thesis-Ready</span>
+      <span class="page-badge">✓ Peer-Reviewed Methods</span>
+    </div>
+  </header>
 
-  <div class="summary-box">
-    <div class="sb-title">Quick Overview</div>
-    <ul class="sb-list">
-      <li>Comprehensive guide to research methodology for academic and professional projects</li>
-      <li>Covers types of research, research design, sampling, and data collection methods</li>
-      <li>Explains quantitative, qualitative, and mixed-method research approaches</li>
-      <li>Highlights best practices for data analysis, reliability, and validity</li>
-      <li>Includes direct links to our Sample Size Calculator and other research tools</li>
+  <!-- CONTENT CARD -->
+  <article class="content-card">
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc" aria-label="Table of contents">
+      <div class="toc-title">📋 Table of Contents</div>
+      <ol class="toc-list">
+        <li><a href="#what-is-methodology">What Is Research Methodology?</a></li>
+        <li><a href="#research-paradigms">Research Paradigms & Philosophies</a></li>
+        <li><a href="#quantitative">Quantitative Research Methods</a></li>
+        <li><a href="#qualitative">Qualitative Research Methods</a></li>
+        <li><a href="#mixed-methods">Mixed Methods Research</a></li>
+        <li><a href="#research-design">Choosing Your Research Design</a></li>
+        <li><a href="#sampling">Sampling Methods & Techniques</a></li>
+        <li><a href="#data-collection">Data Collection Methods</a></li>
+        <li><a href="#analysis">Data Analysis Approaches</a></li>
+        <li><a href="#validity">Validity, Reliability & Rigour</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="what-is-methodology">What Is Research Methodology?</h2>
+    <p><strong>Research methodology</strong> refers to the systematic framework, strategies, and procedures that guide how a research study is designed and conducted. It encompasses your theoretical approach, research design, data collection methods, sampling techniques, and analytical procedures—essentially the "how" and "why" behind your research decisions.</p>
+    
+    <p>Unlike research <em>methods</em> (the specific tools and techniques you use), <strong>methodology</strong> provides the philosophical and logical justification for your methodological choices. A well-articulated methodology demonstrates that your research approach is rigorous, appropriate for your research questions, and capable of producing valid, reliable findings.</p>
+
+    <div class="highlight-box">
+      <p><strong>Key distinction:</strong> Methods are the specific procedures (surveys, interviews, experiments), while methodology is the overarching framework that justifies why those methods are appropriate for answering your research questions within your epistemological stance.</p>
+    </div>
+
+    <h2 id="research-paradigms">Research Paradigms & Philosophies</h2>
+    <p>Before selecting your research methods, it's essential to understand the <strong>research paradigm</strong> that underpins your study. A paradigm is a worldview or set of beliefs that guides how knowledge is constructed and validated.</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-icon">🔬</div>
+        <h4>Positivism</h4>
+        <p>Reality is objective and measurable. Knowledge is gained through observation, experimentation, and statistical analysis. Associated with quantitative research.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">🎭</div>
+        <h4>Interpretivism</h4>
+        <p>Reality is socially constructed and subjective. Knowledge is gained through understanding meanings and experiences. Associated with qualitative research.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">⚖️</div>
+        <h4>Pragmatism</h4>
+        <p>Focus on practical outcomes rather than philosophical debates. Research questions drive method selection. Associated with mixed methods research.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">🔄</div>
+        <h4>Critical Realism</h4>
+        <p>Reality exists independently but is interpreted through social constructs. Combines objective structures with subjective understanding.</p>
+      </div>
+    </div>
+
+    <h2 id="quantitative">Quantitative Research Methods</h2>
+    <p><strong>Quantitative research methodology</strong> involves the systematic collection and analysis of numerical data to test hypotheses, identify patterns, and establish generalizable findings. This approach is rooted in positivist philosophy and emphasizes objectivity, measurement, and statistical analysis.</p>
+
+    <h3>Key Characteristics of Quantitative Research</h3>
+    <ul>
+      <li><strong>Objective measurement:</strong> Variables are operationalized and measured numerically</li>
+      <li><strong>Hypothesis testing:</strong> Research begins with specific, testable hypotheses</li>
+      <li><strong>Large sample sizes:</strong> Statistical power requires adequate participant numbers</li>
+      <li><strong>Generalizability:</strong> Findings can be applied to broader populations</li>
+      <li><strong>Replicability:</strong> Studies can be repeated to verify results</li>
     </ul>
-  </div>
 
-  <div class="section">
-    <h2 class="section-h2">1. Introduction to Research Methodology</h2>
-    <p class="prose">Research methodology is the backbone of any academic or professional research project. It defines the systematic approach used to collect, analyze, and interpret data. A strong understanding of research methodology ensures credible results, minimizes bias, and enables reproducibility.</p>
-    <p class="prose">This guide is designed for students, researchers, and professionals looking to deepen their knowledge of <strong>research design</strong>, <strong>data collection methods</strong>, and <strong>analysis techniques</strong>.</p>
-  </div>
+    <h3>Common Quantitative Research Designs</h3>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Design Type</th>
+          <th>Purpose</th>
+          <th>Example Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Experimental</strong></td>
+          <td>Establish cause-and-effect relationships</td>
+          <td>Testing a new teaching intervention</td>
+        </tr>
+        <tr>
+          <td><strong>Quasi-experimental</strong></td>
+          <td>Compare groups without random assignment</td>
+          <td>Comparing existing classrooms</td>
+        </tr>
+        <tr>
+          <td><strong>Correlational</strong></td>
+          <td>Identify relationships between variables</td>
+          <td>Relationship between stress and performance</td>
+        </tr>
+        <tr>
+          <td><strong>Survey/Descriptive</strong></td>
+          <td>Describe characteristics of a population</td>
+          <td>Measuring customer satisfaction levels</td>
+        </tr>
+        <tr>
+          <td><strong>Longitudinal</strong></td>
+          <td>Track changes over time</td>
+          <td>Following career development over 10 years</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <hr class="divider">
+    <h2 id="qualitative">Qualitative Research Methods</h2>
+    <p><strong>Qualitative research methodology</strong> focuses on exploring phenomena through non-numerical data such as words, images, and observations. Rooted in interpretivist philosophy, qualitative research seeks to understand meanings, experiences, perspectives, and social contexts.</p>
 
-  <div class="section">
-    <h2 class="section-h2">2. Types of Research</h2>
-    <p class="prose">Research can broadly be classified into:</p>
-    <ul class="sb-list">
-      <li><strong>Basic (Pure) Research:</strong> Focuses on expanding knowledge without immediate practical application.</li>
-      <li><strong>Applied Research:</strong> Targets solving specific, practical problems.</li>
-      <li><strong>Descriptive Research:</strong> Observes and describes phenomena systematically.</li>
-      <li><strong>Analytical Research:</strong> Explores relationships between variables using existing data.</li>
-      <li><strong>Exploratory Research:</strong> Investigates new problems where little prior information exists.</li>
-      <li><strong>Experimental Research:</strong> Determines causal relationships through controlled experiments.</li>
+    <h3>Key Characteristics of Qualitative Research</h3>
+    <ul>
+      <li><strong>Naturalistic inquiry:</strong> Research occurs in real-world settings</li>
+      <li><strong>Rich, detailed data:</strong> In-depth exploration of fewer cases</li>
+      <li><strong>Participant perspectives:</strong> Understanding lived experiences and meanings</li>
+      <li><strong>Emergent design:</strong> Research questions may evolve during the study</li>
+      <li><strong>Researcher as instrument:</strong> The researcher's interpretation is central</li>
     </ul>
-  </div>
 
-  <hr class="divider">
+    <h3>Major Qualitative Approaches</h3>
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-icon">📖</div>
+        <h4>Phenomenology</h4>
+        <p>Explores the essence of lived experiences. Answers: "What is it like to experience this phenomenon?"</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">🏛️</div>
+        <h4>Grounded Theory</h4>
+        <p>Develops theory from systematically gathered data. Answers: "What theory explains this process?"</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">🔍</div>
+        <h4>Case Study</h4>
+        <p>In-depth investigation of a bounded system. Answers: "What can we learn from this case?"</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">🌍</div>
+        <h4>Ethnography</h4>
+        <p>Studies culture through immersive fieldwork. Answers: "How does this culture work?"</p>
+      </div>
+    </div>
 
-  <div class="section">
-    <h2 class="section-h2">3. Research Design</h2>
-    <p class="prose">A <strong>research design</strong> is a structured plan that guides how a study is conducted. Common designs include:</p>
-    <ul class="sb-list">
-      <li><strong>Cross-sectional Design:</strong> Observes subjects at a single point in time.</li>
-      <li><strong>Longitudinal Design:</strong> Follows subjects over an extended period.</li>
-      <li><strong>Experimental Design:</strong> Involves manipulation of variables to determine cause-effect relationships.</li>
-      <li><strong>Correlational Design:</strong> Examines associations between variables without direct manipulation.</li>
-      <li><strong>Case Study:</strong> Provides an in-depth understanding of a single subject, group, or event.</li>
+    <h2 id="mixed-methods">Mixed Methods Research</h2>
+    <p><strong>Mixed methods research methodology</strong> integrates both quantitative and qualitative approaches within a single study or program of inquiry. This pragmatic approach leverages the strengths of both traditions to provide more comprehensive answers to complex research questions.</p>
+
+    <div class="highlight-box">
+      <p><strong>When to use mixed methods:</strong> When your research questions require both breadth (generalizability) and depth (detailed understanding), when you need to explain quantitative results with qualitative insights, or when triangulating findings from multiple sources strengthens validity.</p>
+    </div>
+
+    <h3>Common Mixed Methods Designs</h3>
+    <ul>
+      <li><strong>Convergent parallel:</strong> Collect quantitative and qualitative data simultaneously, then compare results</li>
+      <li><strong>Explanatory sequential:</strong> Quantitative phase first, then qualitative to explain findings</li>
+      <li><strong>Exploratory sequential:</strong> Qualitative phase first to develop instruments for quantitative phase</li>
+      <li><strong>Embedded:</strong> One type of data supports a primarily different methodology</li>
     </ul>
-  </div>
 
-  <hr class="divider">
+    <h2 id="research-design">Choosing Your Research Design</h2>
+    <p>Selecting the appropriate <strong>research design</strong> is one of the most critical decisions in your methodology. Your design should align with your research questions, theoretical framework, and practical constraints.</p>
 
-  <div class="section">
-    <h2 class="section-h2">4. Sampling Techniques</h2>
-    <p class="prose">Selecting the right sample is crucial for ensuring valid research results. Key <strong>sampling methods</strong> include:</p>
-    <ul class="sb-list">
-      <li><strong>Probability Sampling:</strong> Each member has a known chance of selection. Includes simple random, stratified, and cluster sampling.</li>
-      <li><strong>Non-Probability Sampling:</strong> Selection based on convenience or judgment. Includes purposive, snowball, and quota sampling.</li>
+    <div class="info-box">
+      <p><strong>Consider these factors:</strong> What is the nature of your research questions? What epistemological assumptions guide your inquiry? What resources and access do you have? What are the ethical considerations? What will your academic committee or field accept?</p>
+    </div>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Research Goal</th>
+          <th>Recommended Approach</th>
+          <th>Typical Design</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Test causal relationships</td>
+          <td>Quantitative</td>
+          <td>Experimental / RCT</td>
+        </tr>
+        <tr>
+          <td>Measure prevalence or attitudes</td>
+          <td>Quantitative</td>
+          <td>Survey / Cross-sectional</td>
+        </tr>
+        <tr>
+          <td>Understand lived experiences</td>
+          <td>Qualitative</td>
+          <td>Phenomenology</td>
+        </tr>
+        <tr>
+          <td>Develop new theory</td>
+          <td>Qualitative</td>
+          <td>Grounded Theory</td>
+        </tr>
+        <tr>
+          <td>Explain quantitative findings</td>
+          <td>Mixed Methods</td>
+          <td>Explanatory Sequential</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="sampling">Sampling Methods & Techniques</h2>
+    <p><strong>Sampling methodology</strong> determines how you select participants or cases for your study. The sampling strategy must align with your research design and goals—whether you seek generalizability or transferability.</p>
+
+    <h3>Probability Sampling (Quantitative)</h3>
+    <ul>
+      <li><strong>Simple random sampling:</strong> Every member has equal chance of selection</li>
+      <li><strong>Stratified sampling:</strong> Population divided into subgroups, then randomly sampled</li>
+      <li><strong>Cluster sampling:</strong> Groups (clusters) are randomly selected, then all members included</li>
+      <li><strong>Systematic sampling:</strong> Every nth member selected from a list</li>
     </ul>
-    <p class="prose">To determine the appropriate number of participants for your study, use our <a href="/sample-size-calculator.html">Sample Size Calculator</a>. Proper sample sizing ensures reliable and generalizable results.</p>
-  </div>
 
-  <hr class="divider">
-
-  <div class="section">
-    <h2 class="section-h2">5. Data Collection Methods</h2>
-    <p class="prose">Effective <strong>data collection</strong> is essential for reliable research outcomes. Methods vary depending on the research type:</p>
-    <ul class="sb-list">
-      <li><strong>Qualitative Methods:</strong> Interviews, focus groups, participant observation, and open-ended surveys to understand perspectives and experiences.</li>
-      <li><strong>Quantitative Methods:</strong> Structured surveys, experiments, and secondary data analysis producing numerical results for statistical evaluation.</li>
-      <li><strong>Mixed-Method Research:</strong> Combines qualitative and quantitative approaches to provide comprehensive insights.</li>
+    <h3>Non-probability Sampling (Qualitative)</h3>
+    <ul>
+      <li><strong>Purposive sampling:</strong> Participants selected based on specific criteria</li>
+      <li><strong>Snowball sampling:</strong> Participants recruit other participants</li>
+      <li><strong>Convenience sampling:</strong> Easily accessible participants selected</li>
+      <li><strong>Theoretical sampling:</strong> Sampling guided by emerging theory (Grounded Theory)</li>
     </ul>
-    <p class="prose">For surveys and quantitative studies, ensure your sample size is sufficient by using our <a href="/sample-size-calculator.html">Sample Size Calculator</a>. It helps align your data collection with research objectives.</p>
-  </div>
 
-  <hr class="divider">
+    <h2 id="data-collection">Data Collection Methods</h2>
+    <p>Your <strong>data collection methods</strong> are the specific techniques used to gather information. These must be appropriate for your research design, feasible within your constraints, and capable of answering your research questions.</p>
 
-  <div class="section">
-    <h2 class="section-h2">6. Data Analysis and Interpretation</h2>
-    <p class="prose">Once data is collected, careful analysis is required:</p>
-    <ul class="sb-list">
-      <li><strong>Qualitative Analysis:</strong> Thematic coding, narrative analysis, or content analysis to identify patterns and insights.</li>
-      <li><strong>Quantitative Analysis:</strong> Statistical tools like regression, correlation, ANOVA, and descriptive statistics to test hypotheses.</li>
-      <li><strong>Ensuring Validity:</strong> Cross-checking measurements and results to reduce errors and bias.</li>
-      <li><strong>Reliability:</strong> Ensuring consistency of results across repeated studies.</li>
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-icon">📝</div>
+        <h4>Surveys & Questionnaires</h4>
+        <p>Standardized instruments for collecting quantifiable data from large samples efficiently.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">🎙️</div>
+        <h4>Interviews</h4>
+        <p>Structured, semi-structured, or unstructured conversations for rich qualitative data.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">👁️</div>
+        <h4>Observations</h4>
+        <p>Systematic recording of behaviours, events, or phenomena in natural settings.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon">📄</div>
+        <h4>Document Analysis</h4>
+        <p>Systematic examination of existing texts, records, or media artifacts.</p>
+      </div>
+    </div>
+
+    <h2 id="analysis">Data Analysis Approaches</h2>
+    <p>Your <strong>data analysis methodology</strong> must match your data type and research objectives. Quantitative data requires statistical analysis, while qualitative data requires interpretive analysis techniques.</p>
+
+    <h3>Quantitative Analysis Techniques</h3>
+    <ul>
+      <li><strong>Descriptive statistics:</strong> Mean, median, mode, standard deviation, frequencies</li>
+      <li><strong>Inferential statistics:</strong> t-tests, ANOVA, chi-square, regression analysis</li>
+      <li><strong>Correlation analysis:</strong> Pearson's r, Spearman's rho</li>
+      <li><strong>Advanced techniques:</strong> Factor analysis, structural equation modelling, multilevel modelling</li>
     </ul>
-    <p class="prose">Visualization tools such as charts, graphs, and tables improve clarity and support data-driven conclusions.</p>
-  </div>
 
-  <hr class="divider">
-
-  <div class="section">
-    <h2 class="section-h2">7. Ethical Considerations</h2>
-    <p class="prose">Research ethics are vital for protecting participants and maintaining credibility:</p>
-    <ul class="sb-list">
-      <li>Obtain informed consent from all participants</li>
-      <li>Ensure anonymity and confidentiality</li>
-      <li>Avoid plagiarism and properly cite all sources</li>
-      <li>Be transparent about funding sources and potential conflicts of interest</li>
-      <li>Follow institutional and international research guidelines</li>
+    <h3>Qualitative Analysis Techniques</h3>
+    <ul>
+      <li><strong>Thematic analysis:</strong> Identifying patterns and themes across data</li>
+      <li><strong>Content analysis:</strong> Systematic coding and categorisation of textual data</li>
+      <li><strong>Narrative analysis:</strong> Examining stories and their structure</li>
+      <li><strong>Discourse analysis:</strong> Analysing language use and power relations</li>
     </ul>
-  </div>
 
-  <hr class="divider">
+    <h2 id="validity">Validity, Reliability & Rigour</h2>
+    <p>Demonstrating the quality and trustworthiness of your research is essential. <strong>Quantitative research</strong> emphasizes validity and reliability, while <strong>qualitative research</strong> uses criteria like credibility, transferability, dependability, and confirmability.</p>
 
-  <div class="section">
-    <h2 class="section-h2">8. Best Practices for Effective Research</h2>
-    <ul class="sb-list">
-      <li>Clearly define research questions and objectives</li>
-      <li>Choose appropriate research designs and methods</li>
-      <li>Use reliable sampling and data collection procedures (<a href="/sample-size-calculator.html">calculate your sample size</a>)</li>
-      <li>Apply rigorous data analysis and interpretation</li>
-      <li>Document methodology for transparency and reproducibility</li>
-      <li>Review literature regularly to contextualize findings</li>
-    </ul>
-  </div>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Quantitative Criteria</th>
+          <th>Qualitative Equivalent</th>
+          <th>Strategies</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Internal validity</td>
+          <td>Credibility</td>
+          <td>Triangulation, member checking, prolonged engagement</td>
+        </tr>
+        <tr>
+          <td>External validity</td>
+          <td>Transferability</td>
+          <td>Thick description, purposive sampling</td>
+        </tr>
+        <tr>
+          <td>Reliability</td>
+          <td>Dependability</td>
+          <td>Audit trail, reflexivity, peer debriefing</td>
+        </tr>
+        <tr>
+          <td>Objectivity</td>
+          <td>Confirmability</td>
+          <td>Reflexive journal, transparent methods</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <hr class="divider">
+    <div class="highlight-box">
+      <p><strong>Remember:</strong> A well-justified methodology is the foundation of credible research. Clearly articulate your philosophical stance, explain why your chosen methods are appropriate, and demonstrate how you ensure quality and rigour throughout your study.</p>
+    </div>
 
-  <div class="section">
-    <h2 class="section-h2">9. Tools and Resources</h2>
-    <p class="prose">Leverage online research tools and calculators for:</p>
-    <ul class="sb-list">
-      <li><a href="/sample-size-calculator.html">Sample size determination</a></li>
-      <li>Statistical analysis (e.g., t-tests, ANOVA, regression)</li>
-      <li>Survey design and data collection</li>
-      <li>Reference management and citation</li>
-    </ul>
-    <p class="prose">Researchtoolslab provides free calculators for sample size, statistical analysis, and other research utilities to simplify your workflow and ensure accurate results.</p>
-  </div>
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+      <h3>📊 Calculate Your Sample Size</h3>
+      <p>Now that you understand research methodology, determine the right sample size for your study using our free, G*Power-verified calculator.</p>
+      <a href="https://researchtoolslab.github.io/sample-size-calculator.html" class="cta-btn">Use Sample Size Calculator →</a>
+    </div>
 
-  <hr class="divider">
+  </article>
 
-  <div class="section">
-    <h2 class="section-h2">10. Conclusion</h2>
-    <p class="prose">A solid understanding of <strong>research methodology</strong> empowers researchers to design effective studies, collect reliable data, and draw meaningful conclusions. Using our <a href="/sample-size-calculator.html">Sample Size Calculator</a> ensures your sampling aligns with best practices and enhances the credibility of your research.</p>
-    <p class="prose">Explore all our research tools at <a href="/">ResearchtoolsLab</a> to streamline your study process and improve accuracy.</p>
-  </div>
 </div>
 </main>
 
+<!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
   <div class="sf-inner">
-    <a href="/" style="text-decoration:none"><div class="sf-brand">Research<em>tools</em>lab</div></a>
-    <p class="sf-copy">© 2026 ResearchtoolsLab · Privacy-first · Client-side only · Free forever</p>
+    <a href="https://researchtoolslab.github.io/" class="logo" aria-label="Researchtoolslab home">
+      <div class="logo-mark" aria-hidden="true">R</div>
+      <span class="logo-name">Research<em>Tools</em>Lab</span>
+    </a>
+    <p class="sf-copy">© 2025 Researchtoolslab · Academic research tools · Free, no account required</p>
     <nav class="sf-links" aria-label="Footer links">
-      <a href="/">All Tools</a><a href="/about.html">About</a><a href="/methodology.html">Methodology</a>
+      <a href="https://researchtoolslab.github.io/">All Tools</a>
+      <a href="https://researchtoolslab.github.io/sample-size-calculator.html">Sample Size Calculator</a>
+      <a href="#">Privacy</a>
     </nav>
   </div>
 </footer>
 
-<div id="mob-drawer" style="display:none;position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(245,240,232,.98);backdrop-filter:blur(20px);z-index:199;padding:2rem;flex-direction:column;gap:.5rem" role="dialog">
-  <a href="/" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🏠 Home</a>
-  <a href="/sample-size-calculator.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🔬 Sample Size Calculator</a>
-  <a href="/about.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">ℹ About</a>
+<!-- MOBILE NAV -->
+<div id="mob-drawer" style="display:none;position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(245,240,232,.98);backdrop-filter:blur(20px);z-index:199;padding:2rem;flex-direction:column;gap:.5rem" role="dialog" aria-label="Mobile navigation">
+  <a href="https://researchtoolslab.github.io/" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🏠 Home — All Tools</a>
+  <a href="https://researchtoolslab.github.io/sample-size-calculator.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">📊 Sample Size Calculator</a>
 </div>
+
 <script>
-var _navOpen=false;
-function navToggle(){_navOpen=!_navOpen;var d=document.getElementById('mob-drawer'),sp=document.querySelectorAll('.hamburger span');d.style.display=_navOpen?'flex':'none';if(_navOpen){sp[0].style.transform='rotate(45deg) translate(5px,5px)';sp[1].style.opacity='0';sp[2].style.transform='rotate(-45deg) translate(5px,-5px)'}else{sp.forEach(s=>{s.style.transform='';s.style.opacity=''})}}
-function navClose(){_navOpen=false;document.getElementById('mob-drawer').style.display='none';document.querySelectorAll('.hamburger span').forEach(s=>{s.style.transform='';s.style.opacity=''})}
+var _navOpen = false;
+function navToggle(){
+  _navOpen = !_navOpen;
+  var d = document.getElementById('mob-drawer');
+  var sp = document.querySelectorAll('.hamburger span');
+  d.style.display = _navOpen ? 'flex' : 'none';
+  if(_navOpen){
+    sp[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+    sp[1].style.opacity = '0';
+    sp[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+  } else {
+    sp.forEach(function(s){ s.style.transform=''; s.style.opacity=''; });
+  }
+}
+function navClose(){
+  _navOpen = false;
+  document.getElementById('mob-drawer').style.display = 'none';
+  document.querySelectorAll('.hamburger span').forEach(function(s){ s.style.transform=''; s.style.opacity=''; });
+}
 </script>
+
 </body>
 </html>
