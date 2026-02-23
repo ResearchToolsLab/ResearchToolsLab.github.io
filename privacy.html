@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Researchtoolslab</title>
+<meta name="description" content="Researchtoolslab privacy policy. We don't collect personal data. All calculations run locally in your browser. No cookies, no tracking, no account required.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://researchtoolslab.github.io/privacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f5f0e8;--cream2:#ede7d9;--cream3:#e4ddd0;--white:#ffffff;--ink:#1a1612;--ink2:#3d3530;--ink3:#7a6f65;--ink4:#b0a89e;--rust:#c8441a;--rust2:#e05228;--rust-l:rgba(200,68,26,.1);--teal:#1a7a6e;--teal-l:rgba(26,122,110,.1);--border:rgba(26,22,18,.1);--border2:rgba(26,22,18,.16);--shadow-md:0 8px 40px rgba(26,22,18,.12);--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',sans-serif;--mono:'DM Mono',monospace;--r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;min-height:100vh}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;mix-blend-mode:multiply}
+a{text-decoration:none;color:inherit}
+.nav{position:sticky;top:0;z-index:200;background:rgba(245,240,232,.93);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1200px;margin:0 auto;padding:0 2rem;height:62px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.logo{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.logo-mark{width:34px;height:34px;background:var(--ink);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.05rem;font-weight:900;color:var(--cream);letter-spacing:-.05em}
+.logo-name{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);letter-spacing:-.03em}
+.logo-name em{color:var(--rust);font-style:normal}
+.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none}
+.nav-links a{padding:.4rem .85rem;font-size:.86rem;font-weight:500;color:var(--ink2);border-radius:var(--r-sm);transition:all .18s}
+.nav-links a:hover{background:var(--cream2);color:var(--ink)}
+.nav-cta{background:var(--rust)!important;color:#fff!important;font-weight:600!important;padding:.4rem 1rem!important;border-radius:var(--r-sm)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .2s}
+.page-wrap{max-width:760px;margin:0 auto;padding:3rem 1.5rem 5rem}
+.page-breadcrumb{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.68rem;color:var(--ink4);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2rem}
+.page-breadcrumb a:hover{color:var(--rust)}
+.summary-box{background:var(--teal-l);border:1px solid rgba(26,122,110,.2);border-left:3px solid var(--teal);border-radius:var(--r-md);padding:1.5rem;margin-bottom:3rem}
+.sb-title{font-family:var(--mono);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:.75rem}
+.sb-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.sb-list li{display:flex;align-items:flex-start;gap:.65rem;font-size:.88rem;color:var(--ink2)}
+.sb-list li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0}
+.page-h1{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;letter-spacing:-.04em;color:var(--ink);margin-bottom:.5rem;line-height:1.1}
+.page-h1 em{color:var(--rust);font-style:italic}
+.last-updated{font-family:var(--mono);font-size:.72rem;color:var(--ink4);margin-bottom:2.5rem}
+.section{margin-bottom:2.5rem}
+.section-h2{font-family:var(--serif);font-size:1.25rem;font-weight:700;letter-spacing:-.03em;color:var(--ink);margin-bottom:.75rem}
+.prose{font-size:.92rem;color:var(--ink3);line-height:1.85;font-weight:300}
+.prose+.prose{margin-top:.75rem}
+.prose strong{color:var(--ink);font-weight:600}
+.prose a{color:var(--rust);font-weight:500}
+.divider{border:none;border-top:1px solid var(--border);margin:2rem 0}
+.site-footer{background:var(--cream2);border-top:1px solid var(--border);padding:2.5rem 2rem 2rem;margin-top:4rem}
+.sf-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.sf-brand{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:-.03em}
+.sf-brand em{color:var(--rust);font-style:normal}
+.sf-copy{font-size:.78rem;color:var(--ink4);font-weight:300}
+.sf-links{display:flex;gap:1.5rem}
+.sf-links a{font-size:.78rem;color:var(--ink4);transition:color .18s}
+.sf-links a:hover{color:var(--rust)}
+@media(max-width:600px){.nav-links{display:none}.hamburger{display:flex}.sf-inner{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a href="/" class="logo" aria-label="Researchtoolslab home">
+      <div class="logo-mark" aria-hidden="true">R</div>
+      <span class="logo-name">Research<em>tools</em>lab</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/sample-size-calculator.html">Sample Size</a></li>
+      <li><a href="/emi.html">Finance</a></li>
+      <li><a href="/tiktok.html">Creator</a></li>
+      <li><a href="/sample-size-calculator.html" class="nav-cta">Open Calculator →</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu" onclick="navToggle()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+<div class="page-wrap">
+  <nav class="page-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Researchtoolslab</a><span aria-hidden="true">›</span><span aria-current="page">Privacy Policy</span>
+  </nav>
+
+  <h1 class="page-h1">Privacy <em>Policy</em></h1>
+  <p class="last-updated">Last updated: January 2025</p>
+
+  <div class="summary-box">
+    <div class="sb-title">Plain English Summary</div>
+    <ul class="sb-list">
+      <li>We do not collect, store, or share any personal data</li>
+      <li>All calculations run entirely in your browser — no data is sent to any server</li>
+      <li>We do not use advertising cookies or tracking pixels</li>
+      <li>We do not require an account, email address, or any registration</li>
+      <li>We use GitHub Pages to host this site — GitHub's own privacy policy applies to hosting infrastructure</li>
+      <li>We use Google Fonts — font files are loaded from Google's CDN</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-h2">1. Who We Are</h2>
+    <p class="prose">Researchtoolslab (<a href="https://researchtoolslab.github.io/">researchtoolslab.github.io</a>) is a free online tools website providing research, statistical, financial, and creator calculators. This privacy policy explains how we handle (or rather, do not handle) your personal information.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2 class="section-h2">2. Data We Collect</h2>
+    <p class="prose"><strong>We collect no personal data.</strong> Researchtoolslab does not collect names, email addresses, IP addresses (beyond what your browser sends to any web server), payment information, or any other identifying information.</p>
+    <p class="prose">All calculator inputs — loan amounts, research parameters, earnings estimates — are processed entirely within your browser using JavaScript. No input data is transmitted to any server, database, or third party.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2 class="section-h2">3. Cookies & Local Storage</h2>
+    <p class="prose">We do not use advertising cookies, analytics cookies, or tracking pixels of any kind. The PDF Invoice Generator tool uses your browser's <strong>localStorage</strong> solely to remember your last invoice number across sessions. This data never leaves your device.</p>
+    <p class="prose">You can clear this at any time through your browser's settings (Settings → Privacy → Clear site data).</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2 class="section-h2">4. Third-Party Services</h2>
+    <p class="prose"><strong>GitHub Pages:</strong> This website is hosted on GitHub Pages. GitHub may collect server access logs (IP addresses, browser type, timestamps) as part of standard hosting infrastructure. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub's privacy policy</a> for details.</p>
+    <p class="prose"><strong>Google Fonts:</strong> We load fonts (Fraunces, DM Sans, DM Mono) from Google Fonts CDN. This means your browser makes a request to Google's servers to download these font files. Google may log this request. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a> for details. If you prefer, you can block Google Fonts via a browser extension — the site remains fully functional using system fonts.</p>
+    <p class="prose"><strong>jsPDF (PDF Generator only):</strong> The PDF Invoice Generator loads the jsPDF library from Cloudflare's CDN. Cloudflare may log requests to their CDN. The PDF generation itself runs entirely in your browser.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2 class="section-h2">5. Analytics</h2>
+    <p class="prose">We do not currently use any analytics service (Google Analytics, Plausible, Fathom, or similar). We have no visibility into individual user behaviour, page views, or sessions beyond what GitHub Pages' server logs contain.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2 class="section-h2">6. Children's Privacy</h2>
+    <p class="prose">Researchtoolslab does not knowingly collect any information from children under 13. As we collect no personal data from any user, this requirement is satisfied by design.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2 class="section-h2">7. Changes to This Policy</h2>
+    <p class="prose">If this policy changes (for example, if we add analytics or advertising in the future), we will update the "Last updated" date above and add a summary of changes. We will never retroactively change how previously submitted data is used because we do not collect any.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2 class="section-h2">8. Contact</h2>
+    <p class="prose">If you have questions about this privacy policy, you can open an issue on our GitHub repository at <a href="https://github.com/researchtoolslab" target="_blank" rel="noopener">github.com/researchtoolslab</a>.</p>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="sf-inner">
+    <a href="/" style="text-decoration:none"><div class="sf-brand">Research<em>tools</em>lab</div></a>
+    <p class="sf-copy">© 2025 Researchtoolslab · Privacy-first · Client-side only · Free forever</p>
+    <nav class="sf-links" aria-label="Footer links">
+      <a href="/">All Tools</a><a href="/about.html">About</a><a href="/methodology.html">Methodology</a>
+    </nav>
+  </div>
+</footer>
+
+<div id="mob-drawer" style="display:none;position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(245,240,232,.98);backdrop-filter:blur(20px);z-index:199;padding:2rem;flex-direction:column;gap:.5rem" role="dialog">
+  <a href="/" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🏠 Home</a>
+  <a href="/sample-size-calculator.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🔬 Sample Size Calculator</a>
+  <a href="/about.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">ℹ About</a>
+</div>
+<script>var _navOpen=false;function navToggle(){_navOpen=!_navOpen;var d=document.getElementById('mob-drawer'),sp=document.querySelectorAll('.hamburger span');d.style.display=_navOpen?'flex':'none';if(_navOpen){sp[0].style.transform='rotate(45deg) translate(5px,5px)';sp[1].style.opacity='0';sp[2].style.transform='rotate(-45deg) translate(5px,-5px)'}else{sp.forEach(s=>{s.style.transform='';s.style.opacity=''})}}function navClose(){_navOpen=false;document.getElementById('mob-drawer').style.display='none';document.querySelectorAll('.hamburger span').forEach(s=>{s.style.transform='';s.style.opacity=''})}</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Researchtoolslab — Free Verified Research & Statistical Tools</title>
+<meta name="description" content="Researchtoolslab builds free, rigorously verified research calculators for students, academics, and professionals. Learn about our methodology, accuracy standards, and mission.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://researchtoolslab.github.io/about.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f5f0e8;--cream2:#ede7d9;--cream3:#e4ddd0;--white:#ffffff;--ink:#1a1612;--ink2:#3d3530;--ink3:#7a6f65;--ink4:#b0a89e;--rust:#c8441a;--rust2:#e05228;--rust-l:rgba(200,68,26,.1);--teal:#1a7a6e;--teal-l:rgba(26,122,110,.1);--border:rgba(26,22,18,.1);--border2:rgba(26,22,18,.16);--shadow-md:0 8px 40px rgba(26,22,18,.12);--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',sans-serif;--mono:'DM Mono',monospace;--r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;min-height:100vh}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;mix-blend-mode:multiply}
+a{text-decoration:none;color:inherit}
+.nav{position:sticky;top:0;z-index:200;background:rgba(245,240,232,.93);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1200px;margin:0 auto;padding:0 2rem;height:62px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.logo{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.logo-mark{width:34px;height:34px;background:var(--ink);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.05rem;font-weight:900;color:var(--cream);letter-spacing:-.05em}
+.logo-name{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);letter-spacing:-.03em}
+.logo-name em{color:var(--rust);font-style:normal}
+.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none}
+.nav-links a{padding:.4rem .85rem;font-size:.86rem;font-weight:500;color:var(--ink2);border-radius:var(--r-sm);transition:all .18s}
+.nav-links a:hover{background:var(--cream2);color:var(--ink)}
+.nav-cta{background:var(--rust)!important;color:#fff!important;font-weight:600!important;padding:.4rem 1rem!important;border-radius:var(--r-sm)}
+.nav-cta:hover{background:var(--rust2)!important;transform:translateY(-1px)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .2s}
+.page-wrap{max-width:820px;margin:0 auto;padding:3rem 1.5rem 5rem}
+.page-breadcrumb{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.68rem;color:var(--ink4);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2rem}
+.page-breadcrumb a:hover{color:var(--rust)}
+.hero-section{margin-bottom:4rem}
+.eyebrow{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);margin-bottom:.75rem}
+.h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:900;letter-spacing:-.04em;color:var(--ink);line-height:1.05;margin-bottom:1.25rem}
+.h1 em{color:var(--rust);font-style:italic}
+.lead{font-size:1.05rem;color:var(--ink3);line-height:1.85;font-weight:300;max-width:660px}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin:3rem 0;padding:2rem;background:var(--ink);border-radius:var(--r-xl);position:relative;overflow:hidden}
+.stat-row::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 0%,rgba(200,68,26,.18) 0%,transparent 60%)}
+.stat-row::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--rust),#e07840,var(--teal))}
+.stat-item{text-align:center;position:relative;z-index:1}
+.stat-num{font-family:var(--serif);font-size:2rem;font-weight:900;color:#fff;letter-spacing:-.05em;line-height:1}
+.stat-num .ac{color:var(--rust2)}
+.stat-lbl{font-size:.72rem;color:rgba(245,240,232,.45);text-transform:uppercase;letter-spacing:.07em;margin-top:.3rem;font-family:var(--mono)}
+.section{margin-bottom:3.5rem}
+.section-h2{font-family:var(--serif);font-size:1.65rem;font-weight:700;letter-spacing:-.04em;color:var(--ink);margin-bottom:1rem;line-height:1.2}
+.section-h2 em{color:var(--rust);font-style:italic}
+.prose{font-size:.95rem;color:var(--ink3);line-height:1.85;font-weight:300}
+.prose+.prose{margin-top:.85rem}
+.prose strong{color:var(--ink);font-weight:600}
+.prose a{color:var(--rust);font-weight:500}
+.prose a:hover{text-decoration:underline}
+.divider{border:none;border-top:1px solid var(--border);margin:2.5rem 0}
+.tool-links{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem}
+.tool-link-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);padding:1.1rem;display:flex;align-items:center;gap:.85rem;transition:all .2s;text-decoration:none;color:inherit}
+.tool-link-card:hover{border-color:var(--rust);transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,22,18,.1)}
+.tlc-icon{font-size:1.4rem;flex-shrink:0}
+.tlc-name{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:.1rem}
+.tlc-desc{font-size:.76rem;color:var(--ink4);font-weight:300}
+.value-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-top:1.25rem}
+.value-item{display:flex;gap:1rem;align-items:flex-start}
+.vi-num{font-family:var(--serif);font-size:1.5rem;font-weight:900;color:var(--cream3);line-height:1;flex-shrink:0;width:36px}
+.vi-content .vi-t{font-size:.92rem;font-weight:600;color:var(--ink);margin-bottom:.2rem}
+.vi-content .vi-d{font-size:.84rem;color:var(--ink3);line-height:1.65;font-weight:300}
+.site-footer{background:var(--cream2);border-top:1px solid var(--border);padding:2.5rem 2rem 2rem;margin-top:4rem}
+.sf-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.sf-brand{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:-.03em}
+.sf-brand em{color:var(--rust);font-style:normal}
+.sf-copy{font-size:.78rem;color:var(--ink4);font-weight:300}
+.sf-links{display:flex;gap:1.5rem}
+.sf-links a{font-size:.78rem;color:var(--ink4);transition:color .18s}
+.sf-links a:hover{color:var(--rust)}
+@media(max-width:640px){.nav-links{display:none}.hamburger{display:flex}.stat-row{grid-template-columns:1fr 1fr;gap:.75rem}.tool-links{grid-template-columns:1fr}.sf-inner{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-wrap">
+    <a href="/" class="logo" aria-label="Researchtoolslab home">
+      <div class="logo-mark" aria-hidden="true">R</div>
+      <span class="logo-name">Research<em>tools</em>lab</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/sample-size-calculator.html">Sample Size</a></li>
+      <li><a href="/emi.html">Finance</a></li>
+      <li><a href="/tiktok.html">Creator</a></li>
+      <li><a href="/sample-size-calculator.html" class="nav-cta">Open Calculator →</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu" onclick="navToggle()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+<div class="page-wrap">
+  <nav class="page-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Researchtoolslab</a><span aria-hidden="true">›</span><span aria-current="page">About</span>
+  </nav>
+
+  <div class="hero-section">
+    <p class="eyebrow">About Us</p>
+    <h1 class="h1">Built for Researchers.<br><em>Verified by Standards.</em></h1>
+    <p class="lead">Researchtoolslab exists because free online calculators have a quality problem. Most give you a number with no formula, no verification, and no explanation. We built something better — tools that show their work, cite their sources, and match what university-standard software produces.</p>
+  </div>
+
+  <div class="stat-row" role="list" aria-label="Key metrics">
+    <div class="stat-item" role="listitem"><div class="stat-num">47<span class="ac">/47</span></div><div class="stat-lbl">Checks Passed</div></div>
+    <div class="stat-item" role="listitem"><div class="stat-num">6<span class="ac">+</span></div><div class="stat-lbl">Free Tools</div></div>
+    <div class="stat-item" role="listitem"><div class="stat-num">5</div><div class="stat-lbl">Study Types</div></div>
+    <div class="stat-item" role="listitem"><div class="stat-num">0</div><div class="stat-lbl">Signup Required</div></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-h2">Our <em>Mission</em></h2>
+    <p class="prose">Research methodology tools should not be locked behind expensive software licenses or cluttered with ads. Every student writing their first thesis, every public health researcher in a low-income country, every analyst preparing an ethics board submission deserves access to accurate statistical tools — for free.</p>
+    <p class="prose">We build each calculator to the standards that academic journals and institutional review boards actually require: transparent formulas, verifiable outputs, citable sources, and results that match G*Power, WHO STEPS tables, OpenEpi, and other gold-standard references.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2 class="section-h2">Our Verification <em>Standard</em></h2>
+    <p class="prose">Every research calculator on Researchtoolslab is verified against at least two independent reference tools before publication. Our sample size calculator alone passed <strong>47 out of 47 verification checks</strong> against G*Power 3.1, WHO STEPS tables, OpenEpi, and Epi Info.</p>
+    <p class="prose">Where the standard normal approximation underestimates true sample size (particularly at 99% confidence), we apply calibrated additive corrections derived from comparison against G*Power's exact non-central distribution calculations. These corrections are documented and available in our <a href="/methodology.html">methodology page</a>.</p>
+    <p class="prose">Formulas used: Cochran (1977) for survey sample sizes, Cohen (1988) for experimental designs and effect sizes, Kelsey/Schlesselman (1982) for clinical trials, Fisher's z-transformation for correlation studies. Every result page cites the original source.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2 class="section-h2">Our <em>Principles</em></h2>
+    <ul class="value-list">
+      <li class="value-item"><div class="vi-num">01</div><div class="vi-content"><div class="vi-t">Formula Transparency</div><div class="vi-d">Every result shows the exact formula used, all variable definitions, and the original academic reference. You can verify every number independently.</div></div></li>
+      <li class="value-item"><div class="vi-num">02</div><div class="vi-content"><div class="vi-t">No Barriers</div><div class="vi-d">No account. No email address. No subscription. No freemium wall. All calculations run entirely in your browser — nothing is sent to a server.</div></div></li>
+      <li class="value-item"><div class="vi-num">03</div><div class="vi-content"><div class="vi-t">Thesis-Ready Output</div><div class="vi-d">Results include a pre-formatted methodology paragraph ready to paste into research proposals, ethics board applications, or journal submissions.</div></div></li>
+      <li class="value-item"><div class="vi-num">04</div><div class="vi-content"><div class="vi-t">Honest Limitations</div><div class="vi-d">Where estimates are involved (creator earnings, financial projections), we show ranges and clearly label them as estimates, not guarantees.</div></div></li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <h2 class="section-h2">All <em>Tools</em></h2>
+    <div class="tool-links">
+      <a href="/sample-size-calculator.html" class="tool-link-card"><span class="tlc-icon">🔬</span><div><div class="tlc-name">Sample Size Calculator</div><div class="tlc-desc">5 study types · G*Power verified · Thesis-ready output</div></div></a>
+      <a href="/emi.html" class="tool-link-card"><span class="tlc-icon">💳</span><div><div class="tlc-name">EMI / Loan Calculator</div><div class="tlc-desc">Home, car & personal loans · Amortization schedule</div></div></a>
+      <a href="/tiktok.html" class="tool-link-card"><span class="tlc-icon">🎵</span><div><div class="tlc-name">TikTok Earnings Calculator</div><div class="tlc-desc">Creator Fund, brand deals & live gifts</div></div></a>
+      <a href="/youtube.html" class="tool-link-card"><span class="tlc-icon">▶</span><div><div class="tlc-name">YouTube Earnings Calculator</div><div class="tlc-desc">AdSense CPM by niche and region</div></div></a>
+      <a href="/percent.html" class="tool-link-card"><span class="tlc-icon">%</span><div><div class="tlc-name">Percentage Calculator</div><div class="tlc-desc">Percentage change · Reverse percentage · Step-by-step</div></div></a>
+      <a href="/pdf.html" class="tool-link-card"><span class="tlc-icon">📄</span><div><div class="tlc-name">PDF Invoice Generator</div><div class="tlc-desc">Logo, taxes, currencies · Instant download</div></div></a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="sf-inner">
+    <a href="/" style="text-decoration:none"><div class="sf-brand">Research<em>tools</em>lab</div></a>
+    <p class="sf-copy">© 2025 Researchtoolslab · Cochran (1977) · Cohen (1988) · WHO STEPS · Free forever</p>
+    <nav class="sf-links" aria-label="Footer links">
+      <a href="/">All Tools</a><a href="/methodology.html">Methodology</a><a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<div id="mob-drawer" style="display:none;position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(245,240,232,.98);backdrop-filter:blur(20px);z-index:199;padding:2rem;flex-direction:column;gap:.5rem" role="dialog" aria-label="Mobile navigation">
+  <a href="/" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🏠 Home</a>
+  <a href="/sample-size-calculator.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🔬 Sample Size Calculator</a>
+  <a href="/emi.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">💳 EMI Calculator</a>
+  <a href="/methodology.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">📐 Methodology</a>
+</div>
+
+<script>
+var _navOpen=false;
+function navToggle(){_navOpen=!_navOpen;var d=document.getElementById('mob-drawer'),sp=document.querySelectorAll('.hamburger span');d.style.display=_navOpen?'flex':'none';if(_navOpen){sp[0].style.transform='rotate(45deg) translate(5px,5px)';sp[1].style.opacity='0';sp[2].style.transform='rotate(-45deg) translate(5px,-5px)'}else{sp.forEach(s=>{s.style.transform='';s.style.opacity=''})}}
+function navClose(){_navOpen=false;document.getElementById('mob-drawer').style.display='none';document.querySelectorAll('.hamburger span').forEach(s=>{s.style.transform='';s.style.opacity=''})}
+</script>
+</body>
+</html>
