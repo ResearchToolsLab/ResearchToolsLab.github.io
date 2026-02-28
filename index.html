@@ -331,6 +331,46 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4rem 
   .hero-h1{font-size:2.1rem}
   .res-num{font-size:2.8rem}
 }
+
+<style>
+/* Dropdown menu CSS */
+.nav-links li {
+  position: relative; /* needed for submenu positioning */
+}
+
+.sub-nav {
+  display: none; /* hide by default */
+  position: absolute;
+  top: 100%; /* places submenu below parent */
+  left: 0;
+  background-color: #ffffff; /* match site background */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 200px; /* optional width */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* subtle shadow */
+  z-index: 1000; /* ensures dropdown is above other elements */
+}
+
+.sub-nav li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333333; /* match site text */
+}
+
+.sub-nav li a:hover {
+  background-color: #f0f0f0; /* hover effect */
+}
+
+.nav-links li:hover .sub-nav {
+  display: block; /* show submenu on hover */
+}
+</style>
+
+
+
+  
 </style>
 </head>
 <body>
@@ -343,6 +383,10 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4rem 
     </a>
     <ul class="nav-links" role="list">
       <li><a href="/sample-size-calculator.html">Research</a></li>
+       <ul class="sub-nav">
+      <li><a href="/sample-size-calculator.html">Sample Size Calculator</a></li>
+      <li><a href="/comparison.html">OpenEpi vs G*Power Comparison</a></li>
+    </ul>
       <li><a href="/emi.html">Finance</a></li>
       <li><a href="/tiktok.html">Creator</a></li>
       <li><a href="/pdf.html">PDF</a></li>
