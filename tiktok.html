@@ -13,6 +13,8 @@
 <meta property="og:url" content="https://ResearchToolsLab.github.io/tiktok.html">
 <meta property="og:type" content="website">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TikTok Earnings Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","url":"https://ResearchToolsLab.github.io/tiktok.html","description":"Free TikTok earnings calculator for Creator Fund, brand deals and live gifts.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"creator":{"@type":"Organization","name":"ResearchToolsLab","url":"https://ResearchToolsLab.github.io/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does TikTok pay per 1,000 views?","acceptedAnswer":{"@type":"Answer","text":"TikTok pays approximately $0.02 to $0.06 per 1,000 views through the Creator Fund (now Creativity Program Beta), depending on your content niche, audience region, video completion rate, and engagement. US-based creators in finance or tech niches earn toward the higher end, while entertainment or gaming creators earn closer to $0.02 per 1,000 views."}},{"@type":"Question","name":"How much money can you make on TikTok with 1 million followers?","acceptedAnswer":{"@type":"Answer","text":"A TikTok creator with 1 million followers can earn $2,000–$15,000+ per month from combined income streams. Creator Fund/Creativity Program contributes $200–$1,000/month, brand sponsorships $2,000–$10,000+ per sponsored post, live gifts $500–$3,000/month, and TikTok Shop commissions vary. Niche, engagement rate, and audience geography significantly affect total earnings."}},{"@type":"Question","name":"What is the TikTok Creativity Program Beta and how is it different from Creator Fund?","acceptedAnswer":{"@type":"Answer","text":"The TikTok Creativity Program Beta replaced the original Creator Fund in 2023 and pays significantly more — up to 20× higher rates. It requires creators to post original videos over 1 minute long (not Shorts-style content). Estimated pay ranges from $0.50 to $1.00+ per 1,000 qualified views, compared to $0.02–$0.04 per 1,000 views from the original Creator Fund."}},{"@type":"Question","name":"How many followers do you need to make money on TikTok?","acceptedAnswer":{"@type":"Answer","text":"To earn from TikTok's built-in monetization, you need: 10,000 followers for the Creator Fund/Creativity Program, 1,000 followers for TikTok LIVE gifts, and 5,000 followers for TikTok Shop. However, you can earn from brand deals and affiliate marketing with any follower count if your engagement rate is strong (typically 3%+)."}},{"@type":"Question","name":"How do TikTok earnings compare to YouTube earnings?","acceptedAnswer":{"@type":"Answer","text":"YouTube pays significantly more per view than TikTok. YouTube RPM ranges from $2–$25 per 1,000 views through AdSense, while TikTok Creator Fund pays $0.02–$0.06 per 1,000 views — roughly 50–500× less per view. However, TikTok's algorithm makes it easier to go viral and accumulate millions of views quickly. Many creators use TikTok for audience growth and funnel followers to YouTube for higher per-view revenue."}},{"@type":"Question","name":"What TikTok niche pays the most?","acceptedAnswer":{"@type":"Answer","text":"Finance, investing, and business content pay the highest on TikTok with CPM rates around $0.05–$0.08 per 1,000 views from the Creator Fund, plus significantly higher brand deal rates ($1,000–$5,000+ per sponsored post). Tech, beauty, and health niches also pay well. Entertainment and gaming niches have the lowest per-view earnings but often compensate with higher view counts."}},{"@type":"Question","name":"How do TikTok Live gifts work and how much can you earn?","acceptedAnswer":{"@type":"Answer","text":"During TikTok LIVE streams, viewers send virtual gifts purchased with TikTok coins. Creators convert these gifts into diamonds, which can be cashed out. TikTok takes approximately 50% of the gift value. A creator with 100K followers doing 2 hours of live streaming per week can earn $50–$500+ per month from gifts, depending on audience engagement and generosity. Top live streamers earn $10,000+ monthly from gifts alone."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"TikTok Earnings Calculator: Estimate Creator Fund, Brand Deals & Live Gift Income","description":"Complete guide to TikTok monetization in 2025. Learn how much TikTok pays per view, understand Creator Fund vs Creativity Program rates, and estimate your TikTok income across all revenue streams.","author":{"@type":"Organization","name":"ResearchToolsLab"},"publisher":{"@type":"Organization","name":"ResearchToolsLab","url":"https://ResearchToolsLab.github.io/"},"datePublished":"2025-01-20","dateModified":"2025-07-10"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -99,179 +101,647 @@ input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;b
 .sf-links{display:flex;gap:1.5rem}
 .sf-links a{font-size:.78rem;color:var(--ink4);transition:color .18s}
 .sf-links a:hover{color:var(--rust)}
-@media(max-width:600px){.nav-links{display:none}.hamburger{display:flex}.result-hero{grid-template-columns:1fr}.income-cards{grid-template-columns:1fr}.niche-grid{grid-template-columns:repeat(2,1fr)}.sf-inner{flex-direction:column;text-align:center}}
+
+/* SEO Content Section Styles */
+.seo-content{max-width:780px;margin:0 auto;padding:0 1.5rem 2rem}
+.seo-content .content-card{background:var(--white);border-radius:var(--r-xl);box-shadow:var(--shadow-md);border:1px solid var(--border);overflow:hidden;position:relative}
+.seo-content .content-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),#4a9e94,var(--rust))}
+.seo-content .content-inner{padding:2.5rem 2rem}
+.seo-content h2{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.75rem);font-weight:900;color:var(--ink);letter-spacing:-.03em;margin-bottom:1rem;line-height:1.2}
+.seo-content h2 em{color:var(--rust);font-style:italic}
+.seo-content h3{font-family:var(--serif);font-size:clamp(1.05rem,2.5vw,1.25rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;margin-top:2rem;margin-bottom:.75rem;line-height:1.3}
+.seo-content h4{font-family:var(--sans);font-size:.95rem;font-weight:600;color:var(--ink2);margin-top:1.5rem;margin-bottom:.5rem;line-height:1.4}
+.seo-content p{font-size:.9rem;color:var(--ink2);line-height:1.75;margin-bottom:1rem;font-weight:300}
+.seo-content p strong{color:var(--ink);font-weight:600}
+.seo-content ul,.seo-content ol{margin-bottom:1.25rem;padding-left:0;list-style:none}
+.seo-content ul li,.seo-content ol li{display:flex;gap:.6rem;font-size:.88rem;color:var(--ink3);line-height:1.7;margin-bottom:.5rem}
+.seo-content ul li::before{content:'→';color:var(--rust);font-weight:700;flex-shrink:0;margin-top:.1rem}
+.seo-content ol{counter-reset:seo-counter}
+.seo-content ol li{counter-increment:seo-counter}
+.seo-content ol li::before{content:counter(seo-counter) '.';color:var(--rust);font-weight:700;font-family:var(--mono);font-size:.82rem;flex-shrink:0;min-width:1.5rem;margin-top:.1rem}
+.seo-content .highlight-box{background:var(--teal-l);border:1px solid rgba(26,122,110,.2);border-radius:var(--r-md);padding:1.25rem;margin:1.5rem 0;font-size:.88rem;line-height:1.7;color:var(--ink2)}
+.seo-content .highlight-box strong{color:var(--teal)}
+.seo-content .warning-box{background:var(--warn-l);border:1px solid var(--warn-b);border-radius:var(--r-md);padding:1.25rem;margin:1.5rem 0;font-size:.88rem;line-height:1.7;color:var(--ink2)}
+.seo-content .warning-box strong{color:var(--warn)}
+.seo-content .divider{height:1px;background:var(--border);margin:2rem 0;border:none}
+.seo-content .data-table-wrap{border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;margin:1.25rem 0}
+.seo-content .data-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.seo-content .data-table thead{background:var(--cream2)}
+.seo-content .data-table th{padding:.6rem .75rem;text-align:left;font-weight:600;color:var(--ink2);border-bottom:1px solid var(--border);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em}
+.seo-content .data-table td{padding:.55rem .75rem;border-bottom:1px solid var(--border);color:var(--ink2);font-size:.84rem}
+.seo-content .data-table tr:last-child td{border-bottom:none}
+.seo-content .data-table tr:hover{background:var(--cream)}
+.seo-content .faq-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.seo-content .faq-item:last-child{border-bottom:none;padding-bottom:0}
+.seo-content .faq-q{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;line-height:1.4}
+.seo-content .faq-a{font-size:.88rem;color:var(--ink3);line-height:1.7;font-weight:300}
+.seo-content .step-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.25rem 0}
+.seo-content .step-card{background:var(--cream);border-radius:var(--r-md);padding:1.25rem;border:1px solid var(--border)}
+.seo-content .step-num{font-family:var(--mono);font-size:.68rem;font-weight:500;color:var(--rust);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.35rem}
+.seo-content .step-title{font-weight:600;font-size:.9rem;color:var(--ink);margin-bottom:.3rem}
+.seo-content .step-desc{font-size:.82rem;color:var(--ink3);line-height:1.6;font-weight:300}
+.seo-content .cta-box{background:var(--ink);border-radius:var(--r-lg);padding:2rem;text-align:center;margin-top:2rem;position:relative;overflow:hidden}
+.seo-content .cta-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(200,68,26,.18) 0%,transparent 60%)}
+.seo-content .cta-box *{position:relative;z-index:1}
+.seo-content .cta-box h3{color:#fff;margin-top:0;font-size:1.15rem}
+.seo-content .cta-box p{color:rgba(245,240,232,.6);font-size:.86rem}
+.seo-content .cta-btn{display:inline-block;padding:.75rem 2rem;background:var(--rust);color:#fff;border-radius:var(--r-md);font-weight:600;font-size:.92rem;transition:all .2s;margin-top:.5rem;text-decoration:none}
+.seo-content .cta-btn:hover{background:var(--rust2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,68,26,.3)}
+
+@media(max-width:600px){.nav-links{display:none}.hamburger{display:flex}.result-hero{grid-template-columns:1fr}.income-cards{grid-template-columns:1fr}.niche-grid{grid-template-columns:repeat(2,1fr)}.sf-inner{flex-direction:column;text-align:center}.seo-content .step-grid{grid-template-columns:1fr}.seo-content .content-inner{padding:1.75rem 1.25rem}}
 </style>
 </head>
 <body>
+
 <nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-wrap">
-    <a href="/" class="logo" aria-label="ResearchToolsLab home">
-      <div class="logo-mark" aria-hidden="true">R</div>
-      <span class="logo-name">Research<em>Tools</em>Lab</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="/">Home</a></li>
-      <li><a href="/sample-size-calculator.html">Sample Size</a></li>
-      <li><a href="/emi.html">Finance</a></li>
-      <li><a href="/tiktok.html">Creator</a></li>
-      <li><a href="/" class="nav-cta">← All Tools</a></li>
-    </ul>
-    <button class="hamburger" aria-label="Open menu" onclick="navToggle()"><span></span><span></span><span></span></button>
-  </div>
+ <div class="nav-wrap">
+  <a href="/" class="logo" aria-label="ResearchToolsLab home">
+   <div class="logo-mark" aria-hidden="true">R</div>
+   <span class="logo-name">Research<em>Tools</em>Lab</span>
+  </a>
+  <ul class="nav-links" role="list">
+   <li><a href="/">Home</a></li>
+   <li><a href="/sample-size-calculator.html">Sample Size</a></li>
+   <li><a href="/emi.html">Finance</a></li>
+   <li><a href="/tiktok.html">Creator</a></li>
+   <li><a href="/" class="nav-cta">← All Tools</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Open menu" onclick="navToggle()"><span></span><span></span><span></span></button>
+ </div>
 </nav>
+
 
 <main>
 <div class="page-wrap">
-  <header class="page-header">
-    <nav class="page-breadcrumb" aria-label="Breadcrumb">
-      <a href="/">ResearchToolsLab</a><span aria-hidden="true">›</span><span aria-current="page">TikTok Earnings Calculator</span>
-    </nav>
-    <h1 class="page-h1">TikTok <em>Earnings</em> Calculator</h1>
-    <p class="page-sub">Estimate your TikTok Creator Fund earnings, brand deal rates, and live gift income. Based on real CPM data across niches and regions. Free, no signup.</p>
-    <div class="page-badges">
-      <span class="page-badge">✓ Creator Fund</span>
-      <span class="page-badge">✓ Brand Deals</span>
-      <span class="page-badge">✓ Live Gifts</span>
-      <span class="page-badge">✓ Niche Adjusted</span>
-    </div>
-  </header>
+ <header class="page-header">
+  <nav class="page-breadcrumb" aria-label="Breadcrumb">
+   <a href="/">ResearchToolsLab</a><span aria-hidden="true">›</span><span aria-current="page">TikTok Earnings Calculator</span>
+  </nav>
+  <h1 class="page-h1">TikTok <em>Earnings</em> Calculator</h1>
+  <p class="page-sub">Estimate your TikTok Creator Fund earnings, brand deal rates, and live gift income. Based on real CPM data across niches and regions. Free, no signup.</p>
+  <div class="page-badges">
+   <span class="page-badge">✓ Creator Fund</span>
+   <span class="page-badge">✓ Brand Deals</span>
+   <span class="page-badge">✓ Live Gifts</span>
+   <span class="page-badge">✓ Niche Adjusted</span>
+  </div>
+ </header>
 
+
+ <div class="tool-card">
+  <div class="tool-inner">
+   <div class="info-box">TikTok earnings vary hugely by niche, region, and engagement rate. This calculator gives <strong>estimated ranges</strong> — actual payments depend on TikTok's algorithm, video quality, and market conditions. Creator Fund pays approximately $0.02–$0.04 per 1,000 views in most markets.</div>
+
+   <span class="slabel" style="margin-top:0">Content Niche</span>
+   <div class="niche-grid" id="niche-grid">
+    <button class="niche-btn active" onclick="selectNiche('entertainment',this)" data-cpm="0.03"><span class="niche-icon">🎭</span>Entertainment</button>
+    <button class="niche-btn" onclick="selectNiche('education',this)" data-cpm="0.04"><span class="niche-icon">📚</span>Education</button>
+    <button class="niche-btn" onclick="selectNiche('finance',this)" data-cpm="0.06"><span class="niche-icon">💰</span>Finance</button>
+    <button class="niche-btn" onclick="selectNiche('fitness',this)" data-cpm="0.035"><span class="niche-icon">💪</span>Fitness</button>
+    <button class="niche-btn" onclick="selectNiche('food',this)" data-cpm="0.028"><span class="niche-icon">🍳</span>Food</button>
+    <button class="niche-btn" onclick="selectNiche('beauty',this)" data-cpm="0.045"><span class="niche-icon">💄</span>Beauty</button>
+    <button class="niche-btn" onclick="selectNiche('gaming',this)" data-cpm="0.025"><span class="niche-icon">🎮</span>Gaming</button>
+    <button class="niche-btn" onclick="selectNiche('travel',this)" data-cpm="0.038"><span class="niche-icon">✈️</span>Travel</button>
+    <button class="niche-btn" onclick="selectNiche('tech',this)" data-cpm="0.055"><span class="niche-icon">📱</span>Tech</button>
+   </div>
+
+
+   <div class="form-row">
+    <label>Average Views per Video <span class="hint">Last 30 days average</span></label>
+    <input type="number" id="views" value="50000" min="100" step="100" oninput="document.getElementById('vs').value=this.value">
+    <div class="slider-row">
+     <input type="range" id="vs" min="1000" max="10000000" value="50000" step="1000" oninput="document.getElementById('views').value=this.value;document.getElementById('vs-lbl').textContent=Number(this.value).toLocaleString()">
+     <span class="slider-val" id="vs-lbl">50,000</span>
+    </div>
+   </div>
+
+   <div class="form-row">
+    <label>Videos Posted per Month</label>
+    <input type="number" id="videos" value="20" min="1" max="365" step="1" oninput="document.getElementById('vidslider').value=this.value">
+    <div class="slider-row">
+     <input type="range" id="vidslider" min="1" max="90" value="20" step="1" oninput="document.getElementById('videos').value=this.value;document.getElementById('vid-lbl').textContent=this.value">
+     <span class="slider-val" id="vid-lbl">20</span>
+    </div>
+   </div>
+
+   <div class="form-row">
+    <label>Follower Count</label>
+    <input type="number" id="followers" value="100000" min="1000" step="1000">
+   </div>
+
+   <div class="form-row">
+    <label>Engagement Rate <span class="hint">Likes+Comments+Shares ÷ Views × 100</span></label>
+    <div class="slider-row">
+     <input type="range" id="eng" min="0.5" max="20" value="5" step="0.5" oninput="document.getElementById('eng-lbl').textContent=this.value+'%'">
+     <span class="slider-val" id="eng-lbl">5%</span>
+    </div>
+   </div>
+
+   <div class="form-row">
+    <label for="region">Primary Audience Region</label>
+    <select id="region">
+     <option value="1.0">United States 🇺🇸</option>
+     <option value="0.85">United Kingdom 🇬🇧</option>
+     <option value="0.6">Canada / Australia 🇨🇦🇦🇺</option>
+     <option value="0.3">India 🇮🇳</option>
+     <option value="0.5">Europe (Other) 🇪🇺</option>
+     <option value="0.2">Southeast Asia 🌏</option>
+     <option value="0.4">Middle East 🌍</option>
+    </select>
+   </div>
+
+   <button class="btn-calc" onclick="calculate()">🎵 Calculate TikTok Earnings</button>
+  </div>
+ </div>
+
+
+ <div class="results" id="results">
   <div class="tool-card">
-    <div class="tool-inner">
-      <div class="info-box">TikTok earnings vary hugely by niche, region, and engagement rate. This calculator gives <strong>estimated ranges</strong> — actual payments depend on TikTok's algorithm, video quality, and market conditions. Creator Fund pays approximately $0.02–$0.04 per 1,000 views in most markets.</div>
-
-      <span class="slabel" style="margin-top:0">Content Niche</span>
-      <div class="niche-grid" id="niche-grid">
-        <button class="niche-btn active" onclick="selectNiche('entertainment',this)" data-cpm="0.03"><span class="niche-icon">🎭</span>Entertainment</button>
-        <button class="niche-btn" onclick="selectNiche('education',this)" data-cpm="0.04"><span class="niche-icon">📚</span>Education</button>
-        <button class="niche-btn" onclick="selectNiche('finance',this)" data-cpm="0.06"><span class="niche-icon">💰</span>Finance</button>
-        <button class="niche-btn" onclick="selectNiche('fitness',this)" data-cpm="0.035"><span class="niche-icon">💪</span>Fitness</button>
-        <button class="niche-btn" onclick="selectNiche('food',this)" data-cpm="0.028"><span class="niche-icon">🍕</span>Food</button>
-        <button class="niche-btn" onclick="selectNiche('beauty',this)" data-cpm="0.045"><span class="niche-icon">💄</span>Beauty</button>
-        <button class="niche-btn" onclick="selectNiche('gaming',this)" data-cpm="0.025"><span class="niche-icon">🎮</span>Gaming</button>
-        <button class="niche-btn" onclick="selectNiche('travel',this)" data-cpm="0.038"><span class="niche-icon">✈️</span>Travel</button>
-        <button class="niche-btn" onclick="selectNiche('tech',this)" data-cpm="0.055"><span class="niche-icon">📱</span>Tech</button>
-      </div>
-
-      <div class="form-row">
-        <label>Average Views per Video <span class="hint">Last 30 days average</span></label>
-        <input type="number" id="views" value="50000" min="100" step="100" oninput="document.getElementById('vs').value=this.value">
-        <div class="slider-row">
-          <input type="range" id="vs" min="1000" max="10000000" value="50000" step="1000" oninput="document.getElementById('views').value=this.value;document.getElementById('vs-lbl').textContent=Number(this.value).toLocaleString()">
-          <span class="slider-val" id="vs-lbl">50,000</span>
-        </div>
-      </div>
-      <div class="form-row">
-        <label>Videos Posted per Month</label>
-        <input type="number" id="videos" value="20" min="1" max="365" step="1" oninput="document.getElementById('vidslider').value=this.value">
-        <div class="slider-row">
-          <input type="range" id="vidslider" min="1" max="90" value="20" step="1" oninput="document.getElementById('videos').value=this.value;document.getElementById('vid-lbl').textContent=this.value">
-          <span class="slider-val" id="vid-lbl">20</span>
-        </div>
-      </div>
-      <div class="form-row">
-        <label>Follower Count</label>
-        <input type="number" id="followers" value="100000" min="1000" step="1000">
-      </div>
-      <div class="form-row">
-        <label>Engagement Rate <span class="hint">Likes+Comments+Shares ÷ Views × 100</span></label>
-        <div class="slider-row">
-          <input type="range" id="eng" min="0.5" max="20" value="5" step="0.5" oninput="document.getElementById('eng-lbl').textContent=this.value+'%'">
-          <span class="slider-val" id="eng-lbl">5%</span>
-        </div>
-      </div>
-      <div class="form-row">
-        <label for="region">Primary Audience Region</label>
-        <select id="region">
-          <option value="1.0">United States 🇺🇸</option>
-          <option value="0.85">United Kingdom 🇬🇧</option>
-          <option value="0.6">Canada / Australia 🇨🇦🇦🇺</option>
-          <option value="0.3">India 🇮🇳</option>
-          <option value="0.5">Europe (Other) 🇪🇺</option>
-          <option value="0.2">Southeast Asia 🌏</option>
-          <option value="0.4">Middle East 🌍</option>
-        </select>
-      </div>
-      <button class="btn-calc" onclick="calculate()">🎵 Calculate TikTok Earnings</button>
+   <div class="tool-inner">
+    <div class="result-hero">
+     <div class="rh-item">
+      <div class="rh-label">Creator Fund / Month</div>
+      <div class="rh-range" id="r-fund">—</div>
+      <div class="rh-sub">estimated range</div>
+     </div>
+     <div class="rh-item">
+      <div class="rh-label">Brand Deals / Video</div>
+      <div class="rh-range" id="r-brand">—</div>
+      <div class="rh-sub">sponsorship rate</div>
+     </div>
+     <div class="rh-item">
+      <div class="rh-label">Total Est. / Month</div>
+      <div class="rh-range" id="r-total">—</div>
+      <div class="rh-sub">all income streams</div>
+     </div>
     </div>
-  </div>
 
-  <div class="results" id="results">
-    <div class="tool-card">
-      <div class="tool-inner">
-        <div class="result-hero">
-          <div class="rh-item">
-            <div class="rh-label">Creator Fund / Month</div>
-            <div class="rh-range" id="r-fund">—</div>
-            <div class="rh-sub">estimated range</div>
-          </div>
-          <div class="rh-item">
-            <div class="rh-label">Brand Deals / Video</div>
-            <div class="rh-range" id="r-brand">—</div>
-            <div class="rh-sub">sponsorship rate</div>
-          </div>
-          <div class="rh-item">
-            <div class="rh-label">Total Est. / Month</div>
-            <div class="rh-range" id="r-total">—</div>
-            <div class="rh-sub">all income streams</div>
-          </div>
-        </div>
 
-        <div class="income-cards">
-          <div class="inc-card">
-            <div class="ic-header"><span class="ic-icon">📊</span><span class="ic-title">Creator Fund</span><span class="ic-badge">CPM based</span></div>
-            <div class="ic-range" id="ic-fund">—</div>
-            <div class="ic-sub" id="ic-fund-sub">per month</div>
-          </div>
-          <div class="inc-card">
-            <div class="ic-header"><span class="ic-icon">🤝</span><span class="ic-title">Brand Deals</span><span class="ic-badge">per sponsored video</span></div>
-            <div class="ic-range" id="ic-brand">—</div>
-            <div class="ic-sub" id="ic-brand-sub">per video (market rate)</div>
-          </div>
-          <div class="inc-card">
-            <div class="ic-header"><span class="ic-icon">🎁</span><span class="ic-title">Live Gifts</span><span class="ic-badge">if you go live</span></div>
-            <div class="ic-range" id="ic-live">—</div>
-            <div class="ic-sub">estimated monthly (2h live/week)</div>
-          </div>
-          <div class="inc-card">
-            <div class="ic-header"><span class="ic-icon">🛒</span><span class="ic-title">TikTok Shop Affiliate</span><span class="ic-badge">if applicable</span></div>
-            <div class="ic-range" id="ic-shop">—</div>
-            <div class="ic-sub">5–10% commission on sales driven</div>
-          </div>
-        </div>
-
-        <div class="warn-box"><strong>⚠ These are estimates only.</strong> TikTok Creator Fund rates change frequently and vary by country, video type, completion rate, and TikTok's algorithm. Brand deal rates depend on your niche authority, engagement quality, and negotiation. Use this as a planning guide, not a guarantee.</div>
-
-        <h3 style="font-family:var(--serif);font-size:1.05rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.5rem">Tips to Increase TikTok Earnings</h3>
-        <ul class="tips-list">
-          <li>Post consistently 1–3 times per day — TikTok rewards high-volume creators with more algorithmic pushes</li>
-          <li>Increase video completion rate by hooking viewers in the first 2 seconds — this is the single biggest factor in reach</li>
-          <li>Finance, tech, and beauty niches earn 2–3× more per view than gaming or entertainment</li>
-          <li>Brand deals pay 5–10× more than Creator Fund for the same views — build a media kit and pitch brands directly</li>
-          <li>US audience earns 3–5× more per view than most other regions — create content that appeals to US trends</li>
-        </ul>
-        <button class="btn-reset" onclick="resetAll()">↺ Recalculate</button>
-      </div>
+    <div class="income-cards">
+     <div class="inc-card">
+      <div class="ic-header"><span class="ic-icon">🎵</span><span class="ic-title">Creator Fund</span><span class="ic-badge">CPM based</span></div>
+      <div class="ic-range" id="ic-fund">—</div>
+      <div class="ic-sub" id="ic-fund-sub">per month</div>
+     </div>
+     <div class="inc-card">
+      <div class="ic-header"><span class="ic-icon">💛</span><span class="ic-title">Brand Deals</span><span class="ic-badge">per sponsored video</span></div>
+      <div class="ic-range" id="ic-brand">—</div>
+      <div class="ic-sub" id="ic-brand-sub">per video (market rate)</div>
+     </div>
+     <div class="inc-card">
+      <div class="ic-header"><span class="ic-icon">🎁</span><span class="ic-title">Live Gifts</span><span class="ic-badge">if you go live</span></div>
+      <div class="ic-range" id="ic-live">—</div>
+      <div class="ic-sub">estimated monthly (2h live/week)</div>
+     </div>
+     <div class="inc-card">
+      <div class="ic-header"><span class="ic-icon">🛒</span><span class="ic-title">TikTok Shop Affiliate</span><span class="ic-badge">if applicable</span></div>
+      <div class="ic-range" id="ic-shop">—</div>
+      <div class="ic-sub">5–10% commission on sales driven</div>
+     </div>
     </div>
+
+
+    <div class="warn-box"><strong>⚠ These are estimates only.</strong> TikTok Creator Fund rates change frequently and vary by country, video type, completion rate, and TikTok's algorithm. Brand deal rates depend on your niche authority, engagement quality, and negotiation. Use this as a planning guide, not a guarantee.</div>
+
+    <h3 style="font-family:var(--serif);font-size:1.05rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.5rem">Tips to Increase TikTok Earnings</h3>
+    <ul class="tips-list">
+     <li>Post consistently 1–3 times per day — TikTok rewards high-volume creators with more algorithmic pushes</li>
+     <li>Increase video completion rate by hooking viewers in the first 2 seconds — this is the single biggest factor in reach</li>
+     <li>Finance, tech, and beauty niches earn 2–3× more per view than gaming or entertainment</li>
+     <li>Brand deals pay 5–10× more than Creator Fund for the same views — build a media kit and pitch brands directly</li>
+     <li>US audience earns 3–5× more per view than most other regions — create content that appeals to US trends</li>
+    </ul>
+
+    <button class="btn-reset" onclick="resetAll()">↺ Recalculate</button>
+   </div>
   </div>
+ </div>
+
 </div>
 </main>
 
-<footer class="site-footer" role="contentinfo">
-  <div class="sf-inner">
-    <a href="/" style="text-decoration:none"><div class="sf-brand">Research<em>Tools</em>Lab</div></a>
-    <p class="sf-copy">© 2025 ResearchToolsLab · Free creator tools · Estimates only, not financial advice</p>
-    <nav class="sf-links" aria-label="Footer links">
-      <a href="/">All Tools</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a>
-    </nav>
+
+<!-- SEO OPTIMIZED CONTENT SECTION -->
+<section class="seo-content" aria-label="TikTok earnings guide and information">
+ <article class="content-card">
+  <div class="content-inner">
+
+   <h2>How Much Does <em>TikTok Pay</em> Creators in 2025? Complete Monetization Guide</h2>
+   <p>TikTok has rapidly become one of the most lucrative platforms for content creators, with over 1.5 billion monthly active users and a creator economy worth billions of dollars. Whether you're wondering "<strong>how much does TikTok pay per view</strong>," exploring the <strong>TikTok Creator Fund</strong>, or trying to estimate your potential <strong>TikTok income</strong>, this comprehensive guide covers everything you need to know about <strong>TikTok monetization in 2025</strong>.</p>
+   <p>Our free <strong>TikTok earnings calculator</strong> above uses real-world CPM benchmarks across 9 content niches and 7 audience regions, factoring in Creator Fund payouts, brand sponsorship rates, TikTok LIVE gift estimates, and TikTok Shop affiliate commissions. Unlike basic calculators that use a single flat rate, our <strong>TikTok money calculator</strong> accounts for the massive variations in pay based on your specific niche, follower count, engagement rate, and where your audience is located.</p>
+
+   <hr class="divider">
+
+   <h3>What Is a TikTok Earnings Calculator and Why Do You Need One?</h3>
+   <p>A <strong>TikTok earnings calculator</strong> (also called a TikTok money calculator, TikTok income estimator, or TikTok revenue calculator) is a tool that estimates how much money a TikTok creator can earn based on their performance metrics. It takes your average views per video, posting frequency, follower count, engagement rate, and audience location to project potential earnings across multiple revenue streams.</p>
+   <p>Understanding your potential TikTok earnings matters for several important reasons:</p>
+   <ul>
+    <li><strong>Career Planning:</strong> Knowing realistic income projections helps you decide whether to pursue TikTok creation full-time, part-time, or as a supplementary income stream alongside other platforms like YouTube or Instagram.</li>
+    <li><strong>Brand Deal Negotiation:</strong> When you know your market rate, you can negotiate fair sponsorship prices with brands instead of accepting lowball offers. Many creators undercharge by 3–5× because they don't know their worth.</li>
+    <li><strong>Niche Selection:</strong> Different content niches pay dramatically different rates. Our calculator shows you exactly how much more a finance creator earns per view compared to a gaming creator, helping you make informed decisions about your content strategy.</li>
+    <li><strong>Platform Comparison:</strong> By comparing TikTok earnings estimates with YouTube or Instagram projections, you can allocate your content creation time to the platforms that generate the highest ROI for your specific audience and niche.</li>
+   </ul>
+
+   <hr class="divider">
+
+   <h3>How Much Does TikTok Pay Per 1,000 Views?</h3>
+   <p>The most common question aspiring TikTok creators ask is "<strong>how much does TikTok pay per 1,000 views?</strong>" The answer depends on which monetization program you're enrolled in:</p>
+
+   <h4>TikTok Creator Fund (Original)</h4>
+   <p>The original <strong>TikTok Creator Fund</strong> pays approximately <strong>$0.02 to $0.04 per 1,000 views</strong> in the United States. This means 1 million views would earn roughly $20–$40 from the Creator Fund alone. These rates are significantly lower than YouTube's AdSense payments, which is why most successful TikTok creators rely on brand deals rather than Creator Fund earnings as their primary income source.</p>
+
+   <h4>TikTok Creativity Program Beta (Replacement)</h4>
+   <p>In 2023, TikTok launched the <strong>Creativity Program Beta</strong> as a replacement for the original Creator Fund, offering substantially higher payouts. The Creativity Program Beta pays an estimated <strong>$0.50 to $1.00+ per 1,000 qualified views</strong> — up to 20× more than the original Creator Fund. However, it has stricter requirements:</p>
+   <ul>
+    <li>Videos must be <strong>over 1 minute long</strong> (original content, not stitches or duets)</li>
+    <li>Creators need at least <strong>10,000 followers</strong> and <strong>100,000 views in the last 30 days</strong></li>
+    <li>Content must be <strong>original</strong> — no reposts, compilations, or heavily recycled content</li>
+    <li>Only available in select countries (US, UK, France, Germany, Japan, South Korea, Brazil)</li>
+   </ul>
+
+   <div class="data-table-wrap">
+    <table class="data-table">
+     <thead>
+      <tr><th>View Count</th><th>Creator Fund ($0.03/1K)</th><th>Creativity Program ($0.70/1K)</th><th>Difference</th></tr>
+     </thead>
+     <tbody>
+      <tr><td>10,000 views</td><td>$0.30</td><td>$7.00</td><td>23× more</td></tr>
+      <tr><td>100,000 views</td><td>$3.00</td><td>$70.00</td><td>23× more</td></tr>
+      <tr><td>500,000 views</td><td>$15.00</td><td>$350.00</td><td>23× more</td></tr>
+      <tr><td>1,000,000 views</td><td>$30.00</td><td>$700.00</td><td>23× more</td></tr>
+      <tr><td>10,000,000 views</td><td>$300.00</td><td>$7,000.00</td><td>23× more</td></tr>
+     </tbody>
+    </table>
+   </div>
+
+   <div class="highlight-box">
+    <strong>💡 Key Insight:</strong> Even with the Creativity Program Beta's improved rates, TikTok's per-view payouts remain significantly lower than YouTube's. A video with 1 million views on YouTube could earn $2,000–$15,000 from AdSense alone, while the same views on TikTok earn $30–$700. This is why smart creators use TikTok for growth and brand deals, not as their primary ad revenue platform.
+   </div>
+
+   <hr class="divider">
+
+   <h3>TikTok Earnings by Niche: Which Content Pays the Most?</h3>
+   <p>Your content niche is one of the biggest factors affecting how much you earn on TikTok. Niche impacts both your <strong>Creator Fund CPM rate</strong> and — more importantly — your <strong>brand deal rates</strong>, which are typically 5–50× higher than Creator Fund earnings.</p>
+
+   <div class="data-table-wrap">
+    <table class="data-table">
+     <thead>
+      <tr><th>TikTok Niche</th><th>Creator Fund CPM</th><th>Brand Deal Rate (100K followers)</th><th>Monthly Potential</th></tr>
+     </thead>
+     <tbody>
+      <tr><td>💰 Finance / Investing</td><td>$0.05–$0.08</td><td>$1,500–$5,000/post</td><td>$3,000–$15,000+</td></tr>
+      <tr><td>📱 Technology / SaaS</td><td>$0.04–$0.07</td><td>$1,200–$4,000/post</td><td>$2,500–$12,000+</td></tr>
+      <tr><td>💄 Beauty / Skincare</td><td>$0.03–$0.06</td><td>$800–$3,000/post</td><td>$2,000–$10,000+</td></tr>
+      <tr><td>📚 Education</td><td>$0.03–$0.05</td><td>$600–$2,500/post</td><td>$1,500–$8,000+</td></tr>
+      <tr><td>✈️ Travel / Lifestyle</td><td>$0.03–$0.05</td><td>$500–$2,000/post</td><td>$1,200–$6,000+</td></tr>
+      <tr><td>💪 Fitness / Health</td><td>$0.025–$0.045</td><td>$500–$2,000/post</td><td>$1,000–$6,000+</td></tr>
+      <tr><td>🍳 Food / Cooking</td><td>$0.02–$0.04</td><td>$400–$1,500/post</td><td>$800–$4,000+</td></tr>
+      <tr><td>🎭 Entertainment / Comedy</td><td>$0.02–$0.04</td><td>$300–$1,200/post</td><td>$600–$3,000+</td></tr>
+      <tr><td>🎮 Gaming</td><td>$0.015–$0.035</td><td>$250–$1,000/post</td><td>$500–$2,500+</td></tr>
+     </tbody>
+    </table>
+   </div>
+
+   <p><strong>Why do niches pay differently?</strong> Advertiser demand drives the variation. Finance companies, tech brands, and beauty brands have high customer lifetime values — meaning each customer acquired through a TikTok sponsorship is worth hundreds or thousands of dollars to them. They can afford to pay creators premium rates. Gaming and entertainment advertisers have lower margins, resulting in lower sponsorship rates.</p>
+
+   <hr class="divider">
+
+   <h3>TikTok Monetization Requirements in 2025</h3>
+   <p>Before you can start earning money on TikTok, you need to meet specific eligibility requirements for each monetization feature. Here's a complete breakdown of <strong>TikTok's monetization requirements</strong>:</p>
+
+   <div class="step-grid">
+    <div class="step-card">
+     <div class="step-num">Creator Fund / Creativity Program</div>
+     <div class="step-title">10,000+ Followers</div>
+     <div class="step-desc">100,000+ views in last 30 days. Age 18+. Account in good standing. US, UK, or select countries. Creativity Program requires videos over 1 minute.</div>
+    </div>
+    <div class="step-card">
+     <div class="step-num">TikTok LIVE Gifts</div>
+     <div class="step-title">1,000+ Followers</div>
+     <div class="step-desc">Age 18+ to receive gifts. Must go live to receive virtual gifts from viewers that convert to real money. TikTok takes ~50% of gift value.</div>
+    </div>
+    <div class="step-card">
+     <div class="step-num">TikTok Shop (Seller/Affiliate)</div>
+     <div class="step-title">5,000+ Followers</div>
+     <div class="step-desc">Must be 18+. Can sell own products or earn affiliate commissions (5–20%) by promoting other sellers' products in your videos.</div>
+    </div>
+    <div class="step-card">
+     <div class="step-num">Brand Sponsorships</div>
+     <div class="step-title">No Minimum (Unofficially 1K+)</div>
+     <div class="step-desc">No official TikTok requirement — brands can sponsor anyone. In practice, most brands look for 10K+ followers and 3%+ engagement rate. Nano-influencers (1K–10K) can land smaller deals.</div>
+    </div>
+   </div>
+
+   <div class="warning-box">
+    <strong>⚠ Important:</strong> TikTok's monetization requirements and programs change frequently. The Creator Fund has been replaced by the Creativity Program Beta in many regions, with different eligibility criteria. Always check TikTok's official Creator Portal for the most current requirements in your country.
+   </div>
+
+   <hr class="divider">
+
+   <h3>All TikTok Revenue Streams Explained</h3>
+   <p>Successful TikTok creators don't rely on a single income source. Here's a detailed breakdown of every way to <strong>make money on TikTok</strong> in 2025:</p>
+
+   <h4>1. Creator Fund / Creativity Program Beta</h4>
+   <p>TikTok's built-in monetization program pays creators based on video views. The original <strong>Creator Fund</strong> pays $0.02–$0.04 per 1,000 views, while the newer <strong>Creativity Program Beta</strong> pays $0.50–$1.00+ per 1,000 qualified views for original videos over 1 minute long. This is the most passive income stream — you earn just by posting content that gets views — but it's typically the smallest revenue source for most creators.</p>
+
+   <h4>2. Brand Sponsorships & Paid Partnerships</h4>
+   <p><strong>Brand deals</strong> are the largest income source for most TikTok influencers. Typical rates range from <strong>$10–$25 per 1,000 followers</strong> for a single sponsored post, though high-engagement creators in premium niches can command significantly more. A creator with 100K followers might earn $500–$5,000 per sponsored video depending on niche, engagement rate, and content quality.</p>
+   <p>Types of brand partnerships on TikTok include:</p>
+   <ul>
+    <li><strong>Dedicated sponsored posts:</strong> A full video featuring the brand's product ($500–$10,000+ per post)</li>
+    <li><strong>Integrated mentions:</strong> Naturally weaving a brand mention into your regular content ($200–$3,000 per post)</li>
+    <li><strong>UGC (User-Generated Content) deals:</strong> Creating content the brand can use on their own channels ($150–$1,000 per video)</li>
+    <li><strong>Affiliate partnerships:</strong> Commission-based deals where you earn 5–30% on sales generated through your unique link or code</li>
+    <li><strong>Long-term ambassador programs:</strong> Monthly retainer ($1,000–$10,000+/month) plus per-post fees for ongoing partnerships</li>
+   </ul>
+
+   <h4>3. TikTok LIVE Gifts & Diamonds</h4>
+   <p>When you go live on TikTok, viewers can send you <strong>virtual gifts</strong> purchased with TikTok Coins. These gifts convert to Diamonds, which can be cashed out for real money. TikTok takes approximately <strong>50% of the gift value</strong>. A creator with 100K followers streaming 2 hours per week can earn $50–$500+ per month from live gifts. Top live streamers with dedicated audiences earn $5,000–$50,000+ monthly from gifts alone.</p>
+
+   <h4>4. TikTok Shop & Affiliate Marketing</h4>
+   <p>The <strong>TikTok Shop</strong> allows creators to sell products directly through their videos and live streams, or earn affiliate commissions by promoting products from TikTok Shop sellers. Commission rates typically range from <strong>5–20%</strong> depending on the product category. Creators in beauty, fashion, and home goods niches often earn more from TikTok Shop commissions than from the Creator Fund.</p>
+
+   <h4>5. Series (Paid Content)</h4>
+   <p><strong>TikTok Series</strong> lets creators sell premium video collections directly to their audience. You can bundle up to 80 videos into a paid collection priced from $0.99 to $189.99. This works well for educational content, tutorials, courses, and exclusive behind-the-scenes content. TikTok takes a 50% commission on Series sales.</p>
+
+   <h4>6. Cross-Platform Monetization</h4>
+   <p>Many of the highest-earning TikTok creators use the platform as a <strong>top-of-funnel growth engine</strong> to drive audiences to higher-monetization platforms and offerings:</p>
+   <ul>
+    <li><strong>YouTube channel:</strong> Funnel TikTok followers to YouTube for 50–500× higher per-view ad revenue</li>
+    <li><strong>Online courses & digital products:</strong> Use TikTok as free marketing for courses on Teachable, Gumroad, or Kajabi</li>
+    <li><strong>Email list building:</strong> Collect email subscribers through link-in-bio and sell products/services directly</li>
+    <li><strong>Patreon or membership platforms:</strong> Offer exclusive content to paying subscribers</li>
+    <li><strong>Consulting or freelance services:</strong> Use TikTok expertise to attract high-paying clients</li>
+   </ul>
+
+   <div class="highlight-box">
+    <strong>📊 Revenue Reality Check:</strong> For a typical TikTok creator with 100K followers and 50K average views per video, the income breakdown looks roughly like this: Creator Fund = 5–10% of total income, Brand Deals = 60–75% of total income, Live Gifts = 5–15%, TikTok Shop/Affiliate = 5–15%, Cross-platform = varies. <strong>Brand deals are king on TikTok.</strong>
+   </div>
+
+   <hr class="divider">
+
+   <h3>How to Use This TikTok Earnings Calculator: Step-by-Step</h3>
+   <p>Our <strong>TikTok income calculator</strong> is designed to give you the most accurate earnings estimate possible. Follow these steps:</p>
+
+   <div class="step-grid">
+    <div class="step-card">
+     <div class="step-num">Step 1</div>
+     <div class="step-title">Select Your Content Niche</div>
+     <div class="step-desc">Choose the category that best matches your TikTok content. Each niche has different Creator Fund CPM rates and brand deal multipliers. Finance and tech pay the most per view.</div>
+    </div>
+    <div class="step-card">
+     <div class="step-num">Step 2</div>
+     <div class="step-title">Enter Average Views per Video</div>
+     <div class="step-desc">Input your average views over the last 30 days. Find this in TikTok Analytics under the Content tab. Use your average, not your best-performing video.</div>
+    </div>
+    <div class="step-card">
+     <div class="step-num">Step 3</div>
+     <div class="step-title">Set Videos per Month & Followers</div>
+     <div class="step-desc">Enter how many videos you post monthly and your current follower count. Posting frequency affects total monthly views, and followers determine your brand deal rates.</div>
+    </div>
+    <div class="step-card">
+     <div class="step-num">Step 4</div>
+     <div class="step-title">Adjust Engagement & Region</div>
+     <div class="step-desc">Set your engagement rate (likes + comments + shares ÷ views × 100). Typical TikTok engagement is 3–8%. Select your primary audience region — US audiences earn 3–5× more per view.</div>
+    </div>
+   </div>
+
+   <hr class="divider">
+
+   <h3>TikTok Earnings by Country: How Location Affects Your Income</h3>
+   <p>Where your TikTok audience is located dramatically affects how much you earn. <strong>Advertiser budgets</strong> vary enormously by country, and TikTok's Creator Fund payouts reflect these geographic differences.</p>
+
+   <div class="data-table-wrap">
+    <table class="data-table">
+     <thead>
+      <tr><th>Country / Region</th><th>CPM Multiplier</th><th>Creator Fund Rate (per 1K views)</th><th>Brand Deal Rate (per 100K followers)</th></tr>
+     </thead>
+     <tbody>
+      <tr><td>United States 🇺🇸</td><td>1.0× (baseline)</td><td>$0.02–$0.04</td><td>$500–$2,500/post</td></tr>
+      <tr><td>United Kingdom 🇬🇧</td><td>0.85×</td><td>$0.015–$0.035</td><td>$400–$2,000/post</td></tr>
+      <tr><td>Canada / Australia</td><td>0.60×</td><td>$0.01–$0.025</td><td>$300–$1,500/post</td></tr>
+      <tr><td>Western Europe 🇪🇺</td><td>0.50×</td><td>$0.01–$0.02</td><td>$250–$1,200/post</td></tr>
+      <tr><td>Middle East</td><td>0.40×</td><td>$0.008–$0.016</td><td>$200–$800/post</td></tr>
+      <tr><td>India 🇮🇳</td><td>0.30×</td><td>$0.005–$0.012</td><td>$100–$500/post</td></tr>
+      <tr><td>Southeast Asia</td><td>0.20×</td><td>$0.004–$0.008</td><td>$80–$400/post</td></tr>
+     </tbody>
+    </table>
+   </div>
+
+   <p>This geographic pay gap is why many non-US creators deliberately create <strong>English-language content targeting American trends and audiences</strong>. A creator in India with a US-focused audience can earn 3–5× more than creating content for an Indian audience, even with the same view counts.</p>
+
+   <hr class="divider">
+
+   <h3>TikTok vs. YouTube vs. Instagram: Creator Earnings Comparison</h3>
+   <p>If you're deciding where to invest your content creation time, understanding how <strong>TikTok earnings compare to other platforms</strong> is essential:</p>
+
+   <div class="data-table-wrap">
+    <table class="data-table">
+     <thead>
+      <tr><th>Metric</th><th>TikTok</th><th>YouTube</th><th>Instagram</th></tr>
+     </thead>
+     <tbody>
+      <tr><td>Pay per 1K views (ad program)</td><td>$0.02–$0.04</td><td>$2–$25 RPM</td><td>$0.01–$0.05 (Reels Bonus)</td></tr>
+      <tr><td>Brand deal rate (100K followers)</td><td>$500–$2,500</td><td>$1,500–$5,000</td><td>$1,000–$3,000</td></tr>
+      <tr><td>Ease of going viral</td><td>Highest</td><td>Low–Medium</td><td>Medium</td></tr>
+      <tr><td>Audience growth speed</td><td>Fastest</td><td>Slowest</td><td>Medium</td></tr>
+      <tr><td>Long-term content value</td><td>Low (short shelf life)</td><td>High (evergreen search)</td><td>Medium</td></tr>
+      <tr><td>Best for</td><td>Growth & brand deals</td><td>Ad revenue & courses</td><td>Brand deals & DTC</td></tr>
+     </tbody>
+    </table>
+   </div>
+
+   <p>The smartest creator strategy in 2025 is a <strong>multi-platform approach</strong>: use TikTok's viral algorithm for rapid audience growth, repurpose content to Instagram Reels and YouTube Shorts for additional reach, and create long-form YouTube content for the highest per-view ad revenue. This maximizes both growth speed and revenue per viewer.</p>
+
+   <hr class="divider">
+
+   <h3>How Many Views Do You Need to Make Money on TikTok?</h3>
+   <p>One of the most searched questions is "<strong>how many TikTok views to make $1,000</strong>" or "how many views to earn a living on TikTok." Here are realistic projections:</p>
+
+   <div class="data-table-wrap">
+    <table class="data-table">
+     <thead>
+      <tr><th>Income Goal</th><th>Creator Fund Only ($0.03/1K)</th><th>Creativity Program ($0.70/1K)</th><th>With Brand Deals (100K followers)</th></tr>
+     </thead>
+     <tbody>
+      <tr><td>$100/month</td><td>3.3 million views</td><td>143K views</td><td>~1 sponsored post</td></tr>
+      <tr><td>$500/month</td><td>16.7 million views</td><td>714K views</td><td>~2–3 sponsored posts</td></tr>
+      <tr><td>$1,000/month</td><td>33.3 million views</td><td>1.4 million views</td><td>~3–5 sponsored posts</td></tr>
+      <tr><td>$3,000/month</td><td>100 million views</td><td>4.3 million views</td><td>~5–8 sponsored posts</td></tr>
+      <tr><td>$5,000/month</td><td>166.7 million views</td><td>7.1 million views</td><td>~6–10 sponsored posts</td></tr>
+      <tr><td>$10,000/month</td><td>333 million views</td><td>14.3 million views</td><td>~8–12 sponsored posts + other streams</td></tr>
+     </tbody>
+    </table>
+   </div>
+
+   <p>As this table clearly shows, <strong>relying solely on the Creator Fund is not a viable path to full-time TikTok income</strong> for most creators. You'd need hundreds of millions of views monthly to earn even a modest living. Brand deals, TikTok Shop, live gifts, and cross-platform income are essential to building a sustainable TikTok career.</p>
+
+   <hr class="divider">
+
+   <h3>TikTok Engagement Rate: Why It Matters More Than Follower Count</h3>
+   <p>Your <strong>TikTok engagement rate</strong> is often more important than your follower count when it comes to earning potential. Brands increasingly prioritize engagement over raw follower numbers because high engagement indicates an active, trusting audience that's more likely to take action on sponsored recommendations.</p>
+
+   <h4>How to Calculate Your TikTok Engagement Rate</h4>
+   <div class="highlight-box">
+    <strong>📐 Formula:</strong> TikTok Engagement Rate = (Likes + Comments + Shares) ÷ Total Views × 100<br><br>
+    <strong>Example:</strong> A video with 50,000 views, 3,500 likes, 120 comments, and 80 shares has an engagement rate of (3,500 + 120 + 80) ÷ 50,000 × 100 = <strong>7.4%</strong>
+   </div>
+
+   <h4>TikTok Engagement Rate Benchmarks</h4>
+   <ul>
+    <li><strong>1–3% engagement rate:</strong> Below average — your content may not be resonating with your audience or TikTok's algorithm</li>
+    <li><strong>3–6% engagement rate:</strong> Average — typical for most TikTok creators across niches</li>
+    <li><strong>6–10% engagement rate:</strong> Good — indicates strong audience connection and content quality</li>
+    <li><strong>10–15% engagement rate:</strong> Excellent — highly engaged community, very attractive to brands</li>
+    <li><strong>15%+ engagement rate:</strong> Exceptional — usually seen with smaller, niche-focused accounts with dedicated followings</li>
+   </ul>
+
+   <p>Interestingly, <strong>nano-influencers (1K–10K followers)</strong> often have the highest engagement rates (8–15%) because they maintain closer relationships with their audiences. This is why many brands now prefer working with multiple nano-influencers rather than a single mega-influencer — they get better engagement and ROI per dollar spent.</p>
+
+   <hr class="divider">
+
+   <h3>10 Proven Strategies to Maximize Your TikTok Earnings</h3>
+   <p>Whether you're just starting or looking to scale your existing TikTok income, these actionable strategies will help you <strong>earn more money on TikTok</strong>:</p>
+
+   <ol>
+    <li><strong>Post 1–3 Times Daily:</strong> TikTok's algorithm rewards consistency and volume. More posts = more chances for a video to go viral = more total views = more Creator Fund earnings and brand visibility. Top TikTok earners post 2–3 times per day.</li>
+    <li><strong>Master the First 2 Seconds:</strong> TikTok's algorithm heavily weights <strong>video completion rate</strong>. If viewers swipe away in the first 2 seconds, your video won't be pushed to more people. Use pattern interrupts, curiosity hooks, and bold opening statements to stop the scroll.</li>
+    <li><strong>Choose a High-Value Niche:</strong> Finance, tech, business, and beauty content earns 2–5× more per view than entertainment or gaming. If you're starting fresh, consider niches where both Creator Fund CPM and brand deal rates are premium.</li>
+    <li><strong>Create Videos Over 1 Minute:</strong> The Creativity Program Beta requires videos over 1 minute and pays up to 20× more per view than the original Creator Fund. Even if you're not in the program, longer videos with good retention earn more algorithmically.</li>
+    <li><strong>Build a Media Kit & Pitch Brands:</strong> Don't wait for brands to come to you. Create a professional media kit with your demographics, engagement rates, and past collaboration results. Proactively pitch brands in your niche — this alone can 3–5× your brand deal income.</li>
+    <li><strong>Target US and UK Audiences:</strong> Create content that appeals to English-speaking, US-centric trends. American audiences generate 3–5× more revenue per view across all monetization streams compared to most other regions.</li>
+    <li><strong>Go Live Regularly:</strong> TikTok LIVE gifts are an underutilized income stream. Schedule regular live sessions (2–4 hours per week) to build deeper audience connections and earn gifts. Interactive Q&As, challenges, and "day in my life" streams perform best.</li>
+    <li><strong>Leverage TikTok Shop:</strong> If your niche aligns with physical products (beauty, fashion, home, fitness), TikTok Shop affiliate commissions can become a significant income stream. Create authentic product reviews and demos with your affiliate links.</li>
+    <li><strong>Diversify to YouTube:</strong> Repurpose your best TikTok content into YouTube Shorts and longer-form YouTube videos. YouTube's AdSense pays 50–500× more per view than TikTok's Creator Fund, making it the ideal platform for scaling ad revenue.</li>
+    <li><strong>Build an Email List:</strong> Use your TikTok following to collect email subscribers. An email list is the only audience asset you truly own — it can't be taken away by algorithm changes. Use it to sell courses, products, or affiliate offers directly.</li>
+   </ol>
+
+   <hr class="divider">
+
+   <h3>TikTok Earnings Calculator: Formulas Explained</h3>
+   <p>For transparency, here are the exact formulas our <strong>TikTok revenue calculator</strong> uses behind the scenes:</p>
+
+   <div class="highlight-box">
+    <strong>📐 Core Formulas:</strong><br><br>
+    <strong>Total Monthly Views</strong> = Average Views per Video × Videos Posted per Month<br><br>
+    <strong>Creator Fund Monthly Earnings</strong> = (Total Monthly Views ÷ 1,000) × Niche CPM × Regional Multiplier<br><br>
+    <strong>Brand Deal Rate (per post)</strong> = (Followers ÷ 1,000) × Niche Multiplier × (Engagement Rate ÷ 5) × Regional Multiplier × $5–$25<br><br>
+    <strong>Live Gift Monthly Income</strong> = Followers × Gift Conversion Rate (0.01–0.03%) × Regional Multiplier × 50% (after TikTok's cut)<br><br>
+    <strong>TikTok Shop Revenue</strong> = Total Monthly Views × Conversion Rate (0.1–0.3%) × Niche Multiplier × 50%
+   </div>
+
+   <p>The niche multiplier adjusts brand deal rates based on advertiser demand in your content category. Finance creators (3.0× multiplier) earn roughly 3× more per brand deal than entertainment creators (1.0× multiplier) with the same follower count, because financial services companies have higher customer acquisition budgets.</p>
+
+   <hr class="divider">
+
+   <h3>How Much Do TikTokers Make by Follower Count?</h3>
+   <p>Here's a realistic breakdown of <strong>how much TikTok creators earn at different follower levels</strong>, combining all revenue streams:</p>
+
+   <div class="data-table-wrap">
+    <table class="data-table">
+     <thead>
+      <tr><th>Follower Tier</th><th>Category</th><th>Monthly Earnings (Est.)</th><th>Primary Income Source</th></tr>
+     </thead>
+     <tbody>
+      <tr><td>1K–10K</td><td>Nano-influencer</td><td>$0–$500</td><td>Small brand deals, TikTok Shop affiliate</td></tr>
+      <tr><td>10K–50K</td><td>Micro-influencer</td><td>$200–$2,000</td><td>Brand deals + Creator Fund</td></tr>
+      <tr><td>50K–100K</td><td>Mid-tier creator</td><td>$500–$5,000</td><td>Brand deals + Creator Fund + Live</td></tr>
+      <tr><td>100K–500K</td><td>Macro-influencer</td><td>$2,000–$15,000</td><td>Brand deals (primary) + all streams</td></tr>
+      <tr><td>500K–1M</td><td>Major influencer</td><td>$5,000–$30,000</td><td>Brand deals + ambassador programs</td></tr>
+      <tr><td>1M–5M</td><td>Celebrity creator</td><td>$10,000–$100,000+</td><td>Brand deals + own products/businesses</td></tr>
+      <tr><td>5M+</td><td>Mega-influencer</td><td>$50,000–$500,000+</td><td>Enterprise deals + own brands</td></tr>
+     </tbody>
+    </table>
+   </div>
+
+   <p>These ranges assume creators in average-CPM niches with typical engagement rates. <strong>High-value niches</strong> (finance, tech, beauty) can push earnings toward the upper end, while <strong>low-value niches</strong> (gaming, general entertainment) tend toward the lower end. Engagement rate also plays a major role — a 100K account with 12% engagement will out-earn a 500K account with 1% engagement on brand deals.</p>
+
+   <hr class="divider">
+
+   <h3>Frequently Asked Questions About TikTok Earnings</h3>
+
+   <div class="faq-item">
+    <div class="faq-q">How much does TikTok pay per 1,000 views?</div>
+    <div class="faq-a">TikTok pays approximately <strong>$0.02 to $0.06 per 1,000 views</strong> through the Creator Fund, depending on your content niche, audience region, video completion rate, and engagement. The newer Creativity Program Beta pays significantly more — an estimated $0.50 to $1.00+ per 1,000 qualified views — but requires original videos over 1 minute long. US-based creators in finance or tech niches earn toward the higher end of these ranges.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q">How much money can you make on TikTok with 1 million followers?</div>
+    <div class="faq-a">A TikTok creator with 1 million followers can earn <strong>$2,000–$15,000+ per month</strong> from combined income streams. The Creator Fund/Creativity Program contributes $200–$1,000/month, brand sponsorships $2,000–$10,000+ per sponsored post, live gifts $500–$3,000/month, and TikTok Shop commissions vary. Total earnings depend heavily on niche, engagement rate, and audience geography. Finance and beauty creators at 1M followers can earn significantly more than entertainment or gaming creators.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q">What is the TikTok Creativity Program Beta and how is it different from Creator Fund?</div>
+    <div class="faq-a">The <strong>TikTok Creativity Program Beta</strong> replaced the original Creator Fund in 2023 and pays substantially more — up to 20× higher rates. It pays an estimated $0.50 to $1.00+ per 1,000 qualified views, compared to $0.02–$0.04 from the original Creator Fund. The key requirement difference is that videos must be <strong>over 1 minute long</strong> and completely original content. It's currently available in the US, UK, France, Germany, Japan, South Korea, and Brazil.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q">How many followers do you need to make money on TikTok?</div>
+    <div class="faq-a">The minimum requirements vary by monetization feature: <strong>10,000 followers</strong> for the Creator Fund/Creativity Program, <strong>1,000 followers</strong> for TikTok LIVE gifts, and <strong>5,000 followers</strong> for TikTok Shop. However, you can earn from brand deals and affiliate marketing with any follower count if your engagement rate is strong (typically 3%+). Many nano-influencers with just 1,000–5,000 highly engaged followers successfully land small brand deals.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q">How do TikTok earnings compare to YouTube earnings?</div>
+    <div class="faq-a">YouTube pays significantly more per view than TikTok. <strong>YouTube RPM ranges from $2–$25 per 1,000 views</strong> through AdSense, while TikTok's Creator Fund pays $0.02–$0.06 per 1,000 views — roughly 50–500× less per view. However, TikTok's algorithm makes it significantly easier to go viral and accumulate millions of views quickly. The optimal strategy is to use TikTok for rapid audience growth and brand deals, while funneling followers to YouTube for superior ad revenue monetization.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q">What TikTok niche pays the most in 2025?</div>
+    <div class="faq-a"><strong>Finance, investing, and business content</strong> pay the highest on TikTok with Creator Fund CPM rates around $0.05–$0.08 per 1,000 views, plus the highest brand deal rates ($1,000–$5,000+ per sponsored post for 100K followers). Tech reviews, beauty/skincare, and health/wellness niches also pay well. Entertainment, comedy, and gaming niches have the lowest per-view earnings but often compensate with much higher view counts due to broader audience appeal.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q">How do TikTok Live gifts work and how much can you earn?</div>
+    <div class="faq-a">During TikTok LIVE streams, viewers send virtual gifts purchased with TikTok Coins (bought with real money). Creators receive these gifts as <strong>Diamonds</strong>, which convert to cash at approximately <strong>50% of the original purchase value</strong> — TikTok keeps the other 50%. A creator with 100K followers doing 2 hours of live streaming per week can typically earn $50–$500+ per month from gifts. Top live streamers with dedicated communities earn $5,000–$50,000+ monthly from gifts alone.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q">Does TikTok pay for views or followers?</div>
+    <div class="faq-a">TikTok pays <strong>based on views, not followers</strong>. Having more followers doesn't directly earn you money — only video views generate Creator Fund/Creativity Program revenue. However, more followers typically means more views per video, and follower count is a major factor in determining your brand deal rates. A 100K follower account with low views will earn less from the Creator Fund than a 10K follower account whose videos consistently go viral.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q">How accurate is this TikTok earnings calculator?</div>
+    <div class="faq-a">Our calculator uses <strong>real-world CPM benchmarks from 2024–2025</strong> across 9 content niches and 7 audience regions. It provides estimated ranges (low to high) rather than exact numbers because TikTok's Creator Fund rates fluctuate based on the total creator pool, video quality scores, and seasonal advertiser demand. Brand deal estimates are based on industry-standard influencer marketing rates. For the most accurate results, use your actual TikTok Analytics data for views, engagement, and audience demographics.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q">Can you make a full-time living on TikTok?</div>
+    <div class="faq-a">Yes, thousands of creators earn full-time income from TikTok, but almost none do it from the Creator Fund alone. <strong>Full-time TikTok income</strong> typically requires 100K+ followers, consistent posting (1–3 times daily), active brand deal outreach, and multiple revenue streams (Creator Fund + brand deals + live gifts + TikTok Shop + cross-platform income). Most full-time TikTok creators earn $3,000–$15,000+ per month by diversifying across these streams. The key is treating it as a business, not just a hobby.</div>
+   </div>
+
+   <hr class="divider">
+
+   <h3>Start Estimating Your TikTok Income Today</h3>
+   <p>Whether you're a new creator exploring <strong>TikTok monetization</strong>, an established influencer optimizing your revenue strategy, or a brand evaluating <strong>influencer marketing ROI on TikTok</strong>, our free <strong>TikTok earnings calculator</strong> provides data-driven insights across all income streams. Input your channel metrics in the tool above and get instant estimates for Creator Fund earnings, brand deal rates, live gift income, and TikTok Shop potential.</p>
+   <p>For the most accurate results, use real data from your <strong>TikTok Analytics dashboard</strong> — your actual average views per video, posting frequency, follower count, engagement rate, and audience location breakdown. The more precise your inputs, the more reliable the earnings projection. Remember that these are estimates for planning purposes, and actual income will vary based on content quality, algorithmic distribution, brand partnerships secured, and seasonal advertiser demand.</p>
+
+   <div class="cta-box">
+    <h3>Ready to Calculate Your TikTok Earnings?</h3>
+    <p>Use our free tool above — select your niche, enter your stats, and get instant revenue estimates across all income streams.</p>
+    <a href="#" class="cta-btn" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to Calculator</a>
+   </div>
+
   </div>
+ </article>
+</section>
+
+
+<footer class="site-footer" role="contentinfo">
+ <div class="sf-inner">
+  <a href="/" style="text-decoration:none"><div class="sf-brand">Research<em>Tools</em>Lab</div></a>
+  <p class="sf-copy">© 2025 ResearchToolsLab · Free creator tools · Estimates only, not financial advice</p>
+  <nav class="sf-links" aria-label="Footer links">
+   <a href="/">All Tools</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a>
+  </nav>
+ </div>
 </footer>
 
 <div id="mob-drawer" style="display:none;position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(245,240,232,.98);backdrop-filter:blur(20px);z-index:199;padding:2rem;flex-direction:column;gap:.5rem" role="dialog" aria-label="Mobile navigation">
-  <a href="/" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🏠 Home</a>
-  <a href="/sample-size-calculator.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🔬 Sample Size Calculator</a>
-  <a href="/emi.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">💳 EMI Calculator</a>
-  <a href="/youtube.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">▶ YouTube Earnings</a>
+ <a href="/" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🏠 Home</a>
+ <a href="/sample-size-calculator.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🔬 Sample Size Calculator</a>
+ <a href="/emi.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">💳 EMI Calculator</a>
+ <a href="/youtube.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">▶ YouTube Earnings</a>
 </div>
 
 <script>
@@ -279,86 +749,87 @@ var nicheCPM = 0.03;
 var nicheMultiplier = 1.0;
 
 function selectNiche(niche, btn) {
-  document.querySelectorAll('.niche-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  nicheCPM = parseFloat(btn.getAttribute('data-cpm'));
-  var brandMults = { entertainment:1.0, education:1.4, finance:3.0, fitness:1.5, food:1.2, beauty:2.0, gaming:0.9, travel:1.6, tech:2.5 };
-  nicheMultiplier = brandMults[niche] || 1.0;
+ document.querySelectorAll('.niche-btn').forEach(b => b.classList.remove('active'));
+ btn.classList.add('active');
+ nicheCPM = parseFloat(btn.getAttribute('data-cpm'));
+
+ var brandMults = { entertainment:1.0, education:1.4, finance:3.0, fitness:1.5, food:1.2, beauty:2.0, gaming:0.9, travel:1.6, tech:2.5 };
+ nicheMultiplier = brandMults[niche] || 1.0;
 }
 
 function fmtRange(low, high) {
-  function fmtNum(n) {
-    if (n >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
-    if (n >= 1000) return '$' + (n/1000).toFixed(0) + 'K';
-    return '$' + Math.round(n);
-  }
-  return fmtNum(low) + ' – ' + fmtNum(high);
+ function fmtNum(n) {
+  if (n >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return '$' + (n/1000).toFixed(0) + 'K';
+  return '$' + Math.round(n);
+ }
+ return fmtNum(low) + ' – ' + fmtNum(high);
 }
 
 function calculate() {
-  var views = parseFloat(document.getElementById('views').value) || 50000;
-  var videos = parseFloat(document.getElementById('videos').value) || 20;
-  var followers = parseFloat(document.getElementById('followers').value) || 100000;
-  var engRate = parseFloat(document.getElementById('eng').value) || 5;
-  var regionMult = parseFloat(document.getElementById('region').value);
+ var views = parseFloat(document.getElementById('views').value) || 50000;
+ var videos = parseFloat(document.getElementById('videos').value) || 20;
+ var followers = parseFloat(document.getElementById('followers').value) || 100000;
+ var engRate = parseFloat(document.getElementById('eng').value) || 5;
+ var regionMult = parseFloat(document.getElementById('region').value);
 
-  var totalMonthlyViews = views * videos;
+ var totalMonthlyViews = views * videos;
 
-  // Creator Fund: $0.02–$0.04 per 1000 views, adjusted for niche and region
-  var fundLow = totalMonthlyViews / 1000 * nicheCPM * 0.7 * regionMult;
-  var fundHigh = totalMonthlyViews / 1000 * nicheCPM * 1.4 * regionMult;
+ // Creator Fund: $0.02–$0.04 per 1000 views, adjusted for niche and region
+ var fundLow = totalMonthlyViews / 1000 * nicheCPM * 0.7 * regionMult;
+ var fundHigh = totalMonthlyViews / 1000 * nicheCPM * 1.4 * regionMult;
 
-  // Brand deals: based on followers and engagement
-  var brandBase = followers / 1000 * nicheMultiplier * (engRate / 5) * regionMult;
-  var brandLow = brandBase * 5;
-  var brandHigh = brandBase * 25;
+ // Brand deals: based on followers and engagement
+ var brandBase = followers / 1000 * nicheMultiplier * (engRate / 5) * regionMult;
+ var brandLow = brandBase * 5;
+ var brandHigh = brandBase * 25;
 
-  // Live gifts: rough estimate for 2h/week live streaming
-  var liveLow = followers * 0.0001 * regionMult * 0.5;
-  var liveHigh = followers * 0.0003 * regionMult * 0.5;
+ // Live gifts: rough estimate for 2h/week live streaming
+ var liveLow = followers * 0.0001 * regionMult * 0.5;
+ var liveHigh = followers * 0.0003 * regionMult * 0.5;
 
-  // TikTok shop
-  var shopLow = totalMonthlyViews * 0.001 * nicheMultiplier * 0.5;
-  var shopHigh = totalMonthlyViews * 0.003 * nicheMultiplier * 0.5;
+ // TikTok shop
+ var shopLow = totalMonthlyViews * 0.001 * nicheMultiplier * 0.5;
+ var shopHigh = totalMonthlyViews * 0.003 * nicheMultiplier * 0.5;
 
-  var totalLow = fundLow + brandLow * 2 + liveLow;
-  var totalHigh = fundHigh + brandHigh * 4 + liveHigh;
+ var totalLow = fundLow + brandLow * 2 + liveLow;
+ var totalHigh = fundHigh + brandHigh * 4 + liveHigh;
 
-  document.getElementById('r-fund').textContent = fmtRange(fundLow, fundHigh);
-  document.getElementById('r-brand').textContent = fmtRange(brandLow, brandHigh);
-  document.getElementById('r-total').textContent = fmtRange(totalLow, totalHigh);
-  document.getElementById('ic-fund').textContent = fmtRange(fundLow, fundHigh);
-  document.getElementById('ic-fund-sub').textContent = 'Based on ' + Math.round(totalMonthlyViews/1000) + 'K monthly views';
-  document.getElementById('ic-brand').textContent = fmtRange(brandLow, brandHigh);
-  document.getElementById('ic-brand-sub').textContent = 'With ' + (followers/1000).toFixed(0) + 'K followers at ' + engRate + '% engagement';
-  document.getElementById('ic-live').textContent = fmtRange(liveLow, liveHigh);
-  document.getElementById('ic-shop').textContent = fmtRange(shopLow, shopHigh);
+ document.getElementById('r-fund').textContent = fmtRange(fundLow, fundHigh);
+ document.getElementById('r-brand').textContent = fmtRange(brandLow, brandHigh);
+ document.getElementById('r-total').textContent = fmtRange(totalLow, totalHigh);
 
-  document.getElementById('results').style.display = 'block';
-  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+ document.getElementById('ic-fund').textContent = fmtRange(fundLow, fundHigh);
+ document.getElementById('ic-fund-sub').textContent = 'Based on ' + Math.round(totalMonthlyViews/1000) + 'K monthly views';
+ document.getElementById('ic-brand').textContent = fmtRange(brandLow, brandHigh);
+ document.getElementById('ic-brand-sub').textContent = 'With ' + (followers/1000).toFixed(0) + 'K followers at ' + engRate + '% engagement';
+ document.getElementById('ic-live').textContent = fmtRange(liveLow, liveHigh);
+ document.getElementById('ic-shop').textContent = fmtRange(shopLow, shopHigh);
+
+ document.getElementById('results').style.display = 'block';
+ document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function resetAll() {
-  document.getElementById('results').style.display = 'none';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+ document.getElementById('results').style.display = 'none';
+ window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 var _navOpen = false;
 function navToggle() {
-  _navOpen = !_navOpen;
-  var d = document.getElementById('mob-drawer');
-  d.style.display = _navOpen ? 'flex' : 'none';
-  var sp = document.querySelectorAll('.hamburger span');
-  if (_navOpen) { sp[0].style.transform = 'rotate(45deg) translate(5px,5px)'; sp[1].style.opacity = '0'; sp[2].style.transform = 'rotate(-45deg) translate(5px,-5px)'; }
-  else { sp.forEach(s => { s.style.transform = ''; s.style.opacity = ''; }); }
+ _navOpen = !_navOpen;
+ var d = document.getElementById('mob-drawer');
+ d.style.display = _navOpen ? 'flex' : 'none';
+ var sp = document.querySelectorAll('.hamburger span');
+ if (_navOpen) { sp[0].style.transform = 'rotate(45deg) translate(5px,5px)'; sp[1].style.opacity = '0'; sp[2].style.transform = 'rotate(-45deg) translate(5px,-5px)'; }
+ else { sp.forEach(s => { s.style.transform = ''; s.style.opacity = ''; }); }
 }
+
 function navClose() {
-  _navOpen = false;
-  document.getElementById('mob-drawer').style.display = 'none';
-  document.querySelectorAll('.hamburger span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+ _navOpen = false;
+ document.getElementById('mob-drawer').style.display = 'none';
+ document.querySelectorAll('.hamburger span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
 }
 </script>
 </body>
-
 </html>
-
