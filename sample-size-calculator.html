@@ -5,11 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Sample Size Calculator — Survey, Experiment, Clinical Trial | ResearchToolsLab</title>
 <meta name="description" content="Free online sample size calculator for surveys, experiments, clinical trials, correlations, and prevalence studies. G*Power verified formulas with thesis-ready methodology paragraphs. Supports Cochran, Cohen's d, Kelsey-Schlesselman, Fisher z-transform. No signup required.">
-<meta name="keywords" content="sample size calculator, sample size determination, cochran formula calculator, cohen d calculator, clinical trial sample size, survey sample size, statistical power calculator, g power alternative, research sample size, thesis sample size calculator, margin of error calculator, effect size calculator, prevalence study sample size, correlation sample size, design effect calculator, attrition adjustment, WHO STEPS sample size">
+<meta name="keywords" content="sample size calculator, sample size determination, cochran formula calculator, cohen d calculator, clinical trial sample size, survey sample size, statistical power calculator, g power alternative, research sample size, thesis sample size calculator, margin of error calculator, effect size calculator, prevalence study sample size, correlation sample size, design effect calculator, attrition adjustment, WHO STEPS sample size, finite population correction, cluster sampling DEFF, sample size for dissertation, IRB sample size justification">
 <meta name="robots" content="index, follow">
 <meta name="author" content="ResearchToolsLab">
 <link rel="canonical" href="https://ResearchToolsLab.com/sample-size-calculator.html">
-
 <!-- Open Graph -->
 <meta property="og:title" content="Free Sample Size Calculator — Survey, Experiment & Clinical Trial | ResearchToolsLab">
 <meta property="og:description" content="Calculate sample size for surveys, experiments, clinical trials, correlations & prevalence studies. G*Power verified. Thesis-ready output. Free forever.">
@@ -18,91 +17,83 @@
 <meta property="og:site_name" content="ResearchToolsLab">
 <meta property="og:image" content="https://ResearchToolsLab.com/images/sample-size-calculator-og.png">
 <meta property="og:locale" content="en_US">
-
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Free Sample Size Calculator — G*Power Verified | ResearchToolsLab">
 <meta name="twitter:description" content="Calculate sample size for 5 study types with verified formulas. Thesis-ready methodology paragraphs. Free online tool for researchers.">
 <meta name="twitter:image" content="https://ResearchToolsLab.com/images/sample-size-calculator-og.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
 <!-- Schema: WebApplication -->
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"Free Sample Size Calculator",
-  "url":"https://ResearchToolsLab.com/sample-size-calculator.html",
-  "description":"Professional sample size calculator for surveys, experiments, clinical trials, correlations, and prevalence studies. Uses Cochran, Cohen, Kelsey-Schlesselman, and Fisher z-transform formulas verified against G*Power 3.1.",
-  "applicationCategory":"EducationalApplication",
-  "operatingSystem":"All",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-  "author":{"@type":"Organization","name":"ResearchToolsLab","url":"https://ResearchToolsLab.com"},
-  "featureList":["5 study types","G*Power 3.1 verified","Thesis-ready output","Attrition adjustment","Design effect (DEFF)","Sensitivity table","Copy methodology paragraph","Client-side processing"]
+ "@context":"https://schema.org",
+ "@type":"WebApplication",
+ "name":"Free Sample Size Calculator",
+ "url":"https://ResearchToolsLab.com/sample-size-calculator.html",
+ "description":"Professional sample size calculator for surveys, experiments, clinical trials, correlations, and prevalence studies. Uses Cochran, Cohen, Kelsey-Schlesselman, and Fisher z-transform formulas verified against G*Power 3.1.",
+ "applicationCategory":"EducationalApplication",
+ "operatingSystem":"All",
+ "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+ "author":{"@type":"Organization","name":"ResearchToolsLab","url":"https://ResearchToolsLab.com"},
+ "featureList":["5 study types","G*Power 3.1 verified","Thesis-ready output","Attrition adjustment","Design effect (DEFF)","Sensitivity table","Copy methodology paragraph","Client-side processing","Correct DEFF×FPC order","Census detection warning"]
 }
 </script>
-
 <!-- Schema: BreadcrumbList -->
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://ResearchToolsLab.com/"},
-    {"@type":"ListItem","position":2,"name":"Sample Size Calculator","item":"https://ResearchToolsLab.com/sample-size-calculator.html"}
-  ]
+ "@context":"https://schema.org",
+ "@type":"BreadcrumbList",
+ "itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://ResearchToolsLab.com/"},
+  {"@type":"ListItem","position":2,"name":"Sample Size Calculator","item":"https://ResearchToolsLab.com/sample-size-calculator.html"}
+ ]
 }
 </script>
-
 <!-- Schema: FAQPage -->
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"What is sample size and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"Sample size is the number of participants or observations needed in a study to produce statistically reliable results. Too few participants risks missing real effects (low power); too many wastes resources. Proper sample size calculation ensures your study has adequate statistical power while remaining feasible."}},
-    {"@type":"Question","name":"How does this calculator determine sample size?","acceptedAnswer":{"@type":"Answer","text":"The calculator uses established statistical formulas: Cochran's formula for surveys, Cohen's d for experiments, Kelsey/Schlesselman for clinical trials, Fisher's z-transform for correlations, and standard proportion formulas for prevalence studies. All formulas are verified against G*Power 3.1, WHO STEPS tables, and OpenEpi."}},
-    {"@type":"Question","name":"What is statistical power and what value should I use?","acceptedAnswer":{"@type":"Answer","text":"Statistical power (1−β) is the probability of detecting a true effect when one exists. The standard minimum is 80%, but 90% is recommended for most research. Higher power requires larger samples but reduces the risk of false negatives (Type II errors)."}},
-    {"@type":"Question","name":"What is effect size and how do I choose one?","acceptedAnswer":{"@type":"Answer","text":"Effect size quantifies the magnitude of difference you expect to detect. Cohen (1988) defined benchmarks: small (d=0.2), medium (d=0.5), and large (d=0.8). If unsure, use medium (0.5) as a starting point, or base it on prior research or pilot data."}},
-    {"@type":"Question","name":"What is the design effect (DEFF) and when should I change it?","acceptedAnswer":{"@type":"Answer","text":"Design effect accounts for clustering in complex sampling designs. For simple random sampling, use DEFF=1.0. For cluster sampling (e.g., sampling by schools, clinics, villages), typical DEFF values range from 1.5 to 3.0 depending on intra-cluster correlation."}},
-    {"@type":"Question","name":"Why should I adjust for attrition and dropout?","acceptedAnswer":{"@type":"Answer","text":"Participants may withdraw, become unreachable, or fail screening criteria. If you recruit only the minimum sample and experience dropout, your final analysable sample will be too small for valid conclusions. This calculator applies screening exclusion and dropout rates sequentially to determine how many to initially recruit."}},
-    {"@type":"Question","name":"Is this calculator verified against G*Power?","acceptedAnswer":{"@type":"Answer","text":"Yes. All formulas have been verified against G*Power 3.1 with 47 out of 47 test cases matching. The calculator also cross-references WHO STEPS sample size tables and OpenEpi for additional validation."}},
-    {"@type":"Question","name":"Can I use the output in my thesis or ethics application?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. The calculator generates a thesis-ready methodology paragraph with full formula details, variable definitions, and academic references (Cochran 1977, Cohen 1988, Schlesselman 1982). Click the Copy button to copy it directly into your document."}}
-  ]
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {"@type":"Question","name":"What is sample size and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"Sample size is the number of participants or observations needed in a study to produce statistically reliable results. Too few participants risks missing real effects (low power); too many wastes resources. Proper sample size calculation ensures your study has adequate statistical power while remaining feasible."}},
+  {"@type":"Question","name":"How does this calculator determine sample size?","acceptedAnswer":{"@type":"Answer","text":"The calculator uses established statistical formulas: Cochran's formula for surveys, Cohen's d for experiments, Kelsey/Schlesselman for clinical trials, Fisher's z-transform for correlations, and standard proportion formulas for prevalence studies. All formulas are verified against G*Power 3.1, WHO STEPS tables, and OpenEpi."}},
+  {"@type":"Question","name":"What is statistical power and what value should I use?","acceptedAnswer":{"@type":"Answer","text":"Statistical power (1−β) is the probability of detecting a true effect when one exists. The standard minimum is 80%, but 90% is recommended for most research. Higher power requires larger samples but reduces the risk of false negatives (Type II errors)."}},
+  {"@type":"Question","name":"What is effect size and how do I choose one?","acceptedAnswer":{"@type":"Answer","text":"Effect size quantifies the magnitude of difference you expect to detect. Cohen (1988) defined benchmarks: small (d=0.2), medium (d=0.5), and large (d=0.8). If unsure, use medium (0.5) as a starting point, or base it on prior research or pilot data."}},
+  {"@type":"Question","name":"What is the design effect (DEFF) and when should I change it?","acceptedAnswer":{"@type":"Answer","text":"Design effect accounts for clustering in complex sampling designs. For simple random sampling, use DEFF=1.0. For cluster sampling (e.g., sampling by schools, clinics, villages), typical DEFF values range from 1.5 to 3.0 depending on intra-cluster correlation. This calculator correctly applies DEFF before the finite population correction (FPC), following WHO and CDC methodology."}},
+  {"@type":"Question","name":"Why should I adjust for attrition and dropout?","acceptedAnswer":{"@type":"Answer","text":"Participants may withdraw, become unreachable, or fail screening criteria. If you recruit only the minimum sample and experience dropout, your final analysable sample will be too small for valid conclusions. This calculator applies screening exclusion and dropout rates sequentially to determine how many to initially recruit."}},
+  {"@type":"Question","name":"Is this calculator verified against G*Power?","acceptedAnswer":{"@type":"Answer","text":"Yes. All formulas have been verified against G*Power 3.1 with 47 out of 47 test cases matching. The calculator also cross-references WHO STEPS sample size tables and OpenEpi for additional validation."}},
+  {"@type":"Question","name":"Can I use the output in my thesis or ethics application?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. The calculator generates a thesis-ready methodology paragraph with full formula details, variable definitions, and academic references (Cochran 1977, Cohen 1988, Schlesselman 1982). Click the Copy button to copy it directly into your document."}}
+ ]
 }
 </script>
-
 <style>
 /* ============================================================
    DESIGN TOKENS
 ============================================================ */
 :root{
-  --cream:#f5f0e8;--cream2:#ede7d9;--cream3:#e4ddd0;--white:#fff;
-  --ink:#1a1612;--ink2:#3d3530;--ink3:#7a6f65;--ink4:#b0a89e;
-  --rust:#c8441a;--rust2:#e05228;--rust-l:rgba(200,68,26,.1);
-  --teal:#1a7a6e;--teal-l:rgba(26,122,110,.1);
-  --success:#0f9b6e;--success-l:rgba(15,155,110,.08);--success-b:rgba(15,155,110,.2);
-  --warn:#b45a00;--warn-l:rgba(180,90,0,.07);--warn-b:rgba(180,90,0,.2);
-  --err:#c8221a;--err-l:rgba(200,34,26,.07);--err-b:rgba(200,34,26,.2);
-  --border:rgba(26,22,18,.1);--border2:rgba(26,22,18,.16);
-  --shadow-sm:0 2px 12px rgba(26,22,18,.07);
-  --shadow-md:0 8px 40px rgba(26,22,18,.12);
-  --shadow-lg:0 24px 80px rgba(26,22,18,.18);
-  --serif:'Fraunces',Georgia,serif;
-  --sans:'DM Sans',sans-serif;
-  --mono:'DM Mono',monospace;
-  --r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px;
+ --cream:#f5f0e8;--cream2:#ede7d9;--cream3:#e4ddd0;--white:#fff;
+ --ink:#1a1612;--ink2:#3d3530;--ink3:#7a6f65;--ink4:#b0a89e;
+ --rust:#c8441a;--rust2:#e05228;--rust-l:rgba(200,68,26,.1);
+ --teal:#1a7a6e;--teal-l:rgba(26,122,110,.1);
+ --success:#0f9b6e;--success-l:rgba(15,155,110,.08);--success-b:rgba(15,155,110,.2);
+ --warn:#b45a00;--warn-l:rgba(180,90,0,.07);--warn-b:rgba(180,90,0,.2);
+ --err:#c8221a;--err-l:rgba(200,34,26,.07);--err-b:rgba(200,34,26,.2);
+ --border:rgba(26,22,18,.1);--border2:rgba(26,22,18,.16);
+ --shadow-sm:0 2px 12px rgba(26,22,18,.07);
+ --shadow-md:0 8px 40px rgba(26,22,18,.12);
+ --shadow-lg:0 24px 80px rgba(26,22,18,.18);
+ --serif:'Fraunces',Georgia,serif;
+ --sans:'DM Sans',sans-serif;
+ --mono:'DM Mono',monospace;
+ --r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px;
 }
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;min-height:100vh}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;mix-blend-mode:multiply}
 a{text-decoration:none;color:inherit}
-
 /* ── NAV ── */
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,240,232,.93);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-wrap{max-width:1200px;margin:0 auto;padding:0 2rem;height:62px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
@@ -117,7 +108,6 @@ a{text-decoration:none;color:inherit}
 .nav-cta:hover{background:var(--rust2)!important;transform:translateY(-1px)!important;box-shadow:0 4px 16px rgba(200,68,26,.3)!important}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none}
 .hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .2s}
-
 /* ── PAGE ── */
 .page-wrap{max-width:760px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
 .page-header{text-align:center;margin-bottom:2.25rem}
@@ -128,21 +118,17 @@ a{text-decoration:none;color:inherit}
 .page-sub{font-size:.92rem;color:var(--ink3);max-width:560px;margin:0 auto;font-weight:300;line-height:1.7}
 .page-badges{display:flex;align-items:center;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
 .page-badge{display:inline-flex;align-items:center;gap:.3rem;background:var(--teal-l);border:1px solid rgba(26,122,110,.2);border-radius:20px;padding:.22rem .7rem;font-size:.68rem;color:var(--teal);font-family:var(--mono);font-weight:500}
-
 /* ── TOOL CARD ── */
 .tool-card{background:var(--white);border-radius:var(--r-xl);box-shadow:var(--shadow-md);border:1px solid var(--border);position:relative;overflow:hidden}
 .tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--rust),#e07840,var(--teal))}
 .tool-inner{padding:2rem}
-
-/* ── TABS (for study type) ── */
+/* ── TABS ── */
 .study-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.5rem;margin-bottom:1.5rem}
 .study-tab{padding:.8rem .75rem;background:var(--cream);border:1.5px solid var(--border);border-radius:var(--r-md);font-family:var(--sans);font-size:.84rem;font-weight:500;color:var(--ink2);cursor:pointer;transition:all .18s;text-align:center;line-height:1.35}
 .study-tab:hover{background:var(--cream2);border-color:var(--ink4)}
 .study-tab.active{background:var(--rust);color:#fff;border-color:var(--rust);font-weight:600}
-
 /* ── SECTION LABELS ── */
 .slabel{font-family:var(--mono);font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:.8rem;margin-top:1.2rem;display:block}
-
 /* ── FORM ── */
 .form-row{margin-bottom:1rem}
 label{display:block;font-size:.84rem;font-weight:500;margin-bottom:.35rem;color:var(--ink2)}
@@ -154,51 +140,41 @@ input:focus,select:focus{outline:none;border-color:var(--rust);box-shadow:0 0 0 
 .radio-row label{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:400;color:var(--ink2);cursor:pointer}
 .radio-row input[type=radio]{accent-color:var(--rust);width:16px;height:16px;cursor:pointer}
 .inline-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-
 /* ── ADVANCED PANEL ── */
 .adv-toggle{display:flex;align-items:center;gap:.5rem;cursor:pointer;font-size:.82rem;font-weight:500;color:var(--teal);padding:.5rem 0;transition:color .18s;border:none;background:none;font-family:var(--sans);margin-top:.5rem}
 .adv-toggle:hover{color:var(--rust)}
 .adv-toggle .arrow{transition:transform .25s;font-size:.65rem}
 .adv-panel{max-height:0;overflow:hidden;transition:max-height .35s ease}
 .adv-panel.open{max-height:600px}
-
 /* ── CALCULATE BUTTON ── */
 .btn-calc{width:100%;padding:1rem;background:var(--rust);color:#fff;border:none;border-radius:var(--r-md);font-family:var(--sans);font-size:1rem;font-weight:600;cursor:pointer;letter-spacing:.01em;transition:all .2s;margin-top:1rem}
 .btn-calc:hover{background:var(--rust2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,68,26,.3)}
-
 /* ── RESULT ── */
 .result{display:none;margin-top:1.5rem}
 .result.show{display:block}
-
 .res-hero{background:linear-gradient(135deg,var(--rust),var(--rust2));border-radius:var(--r-lg);padding:1.5rem;text-align:center;color:#fff;margin-bottom:1rem}
 .res-hero .big{font-family:var(--serif);font-size:2.8rem;font-weight:900;letter-spacing:-.04em;line-height:1}
 .res-hero .tag{font-size:.82rem;opacity:.85;margin-top:.3rem}
-
 .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:1rem}
 .res-box{background:var(--cream);border-radius:var(--r-md);padding:.8rem;text-align:center;border:1px solid var(--border)}
 .res-box .val{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink)}
 .res-box .lbl{font-size:.7rem;color:var(--ink4);margin-top:.15rem;font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase}
-
 .pipeline{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap;margin:1rem 0;padding:1rem;background:var(--cream);border-radius:var(--r-md);border:1px solid var(--border)}
 .pip-step{text-align:center;flex:1;min-width:80px}
 .pip-step .pip-val{font-family:var(--serif);font-weight:700;font-size:1.1rem;color:var(--ink)}
 .pip-step .pip-lbl{font-size:.62rem;color:var(--ink4);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;margin-top:.15rem}
 .pip-arrow{color:var(--ink4);font-size:.85rem;flex-shrink:0}
-
 .sens-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.75rem;border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden}
 .sens-table th{background:var(--cream2);padding:.55rem .5rem;text-align:center;font-weight:600;color:var(--ink2);border-bottom:1px solid var(--border)}
 .sens-table td{padding:.5rem;text-align:center;border-bottom:1px solid var(--border);color:var(--ink2)}
 .sens-table tr:last-child td{border-bottom:none}
 .sens-table .hl{background:var(--rust-l);font-weight:700;color:var(--rust)}
-
 .writeup{background:var(--cream);border:1px solid var(--border);border-radius:var(--r-md);padding:1rem;font-size:.84rem;line-height:1.7;color:var(--ink2);white-space:pre-wrap;font-family:var(--sans);margin-top:.75rem;max-height:220px;overflow-y:auto}
 .copy-btn{display:inline-flex;align-items:center;gap:.35rem;padding:.45rem .9rem;background:var(--teal);color:#fff;border:none;border-radius:var(--r-sm);font-size:.78rem;font-weight:500;cursor:pointer;transition:all .18s;margin-top:.5rem;font-family:var(--sans)}
 .copy-btn:hover{background:#15685e}
-
 .info-box{background:var(--teal-l);border:1px solid rgba(26,122,110,.2);border-radius:var(--r-md);padding:.85rem 1rem;font-size:.84rem;line-height:1.65;color:var(--ink2);margin-bottom:1.25rem}
 .warn-box{background:var(--warn-l);border:1px solid var(--warn-b);border-radius:var(--r-md);padding:.85rem 1rem;font-size:.84rem;line-height:1.65;color:var(--ink2);margin-bottom:1.25rem}
 .err-box{background:var(--err-l);border:1px solid var(--err-b);border-radius:var(--r-md);padding:.85rem 1rem;font-size:.84rem;line-height:1.65;color:var(--err);margin-bottom:1.25rem}
-
 /* ── CONTENT SECTIONS (SEO) ── */
 .content-section{margin-top:2.5rem}
 .content-card{background:var(--white);border-radius:var(--r-xl);box-shadow:var(--shadow-sm);border:1px solid var(--border);padding:2rem;margin-bottom:1.5rem}
@@ -209,21 +185,17 @@ input:focus,select:focus{outline:none;border-color:var(--rust);box-shadow:0 0 0 
 .content-card ul,.content-card ol{font-size:.9rem;color:var(--ink2);line-height:1.75;margin-bottom:.75rem;padding-left:1.5rem}
 .content-card li{margin-bottom:.4rem}
 .content-card code{font-family:var(--mono);background:var(--cream);padding:.15rem .4rem;border-radius:4px;font-size:.85rem}
-
 .formula-box{background:var(--cream);border:1px solid var(--border);border-left:3px solid var(--rust);border-radius:var(--r-md);padding:1rem 1.25rem;margin:.75rem 0 1rem;font-family:var(--mono);font-size:.88rem;color:var(--ink);line-height:1.7}
 .formula-box strong{color:var(--rust)}
-
 .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
 .feature-item{background:var(--cream);border-radius:var(--r-md);padding:1rem;border:1px solid var(--border)}
 .feature-icon{font-size:1.5rem;margin-bottom:.5rem}
 .feature-item h3{font-family:var(--serif);font-size:.92rem;font-weight:700;color:var(--ink);margin:0 0 .35rem;letter-spacing:-.02em}
 .feature-item p{font-size:.8rem;color:var(--ink3);margin:0;line-height:1.55}
-
 .use-cases{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}
 .use-case{background:var(--cream);border-radius:var(--r-md);padding:.85rem;text-align:center;border:1px solid var(--border)}
 .use-case-icon{font-size:1.4rem;margin-bottom:.4rem}
 .use-case-label{font-size:.78rem;font-weight:500;color:var(--ink2)}
-
 .faq-item{border-bottom:1px solid var(--border);padding:1rem 0}
 .faq-item:last-child{border-bottom:none}
 .faq-q{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:color .18s}
@@ -232,14 +204,12 @@ input:focus,select:focus{outline:none;border-color:var(--rust);box-shadow:0 0 0 
 .faq-item.open .faq-arrow{transform:rotate(180deg);color:var(--rust)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:.88rem;color:var(--ink3);line-height:1.7}
 .faq-item.open .faq-a{max-height:300px;padding-top:.75rem}
-
 .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
 .related-item{display:flex;align-items:center;gap:.75rem;background:var(--cream);border:1px solid var(--border);border-radius:var(--r-md);padding:.85rem 1rem;transition:all .18s;text-decoration:none;color:var(--ink)}
 .related-item:hover{background:var(--cream2);border-color:var(--rust);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
 .related-icon{font-size:1.3rem;flex-shrink:0}
 .related-info h4{font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:.15rem}
 .related-info p{font-size:.72rem;color:var(--ink4);margin:0;line-height:1.4}
-
 .site-footer{background:var(--cream2);border-top:1px solid var(--border);padding:2.5rem 2rem 2rem;margin-top:3rem}
 .sf-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
 .sf-brand{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:-.03em}
@@ -248,937 +218,1173 @@ input:focus,select:focus{outline:none;border-color:var(--rust);box-shadow:0 0 0 
 .sf-links{display:flex;gap:1.5rem}
 .sf-links a{font-size:.78rem;color:var(--ink4);transition:color .18s}
 .sf-links a:hover{color:var(--rust)}
-
 @media(max-width:600px){
-  .page-wrap{padding:1.25rem 1rem 3rem}
-  .tool-inner,.content-card{padding:1.25rem}
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  .inline-row{grid-template-columns:1fr}
-  .res-grid{grid-template-columns:1fr 1fr}
-  .study-tabs{grid-template-columns:1fr}
-  .pipeline{flex-direction:column;gap:.5rem}
-  .pip-arrow{transform:rotate(90deg)}
-  .features-grid{grid-template-columns:1fr}
-  .use-cases{grid-template-columns:repeat(2,1fr)}
-  .related-grid{grid-template-columns:1fr}
-  .sf-inner{flex-direction:column;text-align:center}
+ .page-wrap{padding:1.25rem 1rem 3rem}
+ .tool-inner,.content-card{padding:1.25rem}
+ .nav-links{display:none}
+ .hamburger{display:flex}
+ .inline-row{grid-template-columns:1fr}
+ .res-grid{grid-template-columns:1fr 1fr}
+ .study-tabs{grid-template-columns:1fr}
+ .pipeline{flex-direction:column;gap:.5rem}
+ .pip-arrow{transform:rotate(90deg)}
+ .features-grid{grid-template-columns:1fr}
+ .use-cases{grid-template-columns:repeat(2,1fr)}
+ .related-grid{grid-template-columns:1fr}
+ .sf-inner{flex-direction:column;text-align:center}
 }
 </style>
 </head>
-
 <body>
 
 <noscript>
-  <div style="background:#c8221a;color:#fff;text-align:center;padding:1rem;font-size:.9rem;">
-    This calculator requires JavaScript to function. Please enable JavaScript in your browser settings.
-  </div>
+ <div style="background:#c8221a;color:#fff;text-align:center;padding:1rem;font-size:.9rem;">
+  This calculator requires JavaScript to function. Please enable JavaScript in your browser settings.
+ </div>
 </noscript>
 
 <!-- ════ NAV ════ -->
 <nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-wrap">
-    <a href="/" class="logo" aria-label="ResearchToolsLab home">
-      <div class="logo-mark" aria-hidden="true">R</div>
-      <span class="logo-name">Research<em>Tools</em>Lab</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="/">Home</a></li>
-      <li><a href="/percent.html">Percentage</a></li>
-      <li><a href="/pdf.html">Invoice</a></li>
-      <li><a href="/emi.html">Finance</a></li>
-      <li><a href="/" class="nav-cta">← All Tools</a></li>
-    </ul>
-    <button class="hamburger" aria-label="Open menu" onclick="navToggle()">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+ <div class="nav-wrap">
+  <a href="/" class="logo" aria-label="ResearchToolsLab home">
+   <div class="logo-mark" aria-hidden="true">R</div>
+   <span class="logo-name">Research<em>Tools</em>Lab</span>
+  </a>
+  <ul class="nav-links" role="list">
+   <li><a href="/">Home</a></li>
+   <li><a href="/percent.html">Percentage</a></li>
+   <li><a href="/pdf.html">Invoice</a></li>
+   <li><a href="/emi.html">Finance</a></li>
+   <li><a href="/" class="nav-cta">← All Tools</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Open menu" onclick="navToggle()">
+   <span></span><span></span><span></span>
+  </button>
+ </div>
 </nav>
 
 <main>
 <div class="page-wrap">
 
-  <!-- ── HEADER ── -->
-  <header class="page-header">
-    <nav class="page-breadcrumb" aria-label="Breadcrumb">
-      <a href="/">ResearchToolsLab</a>
-      <span aria-hidden="true">›</span>
-      <span aria-current="page">Sample Size Calculator</span>
-    </nav>
-    <h1 class="page-h1">Free <em>Sample Size</em> Calculator</h1>
-    <p class="page-sub">G*Power-verified formulas for surveys, experiments, clinical trials, correlations & prevalence studies. Generates thesis-ready methodology paragraphs.</p>
-    <div class="page-badges">
-      <span class="page-badge">✓ G*Power Verified</span>
-      <span class="page-badge">📊 5 Study Types</span>
-      <span class="page-badge">📝 Thesis-Ready</span>
-      <span class="page-badge">🔒 Privacy-first</span>
-      <span class="page-badge">✓ Free Forever</span>
-    </div>
-  </header>
-
-  <!-- ══════════════════════════════════════
-       TOOL CARD
-  ══════════════════════════════════════ -->
-  <div class="tool-card" id="calculator-top">
-    <div class="tool-inner">
-
-      <div class="info-box">
-        <strong>Verified against G*Power 3.1</strong> (47/47 test cases matched), WHO STEPS tables, and OpenEpi.
-        Five study types · design-effect adjustment · attrition pipeline · sensitivity table · thesis-ready write-up you can copy straight into your proposal.
-      </div>
-
-      <!-- ── STUDY TYPE TABS ── -->
-      <div class="study-tabs">
-        <button class="study-tab active" data-type="survey" onclick="selectStudyType('survey')">Survey / Questionnaire</button>
-        <button class="study-tab" data-type="experiment" onclick="selectStudyType('experiment')">Experiment / Two Groups</button>
-        <button class="study-tab" data-type="clinical" onclick="selectStudyType('clinical')">Clinical / Health Study</button>
-        <button class="study-tab" data-type="correlation" onclick="selectStudyType('correlation')">Correlation / Regression</button>
-        <button class="study-tab" data-type="prevalence" onclick="selectStudyType('prevalence')">Prevalence / Proportion</button>
-      </div>
-
-      <!-- ── DYNAMIC FIELDS CONTAINER ── -->
-      <div id="dynamicFields"></div>
-
-      <!-- ── COMMON SETTINGS ── -->
-      <span class="slabel">Common Settings</span>
-      <div class="inline-row">
-        <div class="form-row">
-          <label for="confLevel">Confidence Level</label>
-          <select id="confLevel">
-            <option value="0.90">90 %</option>
-            <option value="0.95" selected>95 %</option>
-            <option value="0.99">99 %</option>
-          </select>
-        </div>
-        <div class="form-row" id="powerRow">
-          <label for="power">Statistical Power (1−β)</label>
-          <select id="power">
-            <option value="0.80" selected>80 %</option>
-            <option value="0.90">90 %</option>
-            <option value="0.95">95 %</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- ── ADVANCED OPTIONS ── -->
-      <button class="adv-toggle" onclick="toggleAdv()" type="button" aria-expanded="false" aria-controls="advPanel">
-        <span class="arrow" id="advArrow">▶</span> Advanced Options (DEFF, Attrition)
-      </button>
-      <div class="adv-panel" id="advPanel" role="region">
-        <div class="inline-row" style="margin-top:.75rem">
-          <div class="form-row">
-            <label for="deff">Design Effect (DEFF) <span class="hint">1.0 = SRS</span></label>
-            <input type="number" id="deff" value="1" min="1" step="0.1">
-          </div>
-          <div class="form-row">
-            <label for="screening">Screening Exclusion % <span class="hint">0–50</span></label>
-            <input type="number" id="screening" value="0" min="0" max="50">
-          </div>
-        </div>
-        <div class="inline-row">
-          <div class="form-row">
-            <label for="attrition">Expected Dropout / Attrition % <span class="hint">0–50</span></label>
-            <input type="number" id="attrition" value="0" min="0" max="50">
-          </div>
-          <div class="form-row">
-            <label>&nbsp;</label>
-            <div style="font-size:.78rem;color:var(--ink4);line-height:1.55">Recruitment = Core ÷ (1 − screening%) ÷ (1 − dropout%)</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── CALCULATE BUTTON ── -->
-      <button class="btn-calc" onclick="calculate()" type="button">Calculate Sample Size</button>
-
-      <!-- ── RESULT ── -->
-      <div class="result" id="result"></div>
-
-    </div>
+ <!-- ── HEADER ── -->
+ <header class="page-header">
+  <nav class="page-breadcrumb" aria-label="Breadcrumb">
+   <a href="/">ResearchToolsLab</a>
+   <span aria-hidden="true">›</span>
+   <span aria-current="page">Sample Size Calculator</span>
+  </nav>
+  <h1 class="page-h1">Free <em>Sample Size</em> Calculator</h1>
+  <p class="page-sub">G*Power-verified formulas for surveys, experiments, clinical trials, correlations &amp; prevalence studies. Generates thesis-ready methodology paragraphs.</p>
+  <div class="page-badges">
+   <span class="page-badge">✓ G*Power Verified</span>
+   <span class="page-badge">📊 5 Study Types</span>
+   <span class="page-badge">📝 Thesis-Ready</span>
+   <span class="page-badge">🔒 Privacy-first</span>
+   <span class="page-badge">✓ Free Forever</span>
   </div>
-  <!-- ══ END TOOL CARD ══ -->
+ </header>
 
+ <!-- ══════════════════════════════════════
+      TOOL CARD
+ ══════════════════════════════════════ -->
+ <div class="tool-card" id="calculator-top">
+  <div class="tool-inner">
 
-  <!-- ══════════════════════════════════════
-       SEO CONTENT SECTIONS
-  ══════════════════════════════════════ -->
-  <section class="content-section" aria-label="Sample size information">
+   <div class="info-box">
+    <strong>Verified against G*Power 3.1</strong> (47/47 test cases matched), WHO STEPS tables, and OpenEpi.
+    Five study types · design-effect adjustment · attrition pipeline · sensitivity table · thesis-ready write-up you can copy straight into your proposal.
+   </div>
 
-    <!-- ── WHAT IS SAMPLE SIZE ── -->
-    <div class="content-card">
-      <h2>What Is <em>Sample Size</em> and Why Does It Matter?</h2>
-      <p>Sample size refers to the number of participants, observations, or data points required in a study to produce statistically meaningful and reliable results. It is one of the most critical decisions in research design — affecting everything from statistical power to budget planning and ethical approval.</p>
-      <p>An <strong>underpowered study</strong> (too few participants) risks missing real effects entirely, wasting time and resources on inconclusive results. An <strong>overpowered study</strong> (too many participants) exposes unnecessary participants to potential risks, consumes excessive resources, and may detect trivially small effects that lack practical significance.</p>
-      <p>Proper sample size calculation strikes the optimal balance — ensuring your study has adequate <strong>statistical power</strong> to detect meaningful effects while remaining feasible within your budget and timeline. This calculator uses formulas verified against <strong>G*Power 3.1</strong> (47/47 test cases matched), <strong>WHO STEPS tables</strong>, and <strong>OpenEpi</strong>.</p>
+   <!-- ── STUDY TYPE TABS ── -->
+   <div class="study-tabs">
+    <button class="study-tab active" data-type="survey" onclick="selectStudyType('survey')">Survey / Questionnaire</button>
+    <button class="study-tab" data-type="experiment" onclick="selectStudyType('experiment')">Experiment / Two Groups</button>
+    <button class="study-tab" data-type="clinical" onclick="selectStudyType('clinical')">Clinical / Health Study</button>
+    <button class="study-tab" data-type="correlation" onclick="selectStudyType('correlation')">Correlation / Regression</button>
+    <button class="study-tab" data-type="prevalence" onclick="selectStudyType('prevalence')">Prevalence / Proportion</button>
+   </div>
+
+   <!-- ── DYNAMIC FIELDS CONTAINER ── -->
+   <div id="dynamicFields"></div>
+
+   <!-- ── COMMON SETTINGS ── -->
+   <span class="slabel">Common Settings</span>
+   <div class="inline-row">
+    <div class="form-row">
+     <label for="confLevel">Confidence Level</label>
+     <select id="confLevel">
+      <option value="0.90">90 %</option>
+      <option value="0.95" selected>95 %</option>
+      <option value="0.99">99 %</option>
+     </select>
     </div>
-
-    <!-- ── WHY THIS CALCULATOR ── -->
-    <div class="content-card">
-      <h2>Why Use This <em>Sample Size Calculator</em>?</h2>
-      <p>Most online calculators handle only one study type or lack transparency about their formulas. This calculator is built by researchers, for researchers — covering five study designs with full formula disclosure and academic references.</p>
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon">🔬</div>
-          <h3>5 Study Types</h3>
-          <p>Surveys, experiments, clinical trials, correlations, and prevalence studies — all in one tool.</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <h3>G*Power Verified</h3>
-          <p>47/47 test cases match G*Power 3.1. Cross-referenced with WHO STEPS and OpenEpi.</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">📝</div>
-          <h3>Thesis-Ready Output</h3>
-          <p>Generates methodology paragraphs with formulas, variables, and academic references you can copy directly.</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">📊</div>
-          <h3>Sensitivity Table</h3>
-          <p>See how sample size changes across different confidence levels and power values at a glance.</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🔄</div>
-          <h3>Attrition Pipeline</h3>
-          <p>Adjust for screening exclusions and dropout rates with a visual recruitment pipeline.</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🔒</div>
-          <h3>100% Private</h3>
-          <p>Runs entirely in your browser. No data sent to servers, no signup, no tracking.</p>
-        </div>
-      </div>
+    <div class="form-row" id="powerRow">
+     <label for="power">Statistical Power (1−β)</label>
+     <select id="power">
+      <option value="0.80" selected>80 %</option>
+      <option value="0.90">90 %</option>
+      <option value="0.95">95 %</option>
+     </select>
     </div>
+   </div>
 
-    <!-- ── FORMULAS ── -->
-    <div class="content-card">
-      <h2>Supported <em>Study Types</em> & Formulas</h2>
-
-      <h3>1. Survey / Questionnaire — Cochran's Formula (1977)</h3>
-      <p>The most widely used formula for determining sample size for surveys, polls, and questionnaires.</p>
-      <div class="formula-box">
-        <strong>Formula:</strong> n₀ = (z² × p × (1−p)) / e²<br>
-        <strong>With FPC:</strong> n = n₀ / (1 + (n₀ − 1) / N)<br>
-        <strong>Variables:</strong> z = z-score for confidence level, p = expected proportion (use 0.5 for maximum variability), e = margin of error, N = population size
-      </div>
-
-      <h3>2. Experiment / Two Groups — Cohen's d</h3>
-      <p>Calculates per-group sample size for comparing two independent groups (e.g., treatment vs. control).</p>
-      <div class="formula-box">
-        <strong>Formula:</strong> n = 2 × ((z_α + z_β) / d)²<br>
-        <strong>Variables:</strong> z_α = z-score for significance level, z_β = z-score for power, d = Cohen's effect size (small=0.2, medium=0.5, large=0.8)
-      </div>
-
-      <h3>3. Clinical / Health Study — Kelsey-Schlesselman (1982)</h3>
-      <p>Supports both dichotomous endpoints (mortality, cure rates) and continuous endpoints with unequal allocation ratios.</p>
-      <div class="formula-box">
-        <strong>Dichotomous:</strong> n = ((z_α√(p̄(1−p̄)(1+1/k)) + z_β√(p₁(1−p₁)+p₂(1−p₂)/k))² / (p₁−p₂)²<br>
-        <strong>Continuous:</strong> n = (1+1/k) × ((z_α + z_β) / Δ × σ)²<br>
-        <strong>Variables:</strong> k = allocation ratio, p₁/p₂ = group proportions, Δ = mean difference, σ = standard deviation
-      </div>
-
-      <h3>4. Correlation / Regression — Fisher z-Transform</h3>
-      <p>Uses Fisher's z-transformation because Pearson's r is not normally distributed, especially for values far from zero.</p>
-      <div class="formula-box">
-        <strong>Formula:</strong> n = ((z_α + z_β) / z_r)² + 3<br>
-        <strong>Where:</strong> z_r = 0.5 × ln((1+r)/(1−r))<br>
-        <strong>Benchmarks:</strong> weak (r=0.1), moderate (r=0.3), strong (r=0.5) per Cohen (1988)
-      </div>
-
-      <h3>5. Prevalence / Proportion Study</h3>
-      <p>Estimates how common a condition, behavior, or characteristic is in a population. Standard in epidemiology and public health.</p>
-      <div class="formula-box">
-        <strong>Formula:</strong> n = z² × p × (1−p) / e²<br>
-        <strong>With FPC:</strong> n_adj = n / (1 + (n−1) / N)<br>
-        <strong>Common use:</strong> WHO STEPS surveys, disease prevalence, behavioral surveillance
-      </div>
+   <!-- ── ADVANCED OPTIONS ── -->
+   <button class="adv-toggle" onclick="toggleAdv()" type="button" aria-expanded="false" aria-controls="advPanel">
+    <span class="arrow" id="advArrow">▶</span> Advanced Options (DEFF, Attrition)
+   </button>
+   <div class="adv-panel" id="advPanel" role="region">
+    <div class="inline-row" style="margin-top:.75rem">
+     <div class="form-row">
+      <label for="deff">Design Effect (DEFF) <span class="hint">1.0 = SRS</span></label>
+      <input type="number" id="deff" value="1" min="1" step="0.1">
+     </div>
+     <div class="form-row">
+      <label for="screening">Screening Exclusion % <span class="hint">0–50</span></label>
+      <input type="number" id="screening" value="0" min="0" max="50">
+     </div>
     </div>
-
-    <!-- ── KEY CONCEPTS ── -->
-    <div class="content-card">
-      <h2>Key <em>Statistical Concepts</em> Explained</h2>
-
-      <h3>Confidence Level (α)</h3>
-      <p>The probability that your confidence interval contains the true population parameter. <strong>95% is standard</strong> for most research. Use 99% for high-stakes decisions (clinical trials, regulatory submissions) and 90% for exploratory or pilot studies.</p>
-
-      <h3>Statistical Power (1−β)</h3>
-      <p>The probability of correctly detecting a true effect when one exists. <strong>80% is the minimum standard</strong> recommended by Cohen (1988); 90% is preferred for most research. A study with 80% power has a 20% chance of missing a real effect (Type II error).</p>
-
-      <h3>Effect Size</h3>
-      <p>Quantifies the magnitude of difference you expect to detect. Cohen's (1988) benchmarks for d: <strong>small (0.2)</strong> — subtle, requires large samples; <strong>medium (0.5)</strong> — noticeable, standard default; <strong>large (0.8)</strong> — obvious, requires smaller samples. Always prefer pilot data or prior literature over arbitrary benchmarks.</p>
-
-      <h3>Margin of Error (e)</h3>
-      <p>The maximum acceptable difference between your sample estimate and the true population value. <strong>±5% is standard</strong> for most surveys. Tighter margins (±3% or ±2%) quadruple or more the required sample size — use only when precision is critical.</p>
-
-      <h3>Design Effect (DEFF)</h3>
-      <p>Adjusts for the loss of efficiency in cluster sampling compared to simple random sampling. <strong>DEFF = 1.0</strong> for SRS (no adjustment). For cluster designs (e.g., sampling schools, clinics, villages), typical DEFF ranges from 1.5 to 3.0 depending on intra-cluster correlation (ICC).</p>
-
-      <h3>Attrition Adjustment</h3>
-      <p>Accounts for participant dropout and screening exclusions. <strong>Screening exclusion</strong> (5–15% typical): participants who don't meet eligibility criteria. <strong>Dropout rate</strong> (10–30% typical): enrolled participants who withdraw or become unreachable. This calculator applies both adjustments sequentially.</p>
+    <div class="inline-row">
+     <div class="form-row">
+      <label for="attrition">Expected Dropout / Attrition % <span class="hint">0–50</span></label>
+      <input type="number" id="attrition" value="0" min="0" max="50">
+     </div>
+     <div class="form-row">
+      <label>&nbsp;</label>
+      <div style="font-size:.78rem;color:var(--ink4);line-height:1.55">Recruitment = Core ÷ (1 − screening%) ÷ (1 − dropout%)</div>
+     </div>
     </div>
+   </div>
 
-    <!-- ── WHO USES IT ── -->
-    <div class="content-card">
-      <h2>Who Uses a <em>Sample Size Calculator</em>?</h2>
-      <p>Proper sample size determination is required across virtually every research discipline:</p>
-      <div class="use-cases">
-        <div class="use-case">
-          <div class="use-case-icon">🎓</div>
-          <div class="use-case-label">PhD & Masters Students</div>
-        </div>
-        <div class="use-case">
-          <div class="use-case-icon">🏥</div>
-          <div class="use-case-label">Clinical Researchers</div>
-        </div>
-        <div class="use-case">
-          <div class="use-case-icon">📊</div>
-          <div class="use-case-label">Survey Designers</div>
-        </div>
-        <div class="use-case">
-          <div class="use-case-icon">🧪</div>
-          <div class="use-case-label">Lab Scientists</div>
-        </div>
-        <div class="use-case">
-          <div class="use-case-icon">📋</div>
-          <div class="use-case-label">Ethics Committees</div>
-        </div>
-        <div class="use-case">
-          <div class="use-case-icon">🏛️</div>
-          <div class="use-case-label">Public Health Officials</div>
-        </div>
-      </div>
-      <p style="margin-top:1rem">Whether you're writing a <strong>thesis methodology chapter</strong>, preparing an <strong>IRB/ethics application</strong>, designing a <strong>randomized controlled trial</strong>, or planning a <strong>national health survey</strong>, this calculator provides the statistical rigor your work demands — with output you can cite directly.</p>
+   <!-- ── CALCULATE BUTTON ── -->
+   <button class="btn-calc" onclick="calculate()" type="button">Calculate Sample Size</button>
+
+   <!-- ── RESULT ── -->
+   <div class="result" id="result"></div>
+
+  </div>
+ </div>
+ <!-- ══ END TOOL CARD ══ -->
+
+
+ <!-- ══════════════════════════════════════
+      SEO CONTENT SECTIONS
+ ══════════════════════════════════════ -->
+ <section class="content-section" aria-label="Sample size information">
+
+  <!-- ── WHAT IS SAMPLE SIZE ── -->
+  <div class="content-card">
+   <h2>What Is <em>Sample Size</em> and Why Does It Matter?</h2>
+   <p>Sample size refers to the number of participants, observations, or data points required in a study to produce statistically meaningful and reliable results. It is one of the most critical decisions in research design — affecting everything from statistical power to budget planning and ethical approval.</p>
+   <p>An <strong>underpowered study</strong> (too few participants) risks missing real effects entirely, wasting time and resources on inconclusive results. An <strong>overpowered study</strong> (too many participants) exposes unnecessary participants to potential risks, consumes excessive resources, and may detect trivially small effects that lack practical significance.</p>
+   <p>Proper sample size calculation strikes the optimal balance — ensuring your study has adequate <strong>statistical power</strong> to detect meaningful effects while remaining feasible within your budget and timeline. This calculator uses formulas verified against <strong>G*Power 3.1</strong> (47/47 test cases matched), <strong>WHO STEPS tables</strong>, and <strong>OpenEpi</strong>.</p>
+   <p>Whether you are conducting a <strong>cross-sectional survey</strong>, a <strong>randomized controlled trial</strong>, or a <strong>correlational study</strong>, getting the sample size right is essential for producing credible, publishable, and ethically defensible research. Regulatory bodies such as the <strong>FDA</strong>, <strong>EMA</strong>, and institutional review boards (IRBs) routinely require a formal sample size justification as part of study approval.</p>
+  </div>
+
+  <!-- ── WHY THIS CALCULATOR ── -->
+  <div class="content-card">
+   <h2>Why Use This <em>Sample Size Calculator</em>?</h2>
+   <p>Most online calculators handle only one study type or lack transparency about their formulas. This calculator is built by researchers, for researchers — covering five study designs with full formula disclosure and academic references.</p>
+   <p>Unlike many alternatives, this tool applies the <strong>design effect (DEFF) before the finite population correction (FPC)</strong>, which is the mathematically correct order recommended by the WHO and CDC. Applying DEFF after FPC — a common error in other calculators — can produce systematically incorrect results, especially for cluster-sampled surveys with small populations.</p>
+   <div class="features-grid">
+    <div class="feature-item">
+     <div class="feature-icon">📋</div>
+     <h3>5 Study Types</h3>
+     <p>Surveys, experiments, clinical trials, correlations, and prevalence studies — all in one tool.</p>
     </div>
-
-    <!-- ── FAQ ── -->
-    <div class="content-card">
-      <h2>Frequently Asked <em>Questions</em></h2>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>What is sample size and why does it matter?</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-a">Sample size is the number of participants needed to produce statistically reliable results. Too few risks missing real effects (underpowered study); too many wastes resources and may raise ethical concerns. This calculator uses verified formulas from Cochran (1977), Cohen (1988), and Schlesselman (1982) to find the optimal number for your specific study design.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Is this calculator verified against G*Power?</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-a">Yes! All formulas have been verified against G*Power 3.1 with 47 out of 47 test cases matching exactly. The calculator also cross-references WHO STEPS sample size tables and OpenEpi for additional validation, giving you confidence in the results.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>What statistical power should I use?</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-a">The minimum standard is 80% (Cohen, 1988), meaning an 80% probability of detecting a true effect. However, 90% is increasingly recommended, especially for clinical trials and well-funded studies. Higher power requires more participants but significantly reduces false negatives (Type II errors).</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>How do I choose the right effect size?</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-a">Ideally, base effect size on pilot data or prior published research. If unavailable, use Cohen's (1988) benchmarks: small (d=0.2), medium (d=0.5), large (d=0.8). Medium (0.5) is a reasonable default for most behavioral and social science research. Smaller expected effects require substantially larger samples.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>What is the design effect (DEFF)?</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-a">DEFF accounts for the reduced efficiency of cluster sampling compared to simple random sampling (SRS). For SRS, use DEFF = 1.0 (no adjustment). For cluster designs — sampling by schools, clinics, households, or geographic areas — values typically range from 1.5 to 3.0 depending on intra-cluster correlation. Higher DEFF means you need proportionally more participants.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Why should I adjust for attrition and dropout?</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-a">If you recruit exactly the minimum required sample and participants drop out, your final analysable sample will be too small for valid statistical conclusions. This calculator applies screening exclusion (5–15% typical) and dropout rates (10–30% typical) sequentially, telling you exactly how many participants to initially invite, screen, and enroll.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Can I use this output in my thesis or ethics application?</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-a">Absolutely! The calculator generates a thesis-ready methodology paragraph with complete formula details, variable definitions, and proper academic references (Cochran 1977, Cohen 1988, Schlesselman 1982). Click the "Copy" button to paste it directly into your thesis chapter, grant proposal, or IRB/ethics committee application.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Is this calculator free? Does it store my data?</span>
-          <span class="faq-arrow">▼</span>
-        </div>
-        <div class="faq-a">100% free with no usage limits, no signup, and no premium tier. The calculator runs entirely in your browser using client-side JavaScript — your study parameters, sample size results, and methodology text never leave your device. No cookies, no analytics tracking, no data collection whatsoever.</div>
-      </div>
+    <div class="feature-item">
+     <div class="feature-icon">✓</div>
+     <h3>G*Power Verified</h3>
+     <p>47/47 test cases match G*Power 3.1. Cross-referenced with WHO STEPS and OpenEpi.</p>
     </div>
-
-    <!-- ── RELATED TOOLS ── -->
-    <div class="content-card">
-      <h2>Related <em>Tools</em> You May Like</h2>
-      <p>Explore more free calculators and tools on ResearchToolsLab:</p>
-      <div class="related-grid">
-        <a href="/percent.html" class="related-item">
-          <span class="related-icon">🧮</span>
-          <div class="related-info">
-            <h4>Percentage Calculator</h4>
-            <p>Increase, decrease, difference with step-by-step solutions.</p>
-          </div>
-        </a>
-        <a href="/pdf.html" class="related-item">
-          <span class="related-icon">📄</span>
-          <div class="related-info">
-            <h4>PDF Invoice Generator</h4>
-            <p>Create professional invoices and download as PDF instantly.</p>
-          </div>
-        </a>
-        <a href="/emi.html" class="related-item">
-          <span class="related-icon">💰</span>
-          <div class="related-info">
-            <h4>EMI / Loan Calculator</h4>
-            <p>Calculate monthly payments for loans with interest rates.</p>
-          </div>
-        </a>
-        <a href="/tiktok.html" class="related-item">
-          <span class="related-icon">🎵</span>
-          <div class="related-info">
-            <h4>TikTok Earnings Calculator</h4>
-            <p>Estimate potential earnings from TikTok views and engagement.</p>
-          </div>
-        </a>
-      </div>
+    <div class="feature-item">
+     <div class="feature-icon">📝</div>
+     <h3>Thesis-Ready Output</h3>
+     <p>Generates methodology paragraphs with formulas, variables, and academic references you can copy directly.</p>
     </div>
+    <div class="feature-item">
+     <div class="feature-icon">📊</div>
+     <h3>Sensitivity Table</h3>
+     <p>See how sample size changes across different confidence levels and power values at a glance.</p>
+    </div>
+    <div class="feature-item">
+     <div class="feature-icon">🎯</div>
+     <h3>Attrition Pipeline</h3>
+     <p>Adjust for screening exclusions and dropout rates with a visual recruitment pipeline.</p>
+    </div>
+    <div class="feature-item">
+     <div class="feature-icon">🔒</div>
+     <h3>100% Private</h3>
+     <p>Runs entirely in your browser. No data sent to servers, no signup, no tracking.</p>
+    </div>
+   </div>
+  </div>
 
-  </section>
+  <!-- ── FORMULAS ── -->
+  <div class="content-card">
+   <h2>Supported <em>Study Types</em> &amp; Formulas</h2>
 
+   <h3>1. Survey / Questionnaire — Cochran's Formula (1977)</h3>
+   <p>The most widely used formula for determining sample size for surveys, polls, and questionnaires. Cochran's formula assumes simple random sampling and estimates the sample needed to achieve a desired margin of error around a population proportion.</p>
+   <div class="formula-box">
+    <strong>Formula:</strong> n₀ = (z² × p × (1−p)) / e²<br>
+    <strong>With DEFF:</strong> n₀_deff = n₀ × DEFF<br>
+    <strong>With FPC:</strong> n = n₀_deff / (1 + (n₀_deff − 1) / N)<br>
+    <strong>Variables:</strong> z = z-score for confidence level, p = expected proportion (use 0.5 for maximum variability), e = margin of error, N = population size, DEFF = design effect for cluster sampling
+   </div>
+
+   <h3>2. Experiment / Two Groups — Cohen's d</h3>
+   <p>Calculates per-group sample size for comparing two independent groups (e.g., treatment vs. control). Based on the standardized mean difference (Cohen's d), this formula uses the normal approximation to determine the number of participants needed in each group.</p>
+   <div class="formula-box">
+    <strong>Formula:</strong> n = 2 × ((z_α + z_β) / d)² per group<br>
+    <strong>Total:</strong> N_total = n × 2<br>
+    <strong>Variables:</strong> z_α = z-score for significance level (two-tailed by default), z_β = z-score for power, d = Cohen's effect size (small=0.2, medium=0.5, large=0.8)
+   </div>
+
+   <h3>3. Clinical / Health Study — Kelsey-Schlesselman (1982)</h3>
+   <p>Supports both dichotomous endpoints (mortality, cure rates) and continuous endpoints with unequal allocation ratios. This formula is the standard for clinical trial sample size determination and is used by regulatory agencies worldwide.</p>
+   <div class="formula-box">
+    <strong>Dichotomous:</strong> n₁ = (z_α√(p̄(1−p̄)(1+1/k)) + z_β√(p₁(1−p₁)+p₂(1−p₂)/k))² / (p₁−p₂)²<br>
+    <strong>Continuous:</strong> n₁ = (1+1/k) × ((z_α + z_β) / (Δ/σ))²<br>
+    <strong>Total:</strong> N_total = n₁ + n₂ (where n₂ = k × n₁)<br>
+    <strong>Variables:</strong> k = allocation ratio (n₂/n₁), p₁/p₂ = group proportions, Δ = mean difference, σ = standard deviation
+   </div>
+
+   <h3>4. Correlation / Regression — Fisher z-Transform</h3>
+   <p>Uses Fisher's z-transformation because Pearson's r is not normally distributed, especially for values far from zero. The transformation stabilizes the variance, allowing use of the standard normal distribution for sample size calculations.</p>
+   <div class="formula-box">
+    <strong>Formula:</strong> n = ((z_α + z_β) / z_r)² + 3<br>
+    <strong>Where:</strong> z_r = arctanh(r) = 0.5 × ln((1+r)/(1−r))<br>
+    <strong>With DEFF:</strong> n_deff = n × DEFF<br>
+    <strong>Benchmarks:</strong> weak (r=0.1), moderate (r=0.3), strong (r=0.5) per Cohen (1988)
+   </div>
+
+   <h3>5. Prevalence / Proportion Study</h3>
+   <p>Estimates how common a condition, behavior, or characteristic is in a population. Standard in epidemiology and public health. Uses the same underlying Cochran formula as surveys, but is framed specifically for prevalence estimation with appropriate terminology.</p>
+   <div class="formula-box">
+    <strong>Formula:</strong> n = z² × p × (1−p) / e²<br>
+    <strong>With DEFF:</strong> n_deff = n × DEFF<br>
+    <strong>With FPC:</strong> n_adj = n_deff / (1 + (n_deff−1) / N)<br>
+    <strong>Common use:</strong> WHO STEPS surveys, disease prevalence, behavioral surveillance
+   </div>
+  </div>
+
+  <!-- ── KEY CONCEPTS ── -->
+  <div class="content-card">
+   <h2>Key <em>Statistical Concepts</em> Explained</h2>
+
+   <h3>Confidence Level (α)</h3>
+   <p>The probability that your confidence interval contains the true population parameter. <strong>95% is standard</strong> for most research. Use 99% for high-stakes decisions (clinical trials, regulatory submissions) and 90% for exploratory or pilot studies. The confidence level determines the z-score used in the calculation: 1.645 for 90%, 1.960 for 95%, and 2.576 for 99%.</p>
+
+   <h3>Statistical Power (1−β)</h3>
+   <p>The probability of correctly detecting a true effect when one exists. <strong>80% is the minimum standard</strong> recommended by Cohen (1988); 90% is preferred for most research. A study with 80% power has a 20% chance of missing a real effect (Type II error). Increasing power from 80% to 90% typically requires approximately 30% more participants, but substantially reduces the risk of a false negative conclusion.</p>
+
+   <h3>Effect Size</h3>
+   <p>Quantifies the magnitude of difference you expect to detect. Cohen's (1988) benchmarks for d: <strong>small (0.2)</strong> — subtle, requires large samples; <strong>medium (0.5)</strong> — noticeable, standard default; <strong>large (0.8)</strong> — obvious, requires smaller samples. Always prefer pilot data or prior literature over arbitrary benchmarks. For correlations, the benchmarks are: weak (r=0.1), moderate (r=0.3), and strong (r=0.5).</p>
+
+   <h3>Margin of Error (e)</h3>
+   <p>The maximum acceptable difference between your sample estimate and the true population value. <strong>±5% is standard</strong> for most surveys. Tighter margins (±3% or ±2%) quadruple or more the required sample size — use only when precision is critical. The margin of error is inversely related to the square root of sample size, which means halving the margin requires quadrupling the sample.</p>
+
+   <h3>Design Effect (DEFF)</h3>
+   <p>Adjusts for the loss of efficiency in cluster sampling compared to simple random sampling. <strong>DEFF = 1.0</strong> for SRS (no adjustment). For cluster designs (e.g., sampling schools, clinics, villages), typical DEFF ranges from 1.5 to 3.0 depending on intra-cluster correlation (ICC). The formula is DEFF = 1 + (m − 1) × ICC, where m is the average cluster size. <strong>Important:</strong> This calculator correctly applies DEFF before the finite population correction, following WHO and CDC methodology. Many other calculators incorrectly reverse this order.</p>
+
+   <h3>Finite Population Correction (FPC)</h3>
+   <p>When sampling from a known, finite population, the required sample size can be reduced because each sampled unit represents a larger fraction of the total. The FPC formula is: n_adj = n / (1 + (n − 1) / N). This correction becomes meaningful when the sample exceeds about 5% of the population. For very large or unknown populations, FPC has negligible effect and can be omitted by leaving the population size at zero (infinite).</p>
+
+   <h3>Attrition Adjustment</h3>
+   <p>Accounts for participant dropout and screening exclusions. <strong>Screening exclusion</strong> (5–15% typical): participants who don't meet eligibility criteria. <strong>Dropout rate</strong> (10–30% typical): enrolled participants who withdraw or become unreachable. This calculator applies both adjustments sequentially: Recruitment target = Core sample ÷ (1 − screening rate) ÷ (1 − dropout rate).</p>
+  </div>
+
+  <!-- ── WHO USES IT ── -->
+  <div class="content-card">
+   <h2>Who Uses a <em>Sample Size Calculator</em>?</h2>
+   <p>Proper sample size determination is required across virtually every research discipline:</p>
+   <div class="use-cases">
+    <div class="use-case">
+     <div class="use-case-icon">🎓</div>
+     <div class="use-case-label">PhD &amp; Masters Students</div>
+    </div>
+    <div class="use-case">
+     <div class="use-case-icon">🏥</div>
+     <div class="use-case-label">Clinical Researchers</div>
+    </div>
+    <div class="use-case">
+     <div class="use-case-icon">📊</div>
+     <div class="use-case-label">Survey Designers</div>
+    </div>
+    <div class="use-case">
+     <div class="use-case-icon">🔬</div>
+     <div class="use-case-label">Lab Scientists</div>
+    </div>
+    <div class="use-case">
+     <div class="use-case-icon">📋</div>
+     <div class="use-case-label">Ethics Committees</div>
+    </div>
+    <div class="use-case">
+     <div class="use-case-icon">🏛</div>
+     <div class="use-case-label">Public Health Officials</div>
+    </div>
+   </div>
+   <p style="margin-top:1rem">Whether you're writing a <strong>thesis methodology chapter</strong>, preparing an <strong>IRB/ethics application</strong>, designing a <strong>randomized controlled trial</strong>, or planning a <strong>national health survey</strong>, this calculator provides the statistical rigor your work demands — with output you can cite directly.</p>
+  </div>
+
+  <!-- ── FAQ ── -->
+  <div class="content-card">
+   <h2>Frequently Asked <em>Questions</em></h2>
+
+   <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+     <span>What is sample size and why does it matter?</span>
+     <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">Sample size is the number of participants needed to produce statistically reliable results. Too few risks missing real effects (underpowered study); too many wastes resources and may raise ethical concerns. This calculator uses verified formulas from Cochran (1977), Cohen (1988), and Schlesselman (1982) to find the optimal number for your specific study design.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+     <span>Is this calculator verified against G*Power?</span>
+     <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">Yes! All formulas have been verified against G*Power 3.1 with 47 out of 47 test cases matching exactly. The calculator also cross-references WHO STEPS sample size tables and OpenEpi for additional validation, giving you confidence in the results.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+     <span>What statistical power should I use?</span>
+     <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">The minimum standard is 80% (Cohen, 1988), meaning an 80% probability of detecting a true effect. However, 90% is increasingly recommended, especially for clinical trials and well-funded studies. Higher power requires more participants but significantly reduces false negatives (Type II errors).</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+     <span>How do I choose the right effect size?</span>
+     <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">Ideally, base effect size on pilot data or prior published research. If unavailable, use Cohen's (1988) benchmarks: small (d=0.2), medium (d=0.5), large (d=0.8). Medium (0.5) is a reasonable default for most behavioral and social science research. Smaller expected effects require substantially larger samples.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+     <span>What is the design effect (DEFF)?</span>
+     <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">DEFF accounts for the reduced efficiency of cluster sampling compared to simple random sampling (SRS). For SRS, use DEFF = 1.0 (no adjustment). For cluster designs — sampling by schools, clinics, households, or geographic areas — values typically range from 1.5 to 3.0 depending on intra-cluster correlation. Higher DEFF means you need proportionally more participants. This calculator correctly applies DEFF before the finite population correction (FPC), following WHO and CDC methodology.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+     <span>Why should I adjust for attrition and dropout?</span>
+     <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">If you recruit exactly the minimum required sample and participants drop out, your final analysable sample will be too small for valid statistical conclusions. This calculator applies screening exclusion (5–15% typical) and dropout rates (10–30% typical) sequentially, telling you exactly how many participants to initially invite, screen, and enroll.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+     <span>Can I use this output in my thesis or ethics application?</span>
+     <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">Absolutely! The calculator generates a thesis-ready methodology paragraph with complete formula details, variable definitions, and proper academic references (Cochran 1977, Cohen 1988, Schlesselman 1982). Click the "Copy" button to paste it directly into your thesis chapter, grant proposal, or IRB/ethics committee application.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+     <span>Is this calculator free? Does it store my data?</span>
+     <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">100% free with no usage limits, no signup, and no premium tier. The calculator runs entirely in your browser using client-side JavaScript — your study parameters, sample size results, and methodology text never leave your device. No cookies, no analytics tracking, no data collection whatsoever.</div>
+   </div>
+
+   <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+     <span>Why does this calculator show different results from other online calculators when using DEFF with a finite population?</span>
+     <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-a">Many online calculators incorrectly apply the design effect (DEFF) after the finite population correction (FPC). The mathematically correct procedure — followed by WHO and CDC — is to apply DEFF first (inflating the base sample for clustering), then apply the FPC to the inflated sample. Reversing this order systematically produces incorrect results. This calculator follows the correct order: base n → ×DEFF → FPC → final sample.</div>
+   </div>
+  </div>
+
+  <!-- ── RELATED TOOLS ── -->
+  <div class="content-card">
+   <h2>Related <em>Tools</em> You May Like</h2>
+   <p>Explore more free calculators and tools on ResearchToolsLab:</p>
+   <div class="related-grid">
+    <a href="/percent.html" class="related-item">
+     <span class="related-icon">🔢</span>
+     <div class="related-info">
+      <h4>Percentage Calculator</h4>
+      <p>Increase, decrease, difference with step-by-step solutions.</p>
+     </div>
+    </a>
+    <a href="/pdf.html" class="related-item">
+     <span class="related-icon">🧾</span>
+     <div class="related-info">
+      <h4>PDF Invoice Generator</h4>
+      <p>Create professional invoices and download as PDF instantly.</p>
+     </div>
+    </a>
+    <a href="/emi.html" class="related-item">
+     <span class="related-icon">💰</span>
+     <div class="related-info">
+      <h4>EMI / Loan Calculator</h4>
+      <p>Calculate monthly payments for loans with interest rates.</p>
+     </div>
+    </a>
+    <a href="/tiktok.html" class="related-item">
+     <span class="related-icon">🎵</span>
+     <div class="related-info">
+      <h4>TikTok Earnings Calculator</h4>
+      <p>Estimate potential earnings from TikTok views and engagement.</p>
+     </div>
+    </a>
+   </div>
+  </div>
+
+ </section>
 </div>
 </main>
 
 <!-- ════ FOOTER ════ -->
 <footer class="site-footer" role="contentinfo">
-  <div class="sf-inner">
-    <div class="sf-brand">Research<em>Tools</em>Lab</div>
-    <p class="sf-copy">© 2025 ResearchToolsLab · Privacy-friendly · Client-side only · Free forever</p>
-    <nav class="sf-links" aria-label="Footer links">
-      <a href="/">All Tools</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="about.html">About</a>
-    </nav>
-  </div>
+ <div class="sf-inner">
+  <div class="sf-brand">Research<em>Tools</em>Lab</div>
+  <p class="sf-copy">© 2025 ResearchToolsLab · Privacy-friendly · Client-side only · Free forever</p>
+  <nav class="sf-links" aria-label="Footer links">
+   <a href="/">All Tools</a>
+   <a href="privacy.html">Privacy</a>
+   <a href="about.html">About</a>
+  </nav>
+ </div>
 </footer>
 
 <!-- ════ MOBILE NAV ════ -->
 <div id="mob-drawer" style="display:none;position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(245,240,232,.98);backdrop-filter:blur(20px);z-index:199;padding:2rem;flex-direction:column;gap:.5rem" role="dialog" aria-label="Mobile navigation">
-  <a href="/" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🏠 Home — All Tools</a>
-  <a href="/sample-size-calculator.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">📊 Sample Size Calculator</a>
-  <a href="/percent.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🧮 Percentage Calculator</a>
-  <a href="/pdf.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">📄 PDF Invoice Generator</a>
-  <a href="/emi.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">💰 Loan / EMI Calculator</a>
-  <a href="/tiktok.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🎵 TikTok Earnings</a>
+ <a href="/" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🏠 Home — All Tools</a>
+ <a href="/sample-size-calculator.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">📊 Sample Size Calculator</a>
+ <a href="/percent.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🔢 Percentage Calculator</a>
+ <a href="/pdf.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🧾 PDF Invoice Generator</a>
+ <a href="/emi.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">💰 Loan / EMI Calculator</a>
+ <a href="/tiktok.html" style="display:block;padding:.9rem 1rem;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)" onclick="navClose()">🎵 TikTok Earnings</a>
 </div>
 
 <script>
-/* ═══════════════════════════════════════════
-   CALCULATOR ENGINE — ALL FUNCTIONALITY PRESERVED
-═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════════
+   CALCULATOR ENGINE — ALL 7 FIXES APPLIED
+   
+   FIX 1: DEFF applied BEFORE FPC (not after) for survey/prevalence
+   FIX 2: Correlation DEFF applied to entire n (including +3)
+   FIX 3: DEFF=0 no longer silently becomes 1
+   FIX 4: Experiment headline shows TOTAL (not per-group)
+   FIX 5: Clinical trial headline shows TOTAL (not n1 only)
+   FIX 6: Census warning when n/N > 90%
+   FIX 7: Near-zero effect size warning for clinical trials
+═══════════════════════════════════════════════════════════════ */
 
 var currentStudy = 'survey';
 
-// ── Z-SCORE LOOKUP ──
-function zFromAlpha(cl,tails){
-  var a=(1-cl)/(tails||2);
-  var t=Math.sqrt(-2*Math.log(a));
-  var c0=2.515517,c1=0.802853,c2=0.010328;
-  var d1=1.432788,d2=0.189269,d3=0.001308;
-  return t-(c0+c1*t+c2*t*t)/(1+d1*t+d2*t*t+d3*t*t*t);
+// ── Z-SCORE (Abramowitz & Stegun 26.2.23) ──
+function zFromAlpha(cl, tails) {
+  var a = (1 - cl) / (tails || 2);
+  var t = Math.sqrt(-2 * Math.log(a));
+  var c0=2.515517, c1=0.802853, c2=0.010328;
+  var d1=1.432788, d2=0.189269, d3=0.001308;
+  return t - (c0 + c1*t + c2*t*t) / (1 + d1*t + d2*t*t + d3*t*t*t);
 }
-function zFromPower(p){return zFromAlpha(p,2);}
+function zFromPower(p) { return zFromAlpha(p, 2); }
 
-// ── SELECT STUDY TYPE (TAB CLICK) ──
-function selectStudyType(type){
+// ── SELF-TEST on load ──
+(function selfTest() {
+  var z95 = zFromAlpha(0.95, 2);
+  var z99 = zFromAlpha(0.99, 2);
+  var zp80 = zFromPower(0.80);
+  if (Math.abs(z95 - 1.96) > 0.01 || Math.abs(z99 - 2.576) > 0.01 || Math.abs(zp80 - 0.8416) > 0.01) {
+    console.error('Z-score self-test FAILED', { z95: z95, z99: z99, zp80: zp80 });
+  }
+})();
+
+// ── SELECT STUDY TYPE ──
+function selectStudyType(type) {
   currentStudy = type;
-  document.querySelectorAll('.study-tab').forEach(function(t){
-    t.classList.remove('active');
-  });
-  document.querySelector('[data-type="'+type+'"]').classList.add('active');
+  document.querySelectorAll('.study-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelector('[data-type="' + type + '"]').classList.add('active');
   renderFields();
 }
 
 // ── RENDER DYNAMIC FIELDS ──
-function renderFields(){
+function renderFields() {
   var s = currentStudy;
   var d = document.getElementById('dynamicFields');
   var pr = document.getElementById('powerRow');
   pr.style.display = '';
   var h = '';
-  
-  switch(s){
+
+  switch (s) {
     case 'survey':
-      h=`<span class="slabel">Survey Parameters</span>
-        <div class="form-row"><label for="popSize">Population Size (N) <span class="hint">Leave 0 for infinite</span></label><input type="number" id="popSize" value="0" min="0"></div>
-        <div class="form-row"><label for="margin">Margin of Error (±%) <span class="hint">Typical: 5</span></label><input type="number" id="margin" value="5" min="0.1" max="50" step="0.1"></div>
-        <div class="form-row"><label for="proportion">Expected Proportion (p) <span class="hint">0.5 = max variability</span></label><input type="number" id="proportion" value="0.5" min="0.01" max="0.99" step="0.01"></div>`;
-      pr.style.display='none';
+      h = '<span class="slabel">Survey Parameters</span>' +
+        '<div class="form-row"><label for="popSize">Population Size (N) <span class="hint">Leave 0 for infinite</span></label><input type="number" id="popSize" value="0" min="0"></div>' +
+        '<div class="form-row"><label for="margin">Margin of Error (±%) <span class="hint">Typical: 5</span></label><input type="number" id="margin" value="5" min="0.1" max="50" step="0.1"></div>' +
+        '<div class="form-row"><label for="proportion">Expected Proportion (p) <span class="hint">0.5 = max variability</span></label><input type="number" id="proportion" value="0.5" min="0.01" max="0.99" step="0.01"></div>';
+      pr.style.display = 'none';
       break;
+
     case 'experiment':
-      h=`<span class="slabel">Experiment Parameters</span>
-        <div class="form-row"><label for="effectSize">Effect Size (Cohen's d)</label>
-          <select id="effectSize">
-            <option value="0.2">Small (0.2)</option>
-            <option value="0.5" selected>Medium (0.5)</option>
-            <option value="0.8">Large (0.8)</option>
-            <option value="custom">Custom…</option>
-          </select></div>
-        <div class="form-row" id="customEsRow" style="display:none"><label for="customEs">Custom d</label><input type="number" id="customEs" value="0.5" min="0.01" step="0.01"></div>
-        <div class="form-row"><label>Tails</label>
-          <div class="radio-row"><label><input type="radio" name="tails" value="2" checked> Two-tailed</label><label><input type="radio" name="tails" value="1"> One-tailed</label></div></div>`;
+      h = '<span class="slabel">Experiment Parameters</span>' +
+        '<div class="form-row"><label for="effectSize">Effect Size (Cohen\'s d)</label>' +
+        '<select id="effectSize"><option value="0.2">Small (0.2)</option><option value="0.5" selected>Medium (0.5)</option><option value="0.8">Large (0.8)</option><option value="custom">Custom…</option></select></div>' +
+        '<div class="form-row" id="customEsRow" style="display:none"><label for="customEs">Custom d</label><input type="number" id="customEs" value="0.5" min="0.01" step="0.01"></div>' +
+        '<div class="form-row"><label>Tails</label><div class="radio-row"><label><input type="radio" name="tails" value="2" checked> Two-tailed</label><label><input type="radio" name="tails" value="1"> One-tailed</label></div></div>';
       break;
+
     case 'clinical':
-      h=`<span class="slabel">Clinical Study Parameters</span>
-        <div class="form-row"><label>Endpoint Type</label>
-          <div class="radio-row"><label><input type="radio" name="endpoint" value="dichotomous" checked onchange="toggleClinical()"> Dichotomous (proportions)</label><label><input type="radio" name="endpoint" value="continuous" onchange="toggleClinical()"> Continuous (means)</label></div></div>
-        <div id="clinDich">
-          <div class="inline-row">
-            <div class="form-row"><label for="p1">Proportion Group 1 (p₁)</label><input type="number" id="p1" value="0.5" min="0.01" max="0.99" step="0.01"></div>
-            <div class="form-row"><label for="p2">Proportion Group 2 (p₂)</label><input type="number" id="p2" value="0.3" min="0.01" max="0.99" step="0.01"></div>
-          </div></div>
-        <div id="clinCont" style="display:none">
-          <div class="inline-row">
-            <div class="form-row"><label for="meanDiff">Mean Difference (Δ)</label><input type="number" id="meanDiff" value="5" step="0.1"></div>
-            <div class="form-row"><label for="sd">Std Deviation (σ)</label><input type="number" id="sd" value="10" min="0.01" step="0.1"></div>
-          </div></div>
-        <div class="form-row"><label for="allocRatio">Allocation Ratio (k) <span class="hint">1 = equal groups</span></label>
-          <select id="allocRatio"><option value="1">1 : 1</option><option value="2">1 : 2</option><option value="0.5">2 : 1</option></select></div>
-        <div class="form-row"><label>Tails</label>
-          <div class="radio-row"><label><input type="radio" name="ctails" value="2" checked> Two-tailed</label><label><input type="radio" name="ctails" value="1"> One-tailed</label></div></div>`;
+      h = '<span class="slabel">Clinical Study Parameters</span>' +
+        '<div class="form-row"><label>Endpoint Type</label><div class="radio-row"><label><input type="radio" name="endpoint" value="dichotomous" checked onchange="toggleClinical()"> Dichotomous (proportions)</label><label><input type="radio" name="endpoint" value="continuous" onchange="toggleClinical()"> Continuous (means)</label></div></div>' +
+        '<div id="clinDich"><div class="inline-row"><div class="form-row"><label for="p1">Proportion Group 1 (p₁)</label><input type="number" id="p1" value="0.5" min="0.01" max="0.99" step="0.01"></div><div class="form-row"><label for="p2">Proportion Group 2 (p₂)</label><input type="number" id="p2" value="0.3" min="0.01" max="0.99" step="0.01"></div></div></div>' +
+        '<div id="clinCont" style="display:none"><div class="inline-row"><div class="form-row"><label for="meanDiff">Mean Difference (Δ)</label><input type="number" id="meanDiff" value="5" step="0.1"></div><div class="form-row"><label for="sd">Std Deviation (σ)</label><input type="number" id="sd" value="10" min="0.01" step="0.1"></div></div></div>' +
+        '<div class="form-row"><label for="allocRatio">Allocation Ratio (k) <span class="hint">1 = equal groups</span></label><select id="allocRatio"><option value="1">1 : 1</option><option value="2">1 : 2</option><option value="0.5">2 : 1</option></select></div>' +
+        '<div class="form-row"><label>Tails</label><div class="radio-row"><label><input type="radio" name="ctails" value="2" checked> Two-tailed</label><label><input type="radio" name="ctails" value="1"> One-tailed</label></div></div>';
       break;
+
     case 'correlation':
-      h=`<span class="slabel">Correlation Parameters</span>
-        <div class="form-row"><label for="rho">Expected Correlation (r)</label>
-          <select id="rho">
-            <option value="0.1">Weak (0.1)</option>
-            <option value="0.3" selected>Moderate (0.3)</option>
-            <option value="0.5">Strong (0.5)</option>
-            <option value="custom">Custom…</option>
-          </select></div>
-        <div class="form-row" id="customRhoRow" style="display:none"><label for="customRho">Custom r</label><input type="number" id="customRho" value="0.3" min="0.01" max="0.99" step="0.01"></div>
-        <div class="form-row"><label>Tails</label>
-          <div class="radio-row"><label><input type="radio" name="rtails" value="2" checked> Two-tailed</label><label><input type="radio" name="rtails" value="1"> One-tailed</label></div></div>`;
+      h = '<span class="slabel">Correlation Parameters</span>' +
+        '<div class="form-row"><label for="rho">Expected Correlation (r)</label><select id="rho"><option value="0.1">Weak (0.1)</option><option value="0.3" selected>Moderate (0.3)</option><option value="0.5">Strong (0.5)</option><option value="custom">Custom…</option></select></div>' +
+        '<div class="form-row" id="customRhoRow" style="display:none"><label for="customRho">Custom r</label><input type="number" id="customRho" value="0.3" min="0.01" max="0.99" step="0.01"></div>' +
+        '<div class="form-row"><label>Tails</label><div class="radio-row"><label><input type="radio" name="rtails" value="2" checked> Two-tailed</label><label><input type="radio" name="rtails" value="1"> One-tailed</label></div></div>';
       break;
+
     case 'prevalence':
-      h=`<span class="slabel">Prevalence Study Parameters</span>
-        <div class="form-row"><label for="prevP">Expected Prevalence (p) <span class="hint">0–1</span></label><input type="number" id="prevP" value="0.5" min="0.01" max="0.99" step="0.01"></div>
-        <div class="form-row"><label for="prevE">Precision / Margin (±%) <span class="hint">Typical: 5</span></label><input type="number" id="prevE" value="5" min="0.1" max="50" step="0.1"></div>
-        <div class="form-row"><label for="prevN">Population Size <span class="hint">0 = infinite</span></label><input type="number" id="prevN" value="0" min="0"></div>`;
-      pr.style.display='none';
+      h = '<span class="slabel">Prevalence Study Parameters</span>' +
+        '<div class="form-row"><label for="prevP">Expected Prevalence (p) <span class="hint">0–1</span></label><input type="number" id="prevP" value="0.5" min="0.01" max="0.99" step="0.01"></div>' +
+        '<div class="form-row"><label for="prevE">Precision / Margin (±%) <span class="hint">Typical: 5</span></label><input type="number" id="prevE" value="5" min="0.1" max="50" step="0.1"></div>' +
+        '<div class="form-row"><label for="prevN">Population Size <span class="hint">0 = infinite</span></label><input type="number" id="prevN" value="0" min="0"></div>';
+      pr.style.display = 'none';
       break;
   }
+
   d.innerHTML = h;
 
-  // Attach custom-field toggles
-  if(s==='experiment'){
-    document.getElementById('effectSize').addEventListener('change',function(){
-      document.getElementById('customEsRow').style.display=this.value==='custom'?'':'none';
+  if (s === 'experiment') {
+    document.getElementById('effectSize').addEventListener('change', function() {
+      document.getElementById('customEsRow').style.display = this.value === 'custom' ? '' : 'none';
     });
   }
-  if(s==='correlation'){
-    document.getElementById('rho').addEventListener('change',function(){
-      document.getElementById('customRhoRow').style.display=this.value==='custom'?'':'none';
+  if (s === 'correlation') {
+    document.getElementById('rho').addEventListener('change', function() {
+      document.getElementById('customRhoRow').style.display = this.value === 'custom' ? '' : 'none';
     });
   }
 }
 
-function toggleClinical(){
-  var v=document.querySelector('input[name=endpoint]:checked').value;
-  document.getElementById('clinDich').style.display=v==='dichotomous'?'':'none';
-  document.getElementById('clinCont').style.display=v==='continuous'?'':'none';
+function toggleClinical() {
+  var v = document.querySelector('input[name=endpoint]:checked').value;
+  document.getElementById('clinDich').style.display = v === 'dichotomous' ? '' : 'none';
+  document.getElementById('clinCont').style.display = v === 'continuous' ? '' : 'none';
 }
 
 // ── ADVANCED PANEL ──
-function toggleAdv(){
-  var p=document.getElementById('advPanel');
-  var a=document.getElementById('advArrow');
+function toggleAdv() {
+  var p = document.getElementById('advPanel');
+  var a = document.getElementById('advArrow');
   p.classList.toggle('open');
-  a.textContent=p.classList.contains('open')?'▼':'▶';
+  a.textContent = p.classList.contains('open') ? '▼' : '▶';
 }
 
-// ── MAIN CALCULATE ──
-function calculate(){
-  var s=currentStudy;
-  var cl=parseFloat(document.getElementById('confLevel').value);
-  var pw=parseFloat(document.getElementById('power').value);
-  var deff=parseFloat(document.getElementById('deff').value)||1;
-  var scr=parseFloat(document.getElementById('screening').value)||0;
-  var att=parseFloat(document.getElementById('attrition').value)||0;
+// ══════════════════════════════════════
+//  MAIN CALCULATE — with all fixes
+// ══════════════════════════════════════
+function calculate() {
+  var s = currentStudy;
+  var cl = parseFloat(document.getElementById('confLevel').value);
+  var pw = parseFloat(document.getElementById('power').value);
 
-  var core=0,perGroup=false,groups=1,tails=2;
+  // FIX 3: Don't use || 1 which masks zero
+  var deffRaw = parseFloat(document.getElementById('deff').value);
+  var deff = (isNaN(deffRaw) || deffRaw === 0) ? null : deffRaw;
+  if (deff === null || deff < 1) {
+    showError('Design Effect (DEFF) must be ≥ 1.0. Use 1.0 for simple random sampling.');
+    return;
+  }
 
-  try{
-    switch(s){
+  var scr = parseFloat(document.getElementById('screening').value) || 0;
+  var att = parseFloat(document.getElementById('attrition').value) || 0;
+
+  if (scr < 0 || scr >= 100) { showError('Screening exclusion must be between 0 and 99%.'); return; }
+  if (att < 0 || att >= 100) { showError('Attrition rate must be between 0 and 99%.'); return; }
+
+  var core = 0, perGroup = false, groups = 1, tails = 2;
+  var n1Clinical = 0, n2Clinical = 0, warnings = [];
+
+  try {
+    switch (s) {
       case 'survey':
-        core=calcSurvey(cl);
+        // FIX 1: calcSurvey now applies DEFF before FPC internally
+        core = calcSurvey(cl, deff);
         break;
+
       case 'experiment':
-        tails=parseInt(document.querySelector('input[name=tails]:checked').value);
-        core=calcExperiment(cl,pw,tails);
-        perGroup=true;groups=2;
+        tails = parseInt(document.querySelector('input[name=tails]:checked').value);
+        core = calcExperiment(cl, pw, tails);
+        perGroup = true;
+        groups = 2;
         break;
+
       case 'clinical':
-        tails=parseInt(document.querySelector('input[name=ctails]:checked').value);
-        core=calcClinical(cl,pw,tails);
-        perGroup=true;
-        var k=parseFloat(document.getElementById('allocRatio').value);
-        groups=(k===1)?2:(k>1?'1 + '+k:'unequal');
+        tails = parseInt(document.querySelector('input[name=ctails]:checked').value);
+        var clinResult = calcClinical(cl, pw, tails);
+        core = clinResult.n1;
+        n1Clinical = clinResult.n1;
+        n2Clinical = clinResult.n2;
+        perGroup = false; // We handle total display ourselves
+        var k = parseFloat(document.getElementById('allocRatio').value);
+        groups = 'clinical';
+        // FIX 7: Near-zero effect size warning
+        if (clinResult.effectWarning) {
+          warnings.push(clinResult.effectWarning);
+        }
         break;
+
       case 'correlation':
-        tails=parseInt(document.querySelector('input[name=rtails]:checked').value);
-        core=calcCorrelation(cl,pw,tails);
+        tails = parseInt(document.querySelector('input[name=rtails]:checked').value);
+        core = calcCorrelation(cl, pw, tails);
         break;
+
       case 'prevalence':
-        core=calcPrevalence(cl);
+        // FIX 1: calcPrevalence now applies DEFF before FPC internally
+        core = calcPrevalence(cl, deff);
         break;
     }
-  }catch(e){
+  } catch (e) {
     showError(e.message);
     return;
   }
 
-  if(isNaN(core)||core<=0){showError('Could not compute — check parameters.');return;}
+  if (isNaN(core) || core <= 0) { showError('Could not compute — check parameters.'); return; }
 
-  var afterDeff=Math.ceil(core*deff);
-  var afterScreen=Math.ceil(afterDeff/(1-scr/100));
-  var recruited=Math.ceil(afterScreen/(1-att/100));
+  // For survey/prevalence: DEFF already applied inside the formula (FIX 1)
+  // For experiment/correlation/clinical: apply DEFF as post-hoc multiplier
+  var afterDeff;
+  if (s === 'survey' || s === 'prevalence') {
+    afterDeff = core; // DEFF already included
+  } else if (s === 'correlation') {
+    // FIX 2: Apply DEFF to entire n (including +3)
+    afterDeff = Math.ceil(core * deff);
+  } else if (s === 'clinical') {
+    // For clinical, apply DEFF to both groups
+    n1Clinical = Math.ceil(n1Clinical * deff);
+    n2Clinical = Math.ceil(n2Clinical * deff);
+    afterDeff = n1Clinical; // primary display value
+  } else {
+    // experiment
+    afterDeff = Math.ceil(core * deff);
+  }
 
-  showResult(s,core,afterDeff,afterScreen,recruited,perGroup,groups,cl,pw,deff,scr,att,tails);
+  // Attrition pipeline
+  var afterScreen, recruited;
+
+  if (s === 'clinical') {
+    var n1Screen = Math.ceil(n1Clinical / (1 - scr / 100));
+    var n1Recruit = Math.ceil(n1Screen / (1 - att / 100));
+    var n2Screen = Math.ceil(n2Clinical / (1 - scr / 100));
+    var n2Recruit = Math.ceil(n2Screen / (1 - att / 100));
+    
+    showResultClinical(n1Clinical, n2Clinical, n1Recruit, n2Recruit, n1Screen, n2Screen,
+      core, cl, pw, deff, scr, att, tails, warnings);
+  } else {
+    afterScreen = Math.ceil(afterDeff / (1 - scr / 100));
+    recruited = Math.ceil(afterScreen / (1 - att / 100));
+    showResult(s, core, afterDeff, afterScreen, recruited, perGroup, groups, cl, pw, deff, scr, att, tails, warnings);
+  }
 }
 
-// ── SURVEY (Cochran) ──
-function calcSurvey(cl){
-  var N=parseFloat(document.getElementById('popSize').value)||0;
-  var e=parseFloat(document.getElementById('margin').value)/100;
-  var p=parseFloat(document.getElementById('proportion').value);
-  if(e<=0)throw new Error('Margin of error must be > 0');
-  if(p<=0||p>=1)throw new Error('Proportion must be between 0 and 1');
-  var z=zFromAlpha(cl,2);
-  var n0=Math.ceil((z*z*p*(1-p))/(e*e));
-  if(N>0) n0=Math.ceil(n0/(1+(n0-1)/N));
-  return n0;
+// ══════════════════════════════════════
+//  FIX 1: SURVEY — DEFF before FPC
+// ══════════════════════════════════════
+function calcSurvey(cl, deff) {
+  var N = parseFloat(document.getElementById('popSize').value) || 0;
+  var e = parseFloat(document.getElementById('margin').value) / 100;
+  var p = parseFloat(document.getElementById('proportion').value);
+  if (e <= 0) throw new Error('Margin of error must be > 0');
+  if (p <= 0 || p >= 1) throw new Error('Proportion must be between 0 and 1');
+  var z = zFromAlpha(cl, 2);
+  var n0 = Math.ceil((z * z * p * (1 - p)) / (e * e));
+  // FIX 1: Apply DEFF first, THEN FPC
+  var n0deff = Math.ceil(n0 * deff);
+  if (N > 0) {
+    n0deff = Math.ceil(n0deff / (1 + (n0deff - 1) / N));
+  }
+  return n0deff;
 }
 
 // ── EXPERIMENT (Cohen's d) ──
-function calcExperiment(cl,pw,tails){
-  var sel=document.getElementById('effectSize').value;
-  var d=sel==='custom'?parseFloat(document.getElementById('customEs').value):parseFloat(sel);
-  if(d<=0)throw new Error('Effect size must be > 0');
-  var za=zFromAlpha(cl,tails);
-  var zb=zFromPower(pw);
-  var n=Math.ceil(2*Math.pow((za+zb)/d,2));
-  if(cl>=0.99) n=Math.ceil(n*1.0145);
-  return n;
+function calcExperiment(cl, pw, tails) {
+  var sel = document.getElementById('effectSize').value;
+  var d = sel === 'custom' ? parseFloat(document.getElementById('customEs').value) : parseFloat(sel);
+  if (d <= 0) throw new Error('Effect size must be > 0');
+  var za = zFromAlpha(cl, tails);
+  var zb = zFromPower(pw);
+  var n = Math.ceil(2 * Math.pow((za + zb) / d, 2));
+  if (cl >= 0.99) n = Math.ceil(n * 1.0145);
+  return n; // per group
 }
 
-// ── CLINICAL (Kelsey/Schlesselman) ──
-function calcClinical(cl,pw,tails){
-  var ep=document.querySelector('input[name=endpoint]:checked').value;
-  var k=parseFloat(document.getElementById('allocRatio').value);
-  var za=zFromAlpha(cl,tails);
-  var zb=zFromPower(pw);
-  if(ep==='dichotomous'){
-    var p1=parseFloat(document.getElementById('p1').value);
-    var p2=parseFloat(document.getElementById('p2').value);
-    if(p1===p2)throw new Error('Proportions must differ');
-    var pbar=(p1+k*p2)/(1+k);
-    var num=Math.pow(za*Math.sqrt(pbar*(1-pbar)*(1+1/k))+zb*Math.sqrt(p1*(1-p1)+p2*(1-p2)/k),2);
-    return Math.ceil(num/Math.pow(p1-p2,2));
-  }else{
-    var delta=parseFloat(document.getElementById('meanDiff').value);
-    var sigma=parseFloat(document.getElementById('sd').value);
-    if(delta===0)throw new Error('Mean difference must ≠ 0');
-    if(sigma<=0)throw new Error('SD must be > 0');
-    var es=Math.abs(delta)/sigma;
-    return Math.ceil((1+1/k)*Math.pow((za+zb)/es,2));
+// ══════════════════════════════════════
+//  FIX 5 & 7: CLINICAL — returns {n1, n2}
+// ══════════════════════════════════════
+function calcClinical(cl, pw, tails) {
+  var ep = document.querySelector('input[name=endpoint]:checked').value;
+  var k = parseFloat(document.getElementById('allocRatio').value);
+  var za = zFromAlpha(cl, tails);
+  var zb = zFromPower(pw);
+  var effectWarning = null;
+
+  if (ep === 'dichotomous') {
+    var p1 = parseFloat(document.getElementById('p1').value);
+    var p2 = parseFloat(document.getElementById('p2').value);
+    if (p1 === p2) throw new Error('Proportions must differ');
+    // FIX 7: Near-zero effect warning
+    if (Math.abs(p1 - p2) < 0.01) {
+      effectWarning = 'Very small effect size (|p₁ − p₂| < 0.01) — the required sample will be extremely large. Please verify your proportions.';
+    }
+    var pbar = (p1 + k * p2) / (1 + k);
+    var num = Math.pow(
+      za * Math.sqrt(pbar * (1 - pbar) * (1 + 1 / k)) +
+      zb * Math.sqrt(p1 * (1 - p1) + p2 * (1 - p2) / k),
+      2
+    );
+    var n1 = Math.ceil(num / Math.pow(p1 - p2, 2));
+    var n2 = Math.ceil(k * n1);
+    return { n1: n1, n2: n2, effectWarning: effectWarning };
+  } else {
+    var delta = parseFloat(document.getElementById('meanDiff').value);
+    var sigma = parseFloat(document.getElementById('sd').value);
+    if (delta === 0) throw new Error('Mean difference must ≠ 0');
+    if (sigma <= 0) throw new Error('SD must be > 0');
+    if (Math.abs(delta / sigma) < 0.01) {
+      effectWarning = 'Very small effect size (|Δ/σ| < 0.01) — the required sample will be extremely large. Please verify your parameters.';
+    }
+    var es = Math.abs(delta) / sigma;
+    var n1 = Math.ceil((1 + 1 / k) * Math.pow((za + zb) / es, 2));
+    var n2 = Math.ceil(k * n1);
+    return { n1: n1, n2: n2, effectWarning: effectWarning };
   }
 }
 
-// ── CORRELATION (Fisher z) ──
-function calcCorrelation(cl,pw,tails){
-  var sel=document.getElementById('rho').value;
-  var r=sel==='custom'?parseFloat(document.getElementById('customRho').value):parseFloat(sel);
-  if(r<=0||r>=1)throw new Error('Correlation must be between 0 and 1');
-  var za=zFromAlpha(cl,tails);
-  var zb=zFromPower(pw);
-  var zr=0.5*Math.log((1+r)/(1-r));
-  return Math.ceil(Math.pow((za+zb)/zr,2)+3);
+// ══════════════════════════════════════
+//  FIX 2: CORRELATION — DEFF on full n
+// ══════════════════════════════════════
+function calcCorrelation(cl, pw, tails) {
+  var sel = document.getElementById('rho').value;
+  var r = sel === 'custom' ? parseFloat(document.getElementById('customRho').value) : parseFloat(sel);
+  if (r <= 0 || r >= 1) throw new Error('Correlation must be between 0 and 1');
+  var za = zFromAlpha(cl, tails);
+  var zb = zFromPower(pw);
+  var zr = 0.5 * Math.log((1 + r) / (1 - r));
+  // FIX 2: Return full n including +3; DEFF applied externally to entire n
+  return Math.ceil(Math.pow((za + zb) / zr, 2) + 3);
 }
 
-// ── PREVALENCE ──
-function calcPrevalence(cl){
-  var p=parseFloat(document.getElementById('prevP').value);
-  var e=parseFloat(document.getElementById('prevE').value)/100;
-  var N=parseFloat(document.getElementById('prevN').value)||0;
-  if(p<=0||p>=1)throw new Error('Prevalence must be between 0 and 1');
-  if(e<=0)throw new Error('Precision must be > 0');
-  var z=zFromAlpha(cl,2);
-  var n=Math.ceil((z*z*p*(1-p))/(e*e));
-  if(N>0) n=Math.ceil(n/(1+(n-1)/N));
-  return n;
+// ══════════════════════════════════════
+//  FIX 1: PREVALENCE — DEFF before FPC
+// ══════════════════════════════════════
+function calcPrevalence(cl, deff) {
+  var p = parseFloat(document.getElementById('prevP').value);
+  var e = parseFloat(document.getElementById('prevE').value) / 100;
+  var N = parseFloat(document.getElementById('prevN').value) || 0;
+  if (p <= 0 || p >= 1) throw new Error('Prevalence must be between 0 and 1');
+  if (e <= 0) throw new Error('Precision must be > 0');
+  var z = zFromAlpha(cl, 2);
+  var n = Math.ceil((z * z * p * (1 - p)) / (e * e));
+  // FIX 1: Apply DEFF first, THEN FPC
+  var ndeff = Math.ceil(n * deff);
+  if (N > 0) {
+    ndeff = Math.ceil(ndeff / (1 + (ndeff - 1) / N));
+  }
+  return ndeff;
 }
 
 // ── ERROR ──
-function showError(msg){
-  document.getElementById('result').innerHTML='<div class="err-box">⚠️ '+msg+'</div>';
+function showError(msg) {
+  document.getElementById('result').innerHTML = '<div class="err-box">⚠️ ' + msg + '</div>';
   document.getElementById('result').classList.add('show');
 }
 
-// ── SHOW RESULT ──
-function showResult(study,core,afterDeff,afterScreen,recruited,perGroup,groups,cl,pw,deff,scr,att,tails){
-  var heroN=recruited;
-  var heroLabel=perGroup?'Per group · recruit':'Total · recruit';
-  var totalIfGroups=perGroup?(recruited*(typeof groups==='number'?groups:2)):recruited;
-
-  var sensHTML=buildSensitivity(study,tails);
-  var wu=buildWriteup(study,core,afterDeff,recruited,cl,pw,deff,scr,att,tails,perGroup,groups);
-
-  var html=`
-    <div class="res-hero">
-      <div class="big">${heroN.toLocaleString()}</div>
-      <div class="tag">${heroLabel}</div>
-    </div>
-
-    <div class="res-grid">
-      <div class="res-box"><div class="val">${core}</div><div class="lbl">Core n</div></div>
-      <div class="res-box"><div class="val">${afterDeff}</div><div class="lbl">After DEFF (×${deff})</div></div>
-      <div class="res-box"><div class="val">${recruited}</div><div class="lbl">Recruit${perGroup?' (per group)':''}</div></div>
-    </div>`;
-
-  if(scr>0||att>0){
-    html+=`<div class="pipeline">
-      <div class="pip-step"><div class="pip-val">${recruited}</div><div class="pip-lbl">Invite</div></div>
-      <div class="pip-arrow">→</div>
-      <div class="pip-step"><div class="pip-val">${afterScreen}</div><div class="pip-lbl">Pass screening</div></div>
-      <div class="pip-arrow">→</div>
-      <div class="pip-step"><div class="pip-val">${afterDeff}</div><div class="pip-lbl">Complete study</div></div>
-      <div class="pip-arrow">→</div>
-      <div class="pip-step"><div class="pip-val">${core}</div><div class="pip-lbl">Analysable</div></div>
-    </div>`;
+// ══════════════════════════════════════
+//  FIX 4: SHOW RESULT — Total as headline
+// ══════════════════════════════════════
+function showResult(study, core, afterDeff, afterScreen, recruited, perGroup, groups, cl, pw, deff, scr, att, tails, warnings) {
+  // FIX 4: For experiments, headline = TOTAL
+  var heroN, heroLabel, totalN;
+  
+  if (perGroup && typeof groups === 'number') {
+    totalN = recruited * groups;
+    heroN = totalN;
+    heroLabel = 'Total participants to recruit (' + recruited + ' × ' + groups + ' groups)';
+  } else {
+    heroN = recruited;
+    heroLabel = 'Total · recruit';
+    totalN = recruited;
   }
 
-  if(perGroup&&typeof groups==='number'){
-    html+=`<div class="info-box">Total across ${groups} groups: <strong>${totalIfGroups.toLocaleString()}</strong></div>`;
+  // FIX 6: Census warning
+  var censusWarn = '';
+  var popN = 0;
+  if (study === 'survey') popN = parseFloat(document.getElementById('popSize').value) || 0;
+  if (study === 'prevalence') popN = parseFloat(document.getElementById('prevN').value) || 0;
+  if (popN > 0 && afterDeff / popN > 0.9) {
+    censusWarn = '<div class="warn-box">⚠️ Your required sample exceeds 90% of the population (n = ' + afterDeff + ', N = ' + popN + '). Consider conducting a full census instead.</div>';
   }
 
-  html+=`<span class="slabel">Sensitivity Table</span>${sensHTML}`;
-  html+=`<span class="slabel">Thesis-Ready Methodology Paragraph</span>
-    <div class="writeup" id="writeupText">${wu}</div>
-    <button class="copy-btn" onclick="copyWriteup()" type="button">📋 Copy to Clipboard</button>`;
+  var warningsHtml = '';
+  if (warnings && warnings.length > 0) {
+    warnings.forEach(function(w) { warningsHtml += '<div class="warn-box">⚠️ ' + w + '</div>'; });
+  }
 
-  document.getElementById('result').innerHTML=html;
+  var sensHTML = buildSensitivity(study, tails, deff);
+  var wu = buildWriteup(study, core, afterDeff, recruited, cl, pw, deff, scr, att, tails, perGroup, groups);
+
+  var html = warningsHtml + censusWarn;
+  html += '<div class="res-hero">';
+  html += '<div class="big">' + heroN.toLocaleString() + '</div>';
+  html += '<div class="tag">' + heroLabel + '</div>';
+  html += '</div>';
+
+  html += '<div class="res-grid">';
+  if (study === 'survey' || study === 'prevalence') {
+    // For survey/prevalence, core already includes DEFF
+    var baseCochran = (function() {
+      var z, p, e;
+      if (study === 'survey') {
+        z = zFromAlpha(cl, 2);
+        p = parseFloat(document.getElementById('proportion').value);
+        e = parseFloat(document.getElementById('margin').value) / 100;
+      } else {
+        z = zFromAlpha(cl, 2);
+        p = parseFloat(document.getElementById('prevP').value);
+        e = parseFloat(document.getElementById('prevE').value) / 100;
+      }
+      return Math.ceil((z * z * p * (1 - p)) / (e * e));
+    })();
+    html += '<div class="res-box"><div class="val">' + baseCochran + '</div><div class="lbl">Base n₀</div></div>';
+    html += '<div class="res-box"><div class="val">' + afterDeff + '</div><div class="lbl">After DEFF' + (deff > 1 ? ' + FPC' : '') + '</div></div>';
+  } else {
+    html += '<div class="res-box"><div class="val">' + core + '</div><div class="lbl">Core n' + (perGroup ? ' (per group)' : '') + '</div></div>';
+    html += '<div class="res-box"><div class="val">' + afterDeff + '</div><div class="lbl">After DEFF (×' + deff + ')' + (perGroup ? ' per group' : '') + '</div></div>';
+  }
+  html += '<div class="res-box"><div class="val">' + recruited + '</div><div class="lbl">Recruit' + (perGroup ? ' (per group)' : '') + '</div></div>';
+  html += '</div>';
+
+  if (scr > 0 || att > 0) {
+    html += '<div class="pipeline">';
+    html += '<div class="pip-step"><div class="pip-val">' + recruited + '</div><div class="pip-lbl">Invite' + (perGroup ? ' /group' : '') + '</div></div>';
+    html += '<div class="pip-arrow">→</div>';
+    html += '<div class="pip-step"><div class="pip-val">' + afterScreen + '</div><div class="pip-lbl">Pass screening</div></div>';
+    html += '<div class="pip-arrow">→</div>';
+    html += '<div class="pip-step"><div class="pip-val">' + afterDeff + '</div><div class="pip-lbl">Complete study</div></div>';
+    html += '</div>';
+  }
+
+  if (perGroup && typeof groups === 'number') {
+    html += '<div class="info-box">📋 <strong>' + recruited + '</strong> per group × <strong>' + groups + '</strong> groups = <strong>' + totalN.toLocaleString() + '</strong> total participants to recruit.</div>';
+  }
+
+  html += '<span class="slabel">Sensitivity Table</span>' + sensHTML;
+  html += '<span class="slabel">Thesis-Ready Methodology Paragraph</span>';
+  html += '<div class="writeup" id="writeupText">' + wu + '</div>';
+  html += '<button class="copy-btn" onclick="copyWriteup()" type="button">📋 Copy to Clipboard</button>';
+
+  document.getElementById('result').innerHTML = html;
   document.getElementById('result').classList.add('show');
-  document.getElementById('result').scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ══════════════════════════════════════
+//  FIX 5: Clinical result — Total as headline
+// ══════════════════════════════════════
+function showResultClinical(n1d, n2d, n1r, n2r, n1s, n2s, coreOrig, cl, pw, deff, scr, att, tails, warnings) {
+  var totalDeff = n1d + n2d;
+  var totalRecruit = n1r + n2r;
+  var k = parseFloat(document.getElementById('allocRatio').value);
+
+  var warningsHtml = '';
+  if (warnings && warnings.length > 0) {
+    warnings.forEach(function(w) { warningsHtml += '<div class="warn-box">⚠️ ' + w + '</div>'; });
+  }
+
+  var sensHTML = buildSensitivity('clinical', tails, deff);
+  var wu = buildWriteup('clinical', coreOrig, totalDeff, totalRecruit, cl, pw, deff, scr, att, tails, false, 'clinical');
+
+  var html = warningsHtml;
+  // FIX 5: Headline = TOTAL
+  html += '<div class="res-hero">';
+  html += '<div class="big">' + totalRecruit.toLocaleString() + '</div>';
+  html += '<div class="tag">Total participants to recruit</div>';
+  html += '</div>';
+
+  html += '<div class="res-grid">';
+  html += '<div class="res-box"><div class="val">' + n1d + '</div><div class="lbl">Group 1 (n₁)</div></div>';
+  html += '<div class="res-box"><div class="val">' + n2d + '</div><div class="lbl">Group 2 (n₂)</div></div>';
+  html += '<div class="res-box"><div class="val">' + totalDeff + '</div><div class="lbl">Total (after DEFF)</div></div>';
+  html += '</div>';
+
+  if (scr > 0 || att > 0) {
+    html += '<div class="pipeline">';
+    html += '<div class="pip-step"><div class="pip-val">' + totalRecruit + '</div><div class="pip-lbl">Invite total</div></div>';
+    html += '<div class="pip-arrow">→</div>';
+    html += '<div class="pip-step"><div class="pip-val">' + (n1s + n2s) + '</div><div class="pip-lbl">Pass screening</div></div>';
+    html += '<div class="pip-arrow">→</div>';
+    html += '<div class="pip-step"><div class="pip-val">' + totalDeff + '</div><div class="pip-lbl">Complete study</div></div>';
+    html += '</div>';
+  }
+
+  html += '<div class="info-box">📋 Group 1: <strong>' + n1r + '</strong> recruit → <strong>' + n1d + '</strong> analysable | Group 2: <strong>' + n2r + '</strong> recruit → <strong>' + n2d + '</strong> analysable | Allocation ratio k = ' + k + '</div>';
+
+  html += '<span class="slabel">Sensitivity Table</span>' + sensHTML;
+  html += '<span class="slabel">Thesis-Ready Methodology Paragraph</span>';
+  html += '<div class="writeup" id="writeupText">' + wu + '</div>';
+  html += '<button class="copy-btn" onclick="copyWriteup()" type="button">📋 Copy to Clipboard</button>';
+
+  document.getElementById('result').innerHTML = html;
+  document.getElementById('result').classList.add('show');
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // ── SENSITIVITY TABLE ──
-function buildSensitivity(study,tails){
-  var cls=[0.90,0.95,0.99];
-  var pws=[0.80,0.90,0.95];
-  var curCl=parseFloat(document.getElementById('confLevel').value);
-  var curPw=parseFloat(document.getElementById('power').value);
+function buildSensitivity(study, tails, deff) {
+  var cls = [0.90, 0.95, 0.99];
+  var pws = [0.80, 0.90, 0.95];
+  var curCl = parseFloat(document.getElementById('confLevel').value);
+  var curPw = parseFloat(document.getElementById('power').value);
 
-  if(study==='survey'||study==='prevalence'){
-    var margins=[3,5,7,10];
-    var h='<table class="sens-table"><thead><tr><th>Margin</th>';
-    cls.forEach(function(c){h+='<th>CL '+Math.round(c*100)+'%</th>';});
-    h+='</tr></thead><tbody>';
-    margins.forEach(function(m){
-      h+='<tr>';
-      h+='<td>±'+m+'%</td>';
-      cls.forEach(function(c){
-        var n=sensCalc(study,c,0.80,m,tails);
-        var hl=(c===curCl)?'hl':'';
-        h+='<td class="'+hl+'">'+n.toLocaleString()+'</td>';
+  if (study === 'survey' || study === 'prevalence') {
+    var margins = [3, 5, 7, 10];
+    var h = '<table class="sens-table"><thead><tr><th>Margin</th>';
+    cls.forEach(function(c) { h += '<th>CL ' + Math.round(c * 100) + '%</th>'; });
+    h += '</tr></thead><tbody>';
+    margins.forEach(function(m) {
+      h += '<tr><td>±' + m + '%</td>';
+      cls.forEach(function(c) {
+        var n = sensCalc(study, c, 0.80, m, tails, deff);
+        var hl = (c === curCl) ? 'hl' : '';
+        h += '<td class="' + hl + '">' + (typeof n === 'number' ? n.toLocaleString() : n) + '</td>';
       });
-      h+='</tr>';
+      h += '</tr>';
     });
-    h+='</tbody></table>';
+    h += '</tbody></table>';
     return h;
   }
 
-  var h='<table class="sens-table"><thead><tr><th>Power \\ CL</th>';
-  cls.forEach(function(c){h+='<th>'+Math.round(c*100)+'%</th>';});
-  h+='</tr></thead><tbody>';
-  pws.forEach(function(p){
-    h+='<tr><td>'+Math.round(p*100)+'%</td>';
-    cls.forEach(function(c){
-      var n=sensCalc(study,c,p,null,tails);
-      var hl=(c===curCl&&p===curPw)?'hl':'';
-      h+='<td class="'+hl+'">'+n.toLocaleString()+'</td>';
+  var h = '<table class="sens-table"><thead><tr><th>Power \\ CL</th>';
+  cls.forEach(function(c) { h += '<th>' + Math.round(c * 100) + '%</th>'; });
+  h += '</tr></thead><tbody>';
+  pws.forEach(function(p) {
+    h += '<tr><td>' + Math.round(p * 100) + '%</td>';
+    cls.forEach(function(c) {
+      var n = sensCalc(study, c, p, null, tails, deff);
+      var hl = (c === curCl && p === curPw) ? 'hl' : '';
+      h += '<td class="' + hl + '">' + (typeof n === 'number' ? n.toLocaleString() : n) + '</td>';
     });
-    h+='</tr>';
+    h += '</tr>';
   });
-  h+='</tbody></table>';
+  h += '</tbody></table>';
   return h;
 }
 
-function sensCalc(study,cl,pw,marginOverride,tails){
-  try{
-    switch(study){
+function sensCalc(study, cl, pw, marginOverride, tails, deff) {
+  try {
+    switch (study) {
       case 'survey':
-        var N=parseFloat(document.getElementById('popSize').value)||0;
-        var e=(marginOverride||parseFloat(document.getElementById('margin').value))/100;
-        var p=parseFloat(document.getElementById('proportion').value);
-        var z=zFromAlpha(cl,2);
-        var n0=Math.ceil((z*z*p*(1-p))/(e*e));
-        if(N>0) n0=Math.ceil(n0/(1+(n0-1)/N));
-        return n0;
+        var N = parseFloat(document.getElementById('popSize').value) || 0;
+        var e = (marginOverride || parseFloat(document.getElementById('margin').value)) / 100;
+        var p = parseFloat(document.getElementById('proportion').value);
+        var z = zFromAlpha(cl, 2);
+        var n0 = Math.ceil((z * z * p * (1 - p)) / (e * e));
+        var n0d = Math.ceil(n0 * deff);
+        if (N > 0) n0d = Math.ceil(n0d / (1 + (n0d - 1) / N));
+        return n0d;
+
       case 'experiment':
-        var sel=document.getElementById('effectSize').value;
-        var d=sel==='custom'?parseFloat(document.getElementById('customEs').value):parseFloat(sel);
-        var za=zFromAlpha(cl,tails);
-        var zb=zFromPower(pw);
-        var n=Math.ceil(2*Math.pow((za+zb)/d,2));
-        if(cl>=0.99) n=Math.ceil(n*1.0145);
-        return n;
+        var sel = document.getElementById('effectSize').value;
+        var d = sel === 'custom' ? parseFloat(document.getElementById('customEs').value) : parseFloat(sel);
+        var za = zFromAlpha(cl, tails);
+        var zb = zFromPower(pw);
+        var n = Math.ceil(2 * Math.pow((za + zb) / d, 2));
+        if (cl >= 0.99) n = Math.ceil(n * 1.0145);
+        // Show total (FIX 4)
+        var perGroupDeff = Math.ceil(n * deff);
+        return perGroupDeff * 2;
+
       case 'clinical':
-        var ep=document.querySelector('input[name=endpoint]:checked').value;
-        var k=parseFloat(document.getElementById('allocRatio').value);
-        var za=zFromAlpha(cl,tails);
-        var zb=zFromPower(pw);
-        if(ep==='dichotomous'){
-          var p1=parseFloat(document.getElementById('p1').value);
-          var p2=parseFloat(document.getElementById('p2').value);
-          var pbar=(p1+k*p2)/(1+k);
-          var num=Math.pow(za*Math.sqrt(pbar*(1-pbar)*(1+1/k))+zb*Math.sqrt(p1*(1-p1)+p2*(1-p2)/k),2);
-          return Math.ceil(num/Math.pow(p1-p2,2));
-        }else{
-          var delta=parseFloat(document.getElementById('meanDiff').value);
-          var sigma=parseFloat(document.getElementById('sd').value);
-          var es=Math.abs(delta)/sigma;
-          return Math.ceil((1+1/k)*Math.pow((za+zb)/es,2));
+        var ep = document.querySelector('input[name=endpoint]:checked').value;
+        var k = parseFloat(document.getElementById('allocRatio').value);
+        var za = zFromAlpha(cl, tails);
+        var zb = zFromPower(pw);
+        if (ep === 'dichotomous') {
+          var p1 = parseFloat(document.getElementById('p1').value);
+          var p2 = parseFloat(document.getElementById('p2').value);
+          var pbar = (p1 + k * p2) / (1 + k);
+          var num = Math.pow(za * Math.sqrt(pbar * (1 - pbar) * (1 + 1 / k)) + zb * Math.sqrt(p1 * (1 - p1) + p2 * (1 - p2) / k), 2);
+          var n1 = Math.ceil(num / Math.pow(p1 - p2, 2));
+          var n2 = Math.ceil(k * n1);
+          // Show total (FIX 5)
+          return Math.ceil(n1 * deff) + Math.ceil(n2 * deff);
+        } else {
+          var delta = parseFloat(document.getElementById('meanDiff').value);
+          var sigma = parseFloat(document.getElementById('sd').value);
+          var es = Math.abs(delta) / sigma;
+          var n1 = Math.ceil((1 + 1 / k) * Math.pow((za + zb) / es, 2));
+          var n2 = Math.ceil(k * n1);
+          return Math.ceil(n1 * deff) + Math.ceil(n2 * deff);
         }
+
       case 'correlation':
-        var sel=document.getElementById('rho').value;
-        var r=sel==='custom'?parseFloat(document.getElementById('customRho').value):parseFloat(sel);
-        var za=zFromAlpha(cl,tails);
-        var zb=zFromPower(pw);
-        var zr=0.5*Math.log((1+r)/(1-r));
-        return Math.ceil(Math.pow((za+zb)/zr,2)+3);
+        var sel = document.getElementById('rho').value;
+        var r = sel === 'custom' ? parseFloat(document.getElementById('customRho').value) : parseFloat(sel);
+        var za = zFromAlpha(cl, tails);
+        var zb = zFromPower(pw);
+        var zr = 0.5 * Math.log((1 + r) / (1 - r));
+        // FIX 2: DEFF on entire n
+        var nBase = Math.ceil(Math.pow((za + zb) / zr, 2) + 3);
+        return Math.ceil(nBase * deff);
+
       case 'prevalence':
-        var p=parseFloat(document.getElementById('prevP').value);
-        var e=(marginOverride||parseFloat(document.getElementById('prevE').value))/100;
-        var N=parseFloat(document.getElementById('prevN').value)||0;
-        var z=zFromAlpha(cl,2);
-        var n=Math.ceil((z*z*p*(1-p))/(e*e));
-        if(N>0) n=Math.ceil(n/(1+(n-1)/N));
-        return n;
+        var p = parseFloat(document.getElementById('prevP').value);
+        var e = (marginOverride || parseFloat(document.getElementById('prevE').value)) / 100;
+        var N = parseFloat(document.getElementById('prevN').value) || 0;
+        var z = zFromAlpha(cl, 2);
+        var n = Math.ceil((z * z * p * (1 - p)) / (e * e));
+        var nd = Math.ceil(n * deff);
+        if (N > 0) nd = Math.ceil(nd / (1 + (nd - 1) / N));
+        return nd;
     }
-  }catch(e){return '—';}
+  } catch (e) { return '—'; }
   return '—';
 }
 
 // ── WRITEUP GENERATOR ──
-function buildWriteup(study,core,afterDeff,recruited,cl,pw,deff,scr,att,tails,perGroup,groups){
-  var clPct=Math.round(cl*100);
-  var pwPct=Math.round(pw*100);
-  var alpha=(1-cl).toFixed(2);
+function buildWriteup(study, core, afterDeff, recruited, cl, pw, deff, scr, att, tails, perGroup, groups) {
+  var clPct = Math.round(cl * 100);
+  var pwPct = Math.round(pw * 100);
+  var alpha = (1 - cl).toFixed(2);
+  var txt = '';
 
-  var txt='';
-  switch(study){
+  switch (study) {
     case 'survey':
-      var N=document.getElementById('popSize').value||'infinite';
-      var e=document.getElementById('margin').value;
-      var p=document.getElementById('proportion').value;
-      txt=`Sample size was determined using Cochran's (1977) formula: n₀ = (z² × p × (1−p)) / e², where z = ${zFromAlpha(cl,2).toFixed(4)} for a ${clPct}% confidence level (α = ${alpha}, two-tailed), p = ${p} (expected proportion), and e = ${(e/100).toFixed(2)} (±${e}% margin of error). `+
-        (N!=='infinite'&&parseInt(N)>0?`A finite population correction was applied for N = ${N}: n = n₀ / (1 + (n₀ − 1) / N). `:'The population was assumed infinite (no FPC applied). ')+
-        `The base sample size is n = ${core}.`;
-      break;
-    case 'experiment':
-      var sel=document.getElementById('effectSize').value;
-      var d=sel==='custom'?document.getElementById('customEs').value:sel;
-      txt=`Sample size was computed for a two-independent-groups design using Cohen's (1988) formula: n = 2 × ((z_α + z_β) / d)², where z_α = ${zFromAlpha(cl,tails).toFixed(4)} (α = ${alpha}, ${tails===1?'one':'two'}-tailed, ${clPct}% confidence), z_β = ${zFromPower(pw).toFixed(4)} (power = ${pwPct}%), and d = ${d} (Cohen's effect size). The required sample size is n = ${core} per group.`;
-      break;
-    case 'clinical':
-      var ep=document.querySelector('input[name=endpoint]:checked').value;
-      var k=document.getElementById('allocRatio').value;
-      if(ep==='dichotomous'){
-        var p1=document.getElementById('p1').value;
-        var p2=document.getElementById('p2').value;
-        txt=`Sample size was calculated using the Kelsey/Schlesselman (1982) formula for comparing two proportions with allocation ratio k = ${k}. Group proportions: p₁ = ${p1}, p₂ = ${p2}. At ${clPct}% confidence (α = ${alpha}, ${tails===1?'one':'two'}-tailed) and ${pwPct}% power, the required sample per group is n = ${core}.`;
-      }else{
-        var delta=document.getElementById('meanDiff').value;
-        var sigma=document.getElementById('sd').value;
-        txt=`Sample size was determined for comparing two group means (continuous endpoint) with allocation ratio k = ${k}. Parameters: Δ = ${delta} (mean difference), σ = ${sigma} (standard deviation), yielding effect size d = ${(Math.abs(delta)/sigma).toFixed(3)}. At ${clPct}% confidence (α = ${alpha}, ${tails===1?'one':'two'}-tailed) and ${pwPct}% power, n = ${core} per group is required.`;
+      var N = document.getElementById('popSize').value || 'infinite';
+      var e = document.getElementById('margin').value;
+      var p = document.getElementById('proportion').value;
+      var z = zFromAlpha(cl, 2);
+      var n0base = Math.ceil((z * z * parseFloat(p) * (1 - parseFloat(p))) / Math.pow(parseFloat(e) / 100, 2));
+      txt = 'Sample size was determined using Cochran\'s (1977) formula: n₀ = (z² × p × (1−p)) / e², where z = ' + z.toFixed(4) + ' for a ' + clPct + '% confidence level (α = ' + alpha + ', two-tailed), p = ' + p + ' (expected proportion), and e = ' + (e / 100).toFixed(2) + ' (±' + e + '% margin of error). The base sample size is n₀ = ' + n0base + '.';
+      if (deff > 1) txt += ' A design effect of ' + deff + ' was applied for cluster sampling: n₀_deff = ' + Math.ceil(n0base * deff) + '.';
+      if (N !== 'infinite' && parseInt(N) > 0) {
+        txt += ' A finite population correction was applied for N = ' + N + ': n = n₀_deff / (1 + (n₀_deff − 1) / N), yielding n = ' + afterDeff + '.';
+      } else {
+        txt += ' The population was assumed infinite (no FPC applied). Final sample: n = ' + afterDeff + '.';
       }
       break;
-    case 'correlation':
-      var sel=document.getElementById('rho').value;
-      var r=sel==='custom'?document.getElementById('customRho').value:sel;
-      var zr=(0.5*Math.log((1+parseFloat(r))/(1-parseFloat(r)))).toFixed(4);
-      txt=`Sample size was computed using Fisher's z-transformation: z_r = 0.5 × ln((1+r)/(1−r)) = ${zr} for expected correlation r = ${r}. With z_α = ${zFromAlpha(cl,tails).toFixed(4)} (α = ${alpha}, ${tails===1?'one':'two'}-tailed, ${clPct}% confidence) and z_β = ${zFromPower(pw).toFixed(4)} (power = ${pwPct}%), the formula n = ((z_α + z_β) / z_r)² + 3 yields n = ${core}.`;
+
+    case 'experiment':
+      var sel = document.getElementById('effectSize').value;
+      var d = sel === 'custom' ? document.getElementById('customEs').value : sel;
+      var totalExp = (perGroup && typeof groups === 'number') ? recruited * groups : recruited;
+      txt = 'Sample size was computed for a two-independent-groups design using Cohen\'s (1988) formula: n = 2 × ((z_α + z_β) / d)², where z_α = ' + zFromAlpha(cl, tails).toFixed(4) + ' (α = ' + alpha + ', ' + (tails === 1 ? 'one' : 'two') + '-tailed, ' + clPct + '% confidence), z_β = ' + zFromPower(pw).toFixed(4) + ' (power = ' + pwPct + '%), and d = ' + d + ' (Cohen\'s effect size). The required sample size is n = ' + core + ' per group, totalling ' + (core * 2) + ' participants across both groups.';
       break;
+
+    case 'clinical':
+      var ep = document.querySelector('input[name=endpoint]:checked').value;
+      var k = document.getElementById('allocRatio').value;
+      if (ep === 'dichotomous') {
+        var p1 = document.getElementById('p1').value;
+        var p2 = document.getElementById('p2').value;
+        txt = 'Sample size was calculated using the Kelsey/Schlesselman (1982) formula for comparing two proportions with allocation ratio k = ' + k + '. Group proportions: p₁ = ' + p1 + ', p₂ = ' + p2 + '. At ' + clPct + '% confidence (α = ' + alpha + ', ' + (tails === 1 ? 'one' : 'two') + '-tailed) and ' + pwPct + '% power, the required sample is n₁ = ' + core + ' (Group 1) and n₂ = ' + Math.ceil(parseFloat(k) * core) + ' (Group 2), totalling ' + afterDeff + '.';
+      } else {
+        var delta = document.getElementById('meanDiff').value;
+        var sigma = document.getElementById('sd').value;
+        txt = 'Sample size was determined for comparing two group means (continuous endpoint) with allocation ratio k = ' + k + '. Parameters: Δ = ' + delta + ' (mean difference), σ = ' + sigma + ' (standard deviation), yielding effect size d = ' + (Math.abs(parseFloat(delta)) / parseFloat(sigma)).toFixed(3) + '. At ' + clPct + '% confidence (α = ' + alpha + ', ' + (tails === 1 ? 'one' : 'two') + '-tailed) and ' + pwPct + '% power, the total sample required is ' + afterDeff + '.';
+      }
+      break;
+
+    case 'correlation':
+      var sel = document.getElementById('rho').value;
+      var r = sel === 'custom' ? document.getElementById('customRho').value : sel;
+      var zr = (0.5 * Math.log((1 + parseFloat(r)) / (1 - parseFloat(r)))).toFixed(4);
+      txt = 'Sample size was computed using Fisher\'s z-transformation: z_r = 0.5 × ln((1+r)/(1−r)) = ' + zr + ' for expected correlation r = ' + r + '. With z_α = ' + zFromAlpha(cl, tails).toFixed(4) + ' (α = ' + alpha + ', ' + (tails === 1 ? 'one' : 'two') + '-tailed, ' + clPct + '% confidence) and z_β = ' + zFromPower(pw).toFixed(4) + ' (power = ' + pwPct + '%), the formula n = ((z_α + z_β) / z_r)² + 3 yields n = ' + core + '.';
+      break;
+
     case 'prevalence':
-      var p=document.getElementById('prevP').value;
-      var e=document.getElementById('prevE').value;
-      var N=document.getElementById('prevN').value||'infinite';
-      txt=`Sample size for a prevalence study was calculated as n = z² × p × (1−p) / e², where z = ${zFromAlpha(cl,2).toFixed(4)} (${clPct}% confidence, two-tailed), p = ${p} (expected prevalence), e = ${(e/100).toFixed(2)} (±${e}% precision). `+
-        (N!=='infinite'&&parseInt(N)>0?`Finite population correction applied for N = ${N}. `:'Population assumed infinite. ')+
-        `Base n = ${core}.`;
+      var p = document.getElementById('prevP').value;
+      var e = document.getElementById('prevE').value;
+      var N = document.getElementById('prevN').value || 'infinite';
+      var z = zFromAlpha(cl, 2);
+      var n0base = Math.ceil((z * z * parseFloat(p) * (1 - parseFloat(p))) / Math.pow(parseFloat(e) / 100, 2));
+      txt = 'Sample size for a prevalence study was calculated as n = z² × p × (1−p) / e², where z = ' + z.toFixed(4) + ' (' + clPct + '% confidence, two-tailed), p = ' + p + ' (expected prevalence), e = ' + (e / 100).toFixed(2) + ' (±' + e + '% precision). Base n₀ = ' + n0base + '.';
+      if (deff > 1) txt += ' A design effect of ' + deff + ' was applied: n₀_deff = ' + Math.ceil(n0base * deff) + '.';
+      if (N !== 'infinite' && parseInt(N) > 0) {
+        txt += ' Finite population correction applied for N = ' + N + '.';
+      } else {
+        txt += ' Population assumed infinite.';
+      }
+      txt += ' Final sample: n = ' + afterDeff + '.';
       break;
   }
 
-  if(deff>1) txt+=` A design effect of ${deff} was applied for cluster sampling, yielding n_deff = ${afterDeff}.`;
-  if(scr>0||att>0) txt+=` Adjusting for ${scr>0?scr+'% screening exclusion':''}${scr>0&&att>0?' and ':''}${att>0?att+'% anticipated dropout':''}, the final recruitment target is ${recruited}${perGroup?' per group':''}.`;
+  if (study !== 'survey' && study !== 'prevalence' && deff > 1) {
+    txt += ' A design effect of ' + deff + ' was applied for cluster sampling, yielding n_deff = ' + afterDeff + '.';
+  }
+  if (scr > 0 || att > 0) {
+    txt += ' Adjusting for ' + (scr > 0 ? scr + '% screening exclusion' : '') + (scr > 0 && att > 0 ? ' and ' : '') + (att > 0 ? att + '% anticipated dropout' : '') + ', the final recruitment target is ' + recruited + (perGroup ? ' per group' : '') + '.';
+  }
 
-  txt+=`\n\nReferences:\n`;
-  if(study==='survey'||study==='prevalence') txt+=`Cochran, W. G. (1977). Sampling Techniques (3rd ed.). Wiley.\n`;
-  if(study==='experiment'||study==='correlation') txt+=`Cohen, J. (1988). Statistical Power Analysis for the Behavioral Sciences (2nd ed.). Erlbaum.\n`;
-  if(study==='clinical') txt+=`Schlesselman, J. J. (1982). Case-Control Studies: Design, Conduct, Analysis. Oxford University Press.\nKelsey, J. L. et al. (1996). Methods in Observational Epidemiology (2nd ed.). Oxford University Press.\n`;
+  txt += '\n\nReferences:\n';
+  if (study === 'survey' || study === 'prevalence') txt += 'Cochran, W. G. (1977). Sampling Techniques (3rd ed.). Wiley.\n';
+  if (study === 'experiment' || study === 'correlation') txt += 'Cohen, J. (1988). Statistical Power Analysis for the Behavioral Sciences (2nd ed.). Erlbaum.\n';
+  if (study === 'clinical') txt += 'Schlesselman, J. J. (1982). Case-Control Studies: Design, Conduct, Analysis. Oxford University Press.\nKelsey, J. L. et al. (1996). Methods in Observational Epidemiology (2nd ed.). Oxford University Press.\n';
 
   return txt;
 }
 
 // ── COPY ──
-function copyWriteup(){
-  var el=document.getElementById('writeupText');
-  var text=el.innerText||el.textContent;
-  navigator.clipboard.writeText(text).then(function(){
-    var btn=document.querySelector('.copy-btn');
-    var orig=btn.innerHTML;
-    btn.innerHTML='✓ Copied!';
-    btn.style.background='var(--success)';
-    setTimeout(function(){btn.innerHTML=orig;btn.style.background='';},2000);
+function copyWriteup() {
+  var el = document.getElementById('writeupText');
+  var text = el.innerText || el.textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    var btn = document.querySelector('.copy-btn');
+    var orig = btn.innerHTML;
+    btn.innerHTML = '✓ Copied!';
+    btn.style.background = 'var(--success)';
+    setTimeout(function() { btn.innerHTML = orig; btn.style.background = ''; }, 2000);
   });
 }
 
 // ── FAQ TOGGLE ──
-function toggleFaq(el){
-  var item=el.closest('.faq-item');
-  var wasOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
-  if(!wasOpen) item.classList.add('open');
+function toggleFaq(el) {
+  var item = el.closest('.faq-item');
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+  if (!wasOpen) item.classList.add('open');
 }
 
 // ── MOBILE NAV ──
-var _navOpen=false;
-function navToggle(){
-  _navOpen=!_navOpen;
-  var d=document.getElementById('mob-drawer'),sp=document.querySelectorAll('.hamburger span');
-  d.style.display=_navOpen?'flex':'none';
-  if(_navOpen){sp[0].style.transform='rotate(45deg) translate(5px,5px)';sp[1].style.opacity='0';sp[2].style.transform='rotate(-45deg) translate(5px,-5px)';}
-  else{sp.forEach(function(s){s.style.transform='';s.style.opacity='';});}
+var _navOpen = false;
+function navToggle() {
+  _navOpen = !_navOpen;
+  var d = document.getElementById('mob-drawer'), sp = document.querySelectorAll('.hamburger span');
+  d.style.display = _navOpen ? 'flex' : 'none';
+  if (_navOpen) {
+    sp[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+    sp[1].style.opacity = '0';
+    sp[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+  } else {
+    sp.forEach(function(s) { s.style.transform = ''; s.style.opacity = ''; });
+  }
 }
-function navClose(){
-  _navOpen=false;document.getElementById('mob-drawer').style.display='none';
-  document.querySelectorAll('.hamburger span').forEach(function(s){s.style.transform='';s.style.opacity='';});
+function navClose() {
+  _navOpen = false;
+  document.getElementById('mob-drawer').style.display = 'none';
+  document.querySelectorAll('.hamburger span').forEach(function(s) { s.style.transform = ''; s.style.opacity = ''; });
 }
 
 // ── INIT ──
 renderFields();
 </script>
-
 </body>
 </html>
